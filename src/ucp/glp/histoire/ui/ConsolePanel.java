@@ -18,7 +18,7 @@ public class ConsolePanel extends JPanel {
         cArea.setText("J'aime le chocolat\nEt les kebabs");
         cArea.setBounds(2,5,590,365);
         cArea.addKeyListener(new KeyAdapter() {
-            @Override
+           // @Override
             public void keyPressed(KeyEvent e) {
                 if (e.getKeyCode() == KeyEvent.VK_ENTER && cArea.hasFocus()) {
                     System.out.println("ENTER !");
