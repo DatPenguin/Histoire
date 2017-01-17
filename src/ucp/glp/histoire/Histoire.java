@@ -5,6 +5,7 @@ import ucp.glp.histoire.ui.ConsoleFrame;
 public class Histoire {
 
     public static void main(String[] args) {
+    	System.out.println("Bonjour");
 	    new ConsoleFrame();
     }
 }
