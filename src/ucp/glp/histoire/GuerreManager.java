@@ -9,7 +9,7 @@ public class GuerreManager {
 	public GuerreManager(){
 		
 	}
-	public void guerreChecker(ArrayList<Peuple> listePeuple){	//comparera si quel pays peut entrer en guerre avec lequel
+	public void guerreChecker(ArrayList<Peuple> listePeuple){	//comparera si quel pays peut entrer en guerre avec un autre
 		//routine de déclenchement ou non de la guerre (guerre ponctuel)
 		int seuil =  100;
 		
