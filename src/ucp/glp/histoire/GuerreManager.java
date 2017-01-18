@@ -16,15 +16,15 @@ public class GuerreManager {
 		for(int i = 0; i < listePeuple.size();i++){
 			for(int j = (i+1); j < listePeuple.size(); j++ ){	 //de cette façon on évitera un dédoublement des guerres
 				
-				if((int)(listePeuple.get(i).getBelicisme() + listePeuple.get(j).getBelicisme()) >= seuil){
+				if((int)(listePeuple.get(i).getBellicisme() + listePeuple.get(j).getBellicisme()) >= seuil){
 					guerre(listePeuple.get(i), listePeuple.get(j));
 				}
 				
-				else if((int)(listePeuple.get(i).getBelicisme() + listePeuple.get(j).getAttractivite()) >= seuil){
+				else if((int)(listePeuple.get(i).getBellicisme() + listePeuple.get(j).getAttractivite()) >= seuil){
 					guerre(listePeuple.get(i), listePeuple.get(j));
 				}
 				
-				else if((int)(listePeuple.get(j).getBelicisme() + listePeuple.get(i).getAttractivite()) >= seuil){
+				else if((int)(listePeuple.get(j).getBellicisme() + listePeuple.get(i).getAttractivite()) >= seuil){
 					guerre(listePeuple.get(i), listePeuple.get(j));
 				}
 			}
@@ -37,7 +37,7 @@ public class GuerreManager {
 		p2.setPopulation(p2.getPopulation() - (int)(p1.getPuissanceMilitaire()/10));
 		//les puissance millitaires seronts recalculées après
 		int perteBrute = 10;	//à ajouter pour éviter une guerre qui durerais infiniment
-		p1.setRessources(p1.getRessources() + (int)(p1.getPuissanceMilitaire() - p2.getPuissanceMilitaire() - perteBrute)); //a voir pour changer les ressources en float
-		p2.setRessources(p2.getRessources() + (int)(p2.getPuissanceMilitaire() - p1.getPuissanceMilitaire() - perteBrute));
+		p1.setRessources(p1.getRessources() + (p1.getPuissanceMilitaire() - p2.getPuissanceMilitaire() - perteBrute)); //a voir pour changer les ressources en float
+		p2.setRessources(p2.getRessources() + (p2.getPuissanceMilitaire() - p1.getPuissanceMilitaire() - perteBrute));
 	}
 }

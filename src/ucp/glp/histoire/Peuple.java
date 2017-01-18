@@ -2,11 +2,14 @@ package ucp.glp.histoire;
 
 public class Peuple {
 	//attributs principaux
-	protected int ressources,population,education,territoire,agressivite;
+	protected int population;
+	protected double ressources,education,territoire,agressivite;
 	//attributs secondaires
 	protected int nbSoldat,imigration;
-	protected float technologie,densite,richesse,attractivite,bellicisme,puissanceMilitaire,puissancePolitique;
+	protected double technologie,densite,richesse,attractivite,bellicisme,puissanceMilitaire,puissancePolitique;
 	
+
+
 
 
 
@@ -21,23 +24,23 @@ public class Peuple {
 	
 	/* fonctions définissant les attributs secondaires */
 	public void genereTechnologie(){
-		this.technologie = ((float)this.ressources + (float)this.education)/2;
+		this.technologie = (this.ressources + this.education)/2;
 	}
 	
 	public void genereDensite(){
-		this.densite = ((float)this.territoire - (float)this.population);
+		this.densite = (this.territoire - this.population);
 	}
 	
 	public void genereRichesse(){
-		this.richesse = ((float)this.ressources + (float)this.territoire)/2;
+		this.richesse = (this.ressources + this.territoire)/2;
 	}
 	
 	public void genereNbSoldat(){
-		this.nbSoldat = (this.population +this.agressivite)/2;
+		this.nbSoldat = (int)(this.population +this.agressivite)/2;
 	}
 	
 	public void genereBellicisme(){
-		this.bellicisme = ((float)this.richesse + (float)this.agressivite)/2;
+		this.bellicisme = (this.richesse + this.agressivite)/2;
 	}
 	
 	public void genereAttractivite(){
@@ -45,14 +48,14 @@ public class Peuple {
 	}
 	
 	public void generePuissanceMilitaire(){
-		this.puissanceMilitaire = (this.technologie + (float)this.nbSoldat)/2;
+		this.puissanceMilitaire = (this.technologie + this.nbSoldat)/2;
 	}
 	
 	public void generePuissancePolitique(){
 		this.puissancePolitique = (this.puissanceMilitaire + this.richesse)/2;
 	}
 	public void genereImigration(){
-		this.imigration = ((int)this.densite + (int)this.richesse)/10;
+		this.imigration = (int)(this.densite + this.richesse)/10;
 	}
 	
 	public void genereEnsemble(){
@@ -68,15 +71,6 @@ public class Peuple {
 	}
 	
 	/* Différent getter et setter */
-	
-	public int getRessources() {
-		return ressources;
-	}
-
-	public void setRessources(int ressources) {
-		this.ressources = ressources;
-	}
-
 	public int getPopulation() {
 		return population;
 	}
@@ -85,62 +79,108 @@ public class Peuple {
 		this.population = population;
 	}
 
-	public int getEducation() {
+	public double getRessources() {
+		return ressources;
+	}
+
+	public void setRessources(double ressources) {
+		this.ressources = ressources;
+	}
+
+	public double getEducation() {
 		return education;
 	}
 
-	public void setEducation(int education) {
+	public void setEducation(double education) {
 		this.education = education;
 	}
 
-	public int getTerritoire() {
+	public double getTerritoire() {
 		return territoire;
 	}
 
-	public void setTerritoire(int territoire) {
+	public void setTerritoire(double territoire) {
 		this.territoire = territoire;
 	}
 
-	public int getAgressivite() {
+	public double getAgressivite() {
 		return agressivite;
 	}
 
-	public void setAgressivite(int agressivite) {
+	public void setAgressivite(double agressivite) {
 		this.agressivite = agressivite;
 	}
+
 	public int getNbSoldat() {
 		return nbSoldat;
+	}
+
+	public void setNbSoldat(int nbSoldat) {
+		this.nbSoldat = nbSoldat;
 	}
 
 	public int getImigration() {
 		return imigration;
 	}
 
-	public float getTechnologie() {
+	public void setImigration(int imigration) {
+		this.imigration = imigration;
+	}
+
+	public double getTechnologie() {
 		return technologie;
 	}
 
-	public float getDensite() {
+	public void setTechnologie(double technologie) {
+		this.technologie = technologie;
+	}
+
+	public double getDensite() {
 		return densite;
 	}
 
-	public float getRichesse() {
+	public void setDensite(double densite) {
+		this.densite = densite;
+	}
+
+	public double getRichesse() {
 		return richesse;
 	}
 
-	public float getAttractivite() {
+	public void setRichesse(double richesse) {
+		this.richesse = richesse;
+	}
+
+	public double getAttractivite() {
 		return attractivite;
 	}
 
-	public float getBelicisme() {
+	public void setAttractivite(double attractivite) {
+		this.attractivite = attractivite;
+	}
+
+	public double getBellicisme() {
 		return bellicisme;
 	}
 
-	public float getPuissanceMilitaire() {
+	public void setBellicisme(double bellicisme) {
+		this.bellicisme = bellicisme;
+	}
+
+	public double getPuissanceMilitaire() {
 		return puissanceMilitaire;
 	}
 
-	public float getPuissancePolitique() {
+	public void setPuissanceMilitaire(double puissanceMilitaire) {
+		this.puissanceMilitaire = puissanceMilitaire;
+	}
+
+	public double getPuissancePolitique() {
 		return puissancePolitique;
 	}
+
+	public void setPuissancePolitique(double puissancePolitique) {
+		this.puissancePolitique = puissancePolitique;
+	}
+
 }
