@@ -5,7 +5,7 @@ public class Peuple {
 	protected int ressources,population,education,territoire,agressivite;
 	//attributs secondaires
 	protected int nbSoldat,imigration;
-	protected float technologie,densite,richesse,attractivite,belicisme,puissanceMilitaire,puissancePolitique;
+	protected float technologie,densite,richesse,attractivite,bellicisme,puissanceMilitaire,puissancePolitique;
 	
 
 
@@ -36,8 +36,8 @@ public class Peuple {
 		this.nbSoldat = (this.population +this.agressivite)/2;
 	}
 	
-	public void genereBelicisme(){
-		this.belicisme = ((float)this.richesse + (float)this.agressivite)/2;
+	public void genereBellicisme(){
+		this.bellicisme = ((float)this.richesse + (float)this.agressivite)/2;
 	}
 	
 	public void genereAttractivite(){
@@ -60,7 +60,7 @@ public class Peuple {
 		genereDensite();
 		genereRichesse();
 		genereNbSoldat();
-		genereBelicisme();
+		genereBellicisme();
 		genereAttractivite();
 		generePuissanceMilitaire();
 		generePuissancePolitique();
@@ -133,7 +133,7 @@ public class Peuple {
 	}
 
 	public float getBelicisme() {
-		return belicisme;
+		return bellicisme;
 	}
 
 	public float getPuissanceMilitaire() {
