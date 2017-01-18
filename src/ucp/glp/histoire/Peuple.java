@@ -8,6 +8,8 @@ public class Peuple {
 	protected float technologie,densite,richesse,attractivite,belicisme,puissanceMilitaire,puissancePolitique;
 	
 
+
+
 	public Peuple(int ressources, int population, int education,int territoire, int agressivite) {
 		this.ressources = ressources;
 		this.population = population;
@@ -106,5 +108,39 @@ public class Peuple {
 	public void setAgressivite(int agressivite) {
 		this.agressivite = agressivite;
 	}
-	
+	public int getNbSoldat() {
+		return nbSoldat;
+	}
+
+	public int getImigration() {
+		return imigration;
+	}
+
+	public float getTechnologie() {
+		return technologie;
+	}
+
+	public float getDensite() {
+		return densite;
+	}
+
+	public float getRichesse() {
+		return richesse;
+	}
+
+	public float getAttractivite() {
+		return attractivite;
+	}
+
+	public float getBelicisme() {
+		return belicisme;
+	}
+
+	public float getPuissanceMilitaire() {
+		return puissanceMilitaire;
+	}
+
+	public float getPuissancePolitique() {
+		return puissancePolitique;
+	}
 }
