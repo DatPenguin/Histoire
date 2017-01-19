@@ -1,5 +1,7 @@
 package ucp.glp.histoire.utilitaires;
 
+import java.util.ArrayList;
+
 import javax.swing.*;
 
 public class Peuple {
@@ -10,8 +12,13 @@ public class Peuple {
 	protected int nbSoldat,imigration;
 	protected double technologie,densite,richesse,attractivite,bellicisme,puissanceMilitaire,puissancePolitique;
 	private ImageIcon icon;
+	
+	//attribut tertiaires
+	protected ArrayList<Peuple> listeEnnemies;
 
-    public ImageIcon getIcon() {
+
+
+	public ImageIcon getIcon() {
         return icon;
     }
 
@@ -188,5 +195,15 @@ public class Peuple {
 	public void setPuissancePolitique(double puissancePolitique) {
 		this.puissancePolitique = puissancePolitique;
 	}
+	
+    public ArrayList<Peuple> getListeEnnemies() {
+		return listeEnnemies;
+	}
 
+	public void setListeEnnemies(ArrayList<Peuple> listeEnnemies) {
+		this.listeEnnemies = listeEnnemies;
+	}
+	public void addEnnemies(Peuple p1){
+		this.listeEnnemies.add(p1);
+	}
 }

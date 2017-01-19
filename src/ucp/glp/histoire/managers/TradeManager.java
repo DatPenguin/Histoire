@@ -15,7 +15,7 @@ public class TradeManager {
 		for(int i = 0; i < listePeuple.size();i++){
 			for(int j = (i+1); j < listePeuple.size(); j++ ){	 //de cette façon on évitera un dédoublement du commerce
 				
-				if((int)(listePeuple.get(i).getAttractivite() + listePeuple.get(j).getAttractivite()) >= seuil){
+				if(((int)(listePeuple.get(i).getAttractivite() + listePeuple.get(j).getAttractivite()) >= seuil) && !(listePeuple.get(i).getListeEnnemies().contains(listePeuple.get(j)))){	//si la somme de leur attractivitées est suffisante et si ils ne sont pas ennemies
 					trade(listePeuple.get(i),listePeuple.get(j));
 				}
 				

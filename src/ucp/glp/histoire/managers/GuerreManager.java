@@ -16,6 +16,8 @@ public class GuerreManager {
 		int seuil =  100;
 		
 		for(int i = 0; i < listePeuple.size();i++){
+			
+			listePeuple.get(i).setListeEnnemies(new ArrayList<Peuple>());	//on réinitialise à chaque fois la liste des ennemies
 			for(int j = (i+1); j < listePeuple.size(); j++ ){	 //de cette façon on évitera un dédoublement des guerres
 				
 				if((int)(listePeuple.get(i).getBellicisme() + listePeuple.get(j).getBellicisme()) >= seuil){
@@ -41,5 +43,8 @@ public class GuerreManager {
 		int perteBrute = 10;	//à ajouter pour éviter une guerre qui durerais infiniment
 		p1.setRessources(p1.getRessources() + (p1.getPuissanceMilitaire() - p2.getPuissanceMilitaire() - perteBrute)); //a voir pour changer les ressources en float
 		p2.setRessources(p2.getRessources() + (p2.getPuissanceMilitaire() - p1.getPuissanceMilitaire() - perteBrute));
+		//ajout dans la liste des ennemi
+		p1.addEnnemies(p2);
+		p2.addEnnemies(p1);
 	}
 }
