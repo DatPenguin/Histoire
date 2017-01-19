@@ -2,6 +2,14 @@ package ucp.glp.event;
 
 import ucp.glp.histoire.utilitaires.Peuple;
 
+/*Different type :
+ * 0 : Ressources
+ * 1 : Population
+ * 2 : Agressivité
+ * 3 : Education
+ * 4 : territoire 
+ */
+
 public abstract class Event {
 	//sprite location  = location + nom + .png
 	protected String nom,spritesLocation;
@@ -10,7 +18,6 @@ public abstract class Event {
 	protected double ampReel,puissance;
 	
 	public Event(){
-		genereAmpReel();
 	}
 	
 	public String toString(Peuple p){
@@ -33,7 +40,7 @@ public abstract class Event {
 	
 	
 	public void genereAmpReel(){	//méthode gérant les différant coeficient multiplicateur
-		switch(amplitude){
+		switch(this.amplitude){
 		case 0:
 			ampReel = 0.5;
 			break;
@@ -50,22 +57,25 @@ public abstract class Event {
 	
 	
 	
-	public void action(Peuple p){
+	public void action(Peuple p,int amplitude){
+		this.amplitude = amplitude;
+		genereAmpReel();
+		
 		switch(type){
 			case 0 :
-				p.setRessources(p.getRessources() + (puissance * ampReel));
+				p.setRessources(p.getRessources() + (this.puissance * this.ampReel));
 				break;
 			case 1 :
-				p.setPopulation(p.getPopulation() + (int)(puissance * ampReel));
+				p.setPopulation(p.getPopulation() + (int)(this.puissance * this.ampReel));
 				break;
 			case 2 : 
-				p.setAgressivite(p.getAgressivite() + (puissance * ampReel));
+				p.setAgressivite(p.getAgressivite() + (this.puissance * this.ampReel));
 				break;
 			case 3 :
-				p.setEducation(p.getEducation() + (puissance * ampReel));
+				p.setEducation(p.getEducation() + (this.puissance * this.ampReel));
 				break;
 			case 4 :
-				p.setTerritoire(p.getTerritoire() + (puissance * ampReel));
+				p.setTerritoire(p.getTerritoire() + (this.puissance * this.ampReel));
 				break;
 			default:
 			    System.out.println("ERREUR ENTREE action EVENT" + this.nom);
