@@ -6,6 +6,7 @@ import javax.swing.*;
 
 public class Peuple {
 	//attributs principaux
+	protected String nom;
 	protected int population;
 	protected double ressources,education,territoire,agressivite;
 	//attributs secondaires
@@ -26,12 +27,13 @@ public class Peuple {
         this.icon = i;
     }
 
-    public Peuple(int ressources, int population, int education, int territoire, int agressivite) {
+    public Peuple(int ressources, int population, int education, int territoire, int agressivite,String nom) {
 		this.ressources = ressources;
 		this.population = population;
 		this.education = education;
 		this.territoire = territoire;
 		this.agressivite = agressivite;
+		this.nom = nom;
 		genereEnsemble();
 	}
 	
@@ -205,5 +207,12 @@ public class Peuple {
 	}
 	public void addEnnemies(Peuple p1){
 		this.listeEnnemies.add(p1);
+	}
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
 	}
 }
