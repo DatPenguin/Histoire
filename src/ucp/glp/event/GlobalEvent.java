@@ -35,4 +35,23 @@ public abstract class GlobalEvent extends Event{
 		
 		}
 	}
+	
+	//surcharge
+	public String toString(){
+		String amp = "";
+		switch(amplitude){
+			case 0:
+				amp = "petit(e)";
+				break;
+			case 1 :
+				amp = "moyen(nne)";
+				break;
+			case 2 :
+				amp = "grand(e)";
+				break;
+			default:
+			    System.out.println("ERREUR ENTREE VALEUR EVENT" + this.nom);
+		}
+		return ("un(e) " + amp + " " + this.nom + " touche la région, affectant tout les peuples");		
+	}
 }
