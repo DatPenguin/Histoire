@@ -1,5 +1,6 @@
 package ucp.glp.event;
 
+
 public class CriseFinanciere extends Event{
 	
 	public CriseFinanciere(){

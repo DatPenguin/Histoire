@@ -1,5 +1,6 @@
 package ucp.glp.event;
 
+
 public class Famine extends Event{
 	
 	public Famine(){
