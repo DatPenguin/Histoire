@@ -9,13 +9,12 @@ import java.awt.*;
  */
 public class LeftPanel extends JPanel {
 
-    private JComboBox<String> peopleComboBox = new JComboBox(MainFrame.peuplesArrayList.toArray());
-    private JButton peopleButton = new JButton("Sélectionner un peuple");
+    private LeftSmallPanel top = new LeftSmallPanel(1);
+    private LeftSmallPanel bot = new LeftSmallPanel(2);
 
     public LeftPanel() {
         this.setLayout(new BorderLayout());
-        peopleButton.setMinimumSize(new Dimension(50, 50));
-        this.add(peopleButton, BorderLayout.SOUTH);
-        this.add(peopleComboBox, BorderLayout.NORTH);
+        this.add(top, BorderLayout.NORTH);
+        this.add(bot, BorderLayout.SOUTH);
     }
 }

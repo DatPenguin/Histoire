@@ -19,7 +19,7 @@ public class MainPanel extends JPanel {
         infoPanel.setBounds(375,5,530,545);
         this.add(infoPanel);
 
-        leftPanel.setBounds(35, 35, 300, 100);
+        leftPanel.setBounds(35, 35, 300, 515);
         this.add(leftPanel);
     }
 }

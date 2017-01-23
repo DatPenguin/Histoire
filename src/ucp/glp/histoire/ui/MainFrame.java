@@ -13,9 +13,11 @@ import java.util.ArrayList;
 public class MainFrame extends JFrame {
 
     public static ArrayList<String> peuplesArrayList = new ArrayList<>();
+    public static ArrayList<String> eventArrayList = new ArrayList<>();
 
     public MainFrame() {
         peuplesArrayList.add("Peuple X");
+        eventArrayList.add("Ouragan");
         WindowMover mover = new WindowMover(this);
         this.addMouseListener(mover);
         this.addMouseMotionListener(mover);
