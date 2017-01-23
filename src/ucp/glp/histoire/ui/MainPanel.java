@@ -1,18 +1,25 @@
 package ucp.glp.histoire.ui;
 
 import javax.swing.*;
+import java.awt.*;
 
 /**
  * @author Matteo STAIANO, Mathieu HANNOUN
  * @date 16/01/2017
  */
 public class MainPanel extends JPanel {
-    private JTextArea log = new JTextArea();
+
     private InfoPanel infoPanel = new InfoPanel();
+    private LeftPanel leftPanel = new LeftPanel();
+
     public MainPanel() {
         this.setLayout(null);
-        infoPanel.setBounds(250,5,200,300);
-        infoPanel.setVisible(true);
+        this.setBackground(Color.blue);
+
+        infoPanel.setBounds(375,5,530,545);
         this.add(infoPanel);
+
+        leftPanel.setBounds(35, 35, 300, 25);
+        this.add(leftPanel);
     }
 }

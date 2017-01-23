@@ -6,10 +6,10 @@ import ucp.glp.event.*;
 import ucp.glp.histoire.utilitaires.Peuple;
 
 public class EventGlobalManager {
-	protected ArrayList<GlobalEvent> GlobalEventList;
+	protected ArrayList<GlobalHistoricEvent> GlobalEventList;
 	
 	public EventGlobalManager(){
-		GlobalEventList = new ArrayList<GlobalEvent>();
+		GlobalEventList = new ArrayList<GlobalHistoricEvent>();
 		genererEventList();
 			
 	}

@@ -5,9 +5,9 @@ import ucp.glp.event.*;
 import ucp.glp.histoire.utilitaires.Peuple;
 
 public class EventLocalManager {
-	protected ArrayList<Event> EventList;
+	protected ArrayList<HistoricEvent> EventList;
 	public EventLocalManager(){
-		EventList = new ArrayList<Event>();
+		EventList = new ArrayList<HistoricEvent>();
 		genererEventList();
 			
 	}
