@@ -10,10 +10,12 @@ import java.awt.*;
 public class LeftPanel extends JPanel {
 
     private JComboBox<String> peopleComboBox = new JComboBox(MainFrame.peuplesArrayList.toArray());
+    private JButton peopleButton = new JButton("Sélectionner un peuple");
 
     public LeftPanel() {
-        this.setBackground(Color.RED); //TODO POURQUOI CA MARCHE PAS ?
         this.setLayout(new BorderLayout());
+        peopleButton.setMinimumSize(new Dimension(50, 50));
+        this.add(peopleButton, BorderLayout.SOUTH);
         this.add(peopleComboBox, BorderLayout.NORTH);
     }
 }
