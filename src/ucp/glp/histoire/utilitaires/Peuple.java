@@ -85,9 +85,38 @@ public class Peuple {
 		genereImigration();
 	}
 	*/
+    /*
+    	@Override
+	public String toString() {
+		return "Peuple [nom=" + nom + ", population=" + population
+				+ ", ressources=" + ressources + ", education=" + education
+				+ ", territoire=" + territoire + ", agressivite=" + agressivite
+				+ "]";
+	}
+	*/
+    
+    
+    
+    
+    
 	/* Différent getter et setter */
 	public int getPopulation() {
 		return population;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "Peuple [nom=" + nom + ", population=" + population
+				+ ", ressources=" + ressources + ", education=" + education
+				+ ", territoire=" + territoire + ", agressivite=" + agressivite
+				+ ", nbSoldat=" + nbSoldat + ", imigration=" + imigration
+				+ ", technologie=" + technologie + ", densite=" + densite
+				+ ", richesse=" + richesse + ", attractivite=" + attractivite
+				+ ", bellicisme=" + bellicisme + ", puissanceMilitaire="
+				+ puissanceMilitaire + ", puissancePolitique="
+				+ puissancePolitique + "]";
 	}
 
 	public void setPopulation(int population) {
