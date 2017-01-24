@@ -13,7 +13,7 @@ public class LeftPanel extends JPanel {
     private LeftSmallPanel bot = new LeftSmallPanel(2);
 
     public LeftPanel() {
-        this.setBackground(Color.GREEN);
+        this.setBackground(null);
         this.setLayout(new BorderLayout());
         this.add(top, BorderLayout.NORTH);
         this.add(bot, BorderLayout.SOUTH);
