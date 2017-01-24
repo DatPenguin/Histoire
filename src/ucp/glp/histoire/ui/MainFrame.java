@@ -15,6 +15,8 @@ public class MainFrame extends JFrame {
     public static ArrayList<String> peuplesArrayList = new ArrayList<>();
     public static ArrayList<String> eventArrayList = new ArrayList<>();
 
+    public static boolean playing = true;
+
     public MainFrame() {
         peuplesArrayList.add("Peuple X");
         eventArrayList.add("Ouragan");
@@ -24,15 +26,7 @@ public class MainFrame extends JFrame {
 
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-            System.out.println(UIManager.getSystemLookAndFeelClassName());
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (UnsupportedLookAndFeelException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
         }
 
         Swinger.setResourcePath("/ucp/glp/histoire/resources");
@@ -49,5 +43,13 @@ public class MainFrame extends JFrame {
 
     public static String getCurrentEvent() {
         return "X a déclaré la guerre à Y !";
+    }
+
+    public static void togglePlay() {
+        playing = !playing;
+    }
+
+    public static boolean isPlaying() {
+        return playing;
     }
 }

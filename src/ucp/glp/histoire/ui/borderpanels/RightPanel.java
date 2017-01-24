@@ -1,4 +1,4 @@
-package ucp.glp.histoire.ui;
+package ucp.glp.histoire.ui.borderpanels;
 
 import javax.swing.*;
 import java.awt.*;

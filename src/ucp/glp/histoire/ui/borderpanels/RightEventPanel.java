@@ -1,6 +1,7 @@
-package ucp.glp.histoire.ui;
+package ucp.glp.histoire.ui.borderpanels;
 
 import fr.theshark34.swinger.Swinger;
+import ucp.glp.histoire.ui.MainFrame;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;

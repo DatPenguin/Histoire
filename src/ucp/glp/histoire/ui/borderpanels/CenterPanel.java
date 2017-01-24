@@ -1,4 +1,4 @@
-package ucp.glp.histoire.ui;
+package ucp.glp.histoire.ui.borderpanels;
 
 import javax.swing.*;
 import java.awt.*;
@@ -7,11 +7,11 @@ import java.awt.*;
  * @author Matteo STAIANO, Mathieu HANNOUN
  * @date 19/01/2017
  */
-public class InfoPanel extends JPanel {
+public class CenterPanel extends JPanel {
 
     JButton a = new JButton("Bonjour");
 
-    public InfoPanel() {
+    public CenterPanel() {
         this.setBackground(Color.black);
         this.setLayout(new BorderLayout());
         this.add(a, BorderLayout.SOUTH);
