@@ -5,15 +5,14 @@ import java.awt.*;
 
 /**
  * @author Matteo STAIANO, Mathieu HANNOUN
- * @date 23/01/2017
+ * @date 24/01/2017
  */
-public class LeftPanel extends JPanel {
+public class RightPanel extends JPanel {
+    private RightSmallPanel top = new RightSmallPanel(1);
+    private RightSmallPanel bot = new RightSmallPanel(2);
 
-    private LeftSmallPanel top = new LeftSmallPanel(1);
-    private LeftSmallPanel bot = new LeftSmallPanel(2);
-
-    public LeftPanel() {
-        this.setBackground(null);
+    public RightPanel() {
+        this.setBackground(Color.red);
         this.setLayout(new BorderLayout());
         this.add(top, BorderLayout.NORTH);
         this.add(bot, BorderLayout.SOUTH);

@@ -11,15 +11,19 @@ public class MainPanel extends JPanel {
 
     private InfoPanel infoPanel = new InfoPanel();
     private LeftPanel leftPanel = new LeftPanel();
+    private RightPanel rightPanel = new RightPanel();
 
     public MainPanel() {
         this.setLayout(null);
         this.setBackground(Color.blue);
 
-        infoPanel.setBounds(375,5,530,545);
+        infoPanel.setBounds(370, 35, 530, 515);
         this.add(infoPanel);
 
         leftPanel.setBounds(35, 35, 300, 515);
         this.add(leftPanel);
+
+        rightPanel.setBounds(935, 35, 300, 515);
+        this.add(rightPanel);
     }
 }
