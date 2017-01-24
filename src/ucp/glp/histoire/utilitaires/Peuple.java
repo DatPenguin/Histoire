@@ -34,10 +34,10 @@ public class Peuple {
 		this.territoire = territoire;
 		this.agressivite = agressivite;
 		this.nom = nom;
-		genereEnsemble();
 	}
 	
 	/* fonctions définissant les attributs secondaires */
+    /*
 	public void genereTechnologie(){
 		this.technologie = (this.ressources + this.education)/2;
 	}
@@ -84,7 +84,7 @@ public class Peuple {
 		generePuissancePolitique();
 		genereImigration();
 	}
-	
+	*/
 	/* Différent getter et setter */
 	public int getPopulation() {
 		return population;
