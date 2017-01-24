@@ -35,7 +35,7 @@ public class MainFrame extends JFrame {
             e.printStackTrace();
         }
 
-        Swinger.setResourcePath("/ucp/glp/resources");
+        Swinger.setResourcePath("/ucp/glp/histoire/resources");
 
         this.setContentPane(new MainPanel());
         this.setVisible(true);

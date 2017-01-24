@@ -1,4 +1,4 @@
-package ucp.glp.event;
+package ucp.glp.histoire.event;
 
 public abstract class GlobalHistoricEvent extends HistoricEvent {
 	

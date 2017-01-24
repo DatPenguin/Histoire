@@ -1,4 +1,4 @@
-package ucp.glp.event;
+package ucp.glp.histoire.event;
 
 import ucp.glp.histoire.utilitaires.Peuple;
 
@@ -88,16 +88,16 @@ public abstract class HistoricEvent {
 		return nom;
 	}
 
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
 	public int getType() {
 		return type;
 	}
 
 	public double getPuissance() {
 		return puissance;
-	}
-
-	public void setNom(String nom) {
-		this.nom = nom;
 	}
 
 	public String getSpritesLocation() {
