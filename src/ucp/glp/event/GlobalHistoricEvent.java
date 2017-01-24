@@ -1,11 +1,27 @@
 package ucp.glp.event;
 
-import java.util.ArrayList;
-
-import ucp.glp.histoire.utilitaires.Peuple;
-
 public abstract class GlobalHistoricEvent extends HistoricEvent {
-
+	
+	
+	public String toString(){
+		String amp = "";
+		switch(amplitude){
+			case 0:
+				amp = "petit(e)";
+				break;
+			case 1 :
+				amp = "moyen(nne)";
+				break;
+			case 2 :
+				amp = "grand(e)";
+				break;
+			default:
+			    System.out.println("ERREUR ENTREE VALEUR EVENT" + this.nom);
+		}
+		return ("un(e) " + amp + " " + this.nom + " touche la région, affectant tout les peuples");		
+	}
+	
+	/*
 	//surcharge
 	public void action(ArrayList<Peuple> listP,int amplitude){
 		this.amplitude = amplitude;
@@ -35,23 +51,7 @@ public abstract class GlobalHistoricEvent extends HistoricEvent {
 		
 		}
 	}
-	
+	*/
 	//surcharge
-	public String toString(){
-		String amp = "";
-		switch(amplitude){
-			case 0:
-				amp = "petit(e)";
-				break;
-			case 1 :
-				amp = "moyen(nne)";
-				break;
-			case 2 :
-				amp = "grand(e)";
-				break;
-			default:
-			    System.out.println("ERREUR ENTREE VALEUR EVENT" + this.nom);
-		}
-		return ("un(e) " + amp + " " + this.nom + " touche la région, affectant tout les peuples");		
-	}
+
 }

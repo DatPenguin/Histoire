@@ -1,7 +1,7 @@
 package ucp.glp.event;
 
 
-public class CriseFinanciere extends HistoricEvent {
+public class CriseFinanciere extends LocalHistoricEvent {
 	
 	public CriseFinanciere(){
 		this.nom = "Crise Financiere";

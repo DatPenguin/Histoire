@@ -38,7 +38,7 @@ public abstract class HistoricEvent {
 		return ("un(e) " + amp + " " + this.nom + " touche " + p.getNom());		
 	}
 	
-	
+	/*
 	public void genereAmpReel(){	//méthode gérant les différant coeficient multiplicateur
 		switch(this.amplitude){
 		case 0:
@@ -54,9 +54,9 @@ public abstract class HistoricEvent {
 		    System.out.println("ERREUR ENTREE genereAmpReel EVENT" + this.nom);
 		}
 	}
+	*/
 	
-	
-	
+	/*
 	public void action(Peuple p,int amplitude){
 		this.amplitude = amplitude;
 		genereAmpReel();
@@ -82,9 +82,18 @@ public abstract class HistoricEvent {
 		
 		}
 	}
+	*/
 	
 	public String getNom() {
 		return nom;
+	}
+
+	public int getType() {
+		return type;
+	}
+
+	public double getPuissance() {
+		return puissance;
 	}
 
 	public void setNom(String nom) {
