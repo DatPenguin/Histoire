@@ -14,11 +14,10 @@ import java.awt.*;
  */
 public class MainPanel extends JPanel {
 
+    private static JLabel barLabel = new JLabel();
     private CenterPanel centerPanel = new CenterPanel();
-
     private LeftPanel leftPanel = new LeftPanel();
     private RightPanel rightPanel = new RightPanel();
-
     private BottomPanel bottomPanel = new BottomPanel();
 
     public MainPanel() {
@@ -36,5 +35,14 @@ public class MainPanel extends JPanel {
 
         bottomPanel.setBounds(35, 580, 1200, 85);
         this.add(bottomPanel);
+
+        barLabel.setBounds(35, 35, 100, 30);
+        barLabel.setFont(barLabel.getFont().deriveFont(20f));
+        barLabel.setForeground(Color.white);
+        this.add(barLabel);
+    }
+
+    public static void setBarLabelText(String barLabel) {
+        MainPanel.barLabel.setText(barLabel);
     }
 }
