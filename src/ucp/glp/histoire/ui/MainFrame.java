@@ -22,6 +22,19 @@ public class MainFrame extends JFrame {
         this.addMouseListener(mover);
         this.addMouseMotionListener(mover);
 
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+            System.out.println(UIManager.getSystemLookAndFeelClassName());
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (UnsupportedLookAndFeelException e) {
+            e.printStackTrace();
+        }
+
         Swinger.setResourcePath("/ucp/glp/resources");
 
         this.setContentPane(new MainPanel());
@@ -32,5 +45,9 @@ public class MainFrame extends JFrame {
         this.setTitle("History Simulator 2017");
         this.setLocationRelativeTo(null);
         this.setLayout(null);
+    }
+
+    public static String getCurrentEvent() {
+        return "X a déclaré la guerre à Y !";
     }
 }

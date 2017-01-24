@@ -20,7 +20,7 @@ public class MainPanel extends JPanel {
         infoPanel.setBounds(370, 35, 530, 515);
         this.add(infoPanel);
 
-        leftPanel.setBounds(35, 35, 300, 515);
+        leftPanel.setBounds(35, 185, 300, 365);
         this.add(leftPanel);
 
         rightPanel.setBounds(935, 35, 300, 515);
