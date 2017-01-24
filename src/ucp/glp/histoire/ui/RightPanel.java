@@ -8,11 +8,11 @@ import java.awt.*;
  * @date 24/01/2017
  */
 public class RightPanel extends JPanel {
-    private RightSmallPanel top = new RightSmallPanel(1);
-    private RightSmallPanel bot = new RightSmallPanel(2);
+    private RightEventPanel top = new RightEventPanel();
+    private RightLogPanel bot = new RightLogPanel();
 
     public RightPanel() {
-        this.setBackground(Color.red);
+        this.setBackground(null);
         this.setLayout(new BorderLayout());
         this.add(top, BorderLayout.NORTH);
         this.add(bot, BorderLayout.SOUTH);
