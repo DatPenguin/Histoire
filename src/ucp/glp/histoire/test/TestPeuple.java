@@ -21,7 +21,8 @@ public class TestPeuple {
 		for(int i=0; i < 50; i++){
 			//System.out.println(p1.toString());
 			PeupleManager.genereEnsembleTotal(listePeuple);
-			ecm.action(listePeuple);
+			ecm.actionLocale(listePeuple);
+			ecm.actionGlobale(listePeuple);
 			//System.out.println(p1.toString());
 
 			GuerreManager.guerreChecker(listePeuple);

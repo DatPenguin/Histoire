@@ -70,7 +70,7 @@ public class EventGlobalManager {
 	public void action(ArrayList<Peuple> listP) {
 		// a ajouter : un systeme de condition directement dans les events et une methode de check
 		//remplacer le System.out.println par un ajout a la pile des messages a afficher
-		int randEvent = (int) (Math.random() * (GlobalEventList.size() + 1)); //generera un nombre aléatoire compris entre [0,size]
+		int randEvent = (int) (Math.random() * (GlobalEventList.size())); //generera un nombre aléatoire compris entre [0,size]
 		int RandAmp = (int) (Math.random() * (3)); //generera un nombre aléatoire compris entre [0,2]
 		//GlobalEventList.get(randEvent).action(listP, RandAmp);
 		EventGlobalManager.actionOnPeuple(GlobalEventList.get(randEvent), listP, RandAmp);
