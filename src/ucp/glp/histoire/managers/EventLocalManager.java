@@ -64,8 +64,8 @@ public class EventLocalManager {
 
 	public void action(Peuple p) {
 		// a ajouter : un systeme de condition directement dans les events et une methode de check
-		//remplacer le System.out.println par un ajout a la pile des messages a afficher
-		int randEvent = (int) (Math.random() * (EventList.size() + 1)); //generera un nombre aléatoire compris entre [0,size]
+		//remplacer le System.out.println par un ajout a la file des messages a afficher
+		int randEvent = (int) (Math.random() * (EventList.size())); //generera un nombre aléatoire compris entre [0,size]
 		int RandAmp = (int) (Math.random() * (3)); //generera un nombre aléatoire compris entre [0,2]
 		//EventList.get(randEvent).action(p, RandAmp);
 		EventLocalManager.actionOnPeuple(EventList.get(randEvent), p, RandAmp);
