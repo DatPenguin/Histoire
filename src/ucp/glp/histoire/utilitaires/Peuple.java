@@ -1,8 +1,7 @@
 package ucp.glp.histoire.utilitaires;
 
-import java.util.ArrayList;
-
 import javax.swing.*;
+import java.util.ArrayList;
 
 public class Peuple {
 	//attributs principaux
@@ -12,16 +11,11 @@ public class Peuple {
 	//attributs secondaires
 	protected int nbSoldat,imigration;
 	protected double technologie,densite,richesse,attractivite,bellicisme,puissanceMilitaire,puissancePolitique;
-	private ImageIcon icon;
-	
 	//attribut tertiaires
 	protected ArrayList<Peuple> listeEnnemies;
+	private ImageIcon icon;
 
 
-
-	public ImageIcon getIcon() {
-        return icon;
-    }
 
     public Peuple(ImageIcon i) {
         this.icon = i;
@@ -34,6 +28,10 @@ public class Peuple {
 		this.territoire = territoire;
 		this.agressivite = agressivite;
 		this.nom = nom;
+	}
+
+	public ImageIcon getIcon() {
+		return icon;
 	}
 	
 	/* fonctions définissant les attributs secondaires */

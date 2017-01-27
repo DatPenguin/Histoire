@@ -2,6 +2,7 @@ package ucp.glp.histoire.ui;
 
 import fr.theshark34.swinger.Swinger;
 import fr.theshark34.swinger.util.WindowMover;
+import ucp.glp.histoire.utilitaires.RunningTime;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -39,6 +40,8 @@ public class MainFrame extends JFrame {
         this.setTitle("History Simulator 2017");
         this.setLocationRelativeTo(null);
         this.setLayout(null);
+
+        new RunningTime().run();
     }
 
     public static String getCurrentEvent() {

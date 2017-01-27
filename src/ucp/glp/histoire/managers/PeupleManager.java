@@ -1,8 +1,8 @@
 package ucp.glp.histoire.managers;
 
-import java.util.ArrayList;
-
 import ucp.glp.histoire.utilitaires.Peuple;
+
+import java.util.ArrayList;
 
 public class PeupleManager {
 	

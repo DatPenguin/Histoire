@@ -18,9 +18,9 @@ import java.awt.*;
  */
 public class BottomPanel extends JPanel implements SwingerEventListener, ChangeListener {
 
+    public static JSlider timeSlider = new JSlider();
     private STexturedButton leftButton = new STexturedButton(Swinger.getResource("leftButton.png"));
     private STexturedButton rightButton = new STexturedButton(Swinger.getResource("rightButton.png"));
-    private JSlider timeSlider = new JSlider();
 
     public BottomPanel() {
         this.setLayout(new BorderLayout());
@@ -34,6 +34,7 @@ public class BottomPanel extends JPanel implements SwingerEventListener, ChangeL
 
         timeSlider.setBackground(null);
         timeSlider.addChangeListener(this);
+        timeSlider.setMaximum(1000);
 
         this.add(rightButton, BorderLayout.EAST);
         this.add(leftButton, BorderLayout.WEST);
@@ -60,6 +61,6 @@ public class BottomPanel extends JPanel implements SwingerEventListener, ChangeL
     @Override
     public void stateChanged(ChangeEvent e) {
         if (e.getSource() == timeSlider)
-            MainPanel.setBarLabelText(Integer.toString(this.timeSlider.getValue()));
+            MainPanel.setBarLabelText(Integer.toString(timeSlider.getValue()));
     }
 }

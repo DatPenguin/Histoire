@@ -14,7 +14,9 @@ import java.awt.*;
  */
 public class MainPanel extends JPanel {
 
+    public static float running = 0;
     private static JLabel barLabel = new JLabel();
+    private static JLabel runningLabel = new JLabel();
     private CenterPanel centerPanel = new CenterPanel();
     private LeftPanel leftPanel = new LeftPanel();
     private RightPanel rightPanel = new RightPanel();
@@ -40,9 +42,21 @@ public class MainPanel extends JPanel {
         barLabel.setFont(barLabel.getFont().deriveFont(20f));
         barLabel.setForeground(Color.white);
         this.add(barLabel);
+        runningLabel.setBounds(35, 70, 100, 30);
+        runningLabel.setFont(runningLabel.getFont().deriveFont(20f));
+        runningLabel.setForeground(Color.white);
+        this.add(runningLabel);
     }
 
     public static void setBarLabelText(String barLabel) {
         MainPanel.barLabel.setText(barLabel);
+    }
+
+    public static void setRunningLabelText(String runningLabel) {
+        MainPanel.runningLabel.setText(runningLabel);
+    }
+
+    public static JLabel getRunningLabel() {
+        return runningLabel;
     }
 }
