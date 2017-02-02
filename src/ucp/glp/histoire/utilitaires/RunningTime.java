@@ -1,5 +1,6 @@
 package ucp.glp.histoire.utilitaires;
 
+import ucp.glp.histoire.ui.MainFrame;
 import ucp.glp.histoire.ui.MainPanel;
 import ucp.glp.histoire.ui.borderpanels.BottomPanel;
 
@@ -22,12 +23,14 @@ public class RunningTime implements Runnable {
     @Override
     public void run() {
         while (true) {
-            MainPanel.running += 1 * ((float) BottomPanel.timeSlider.getValue()) / 1000;
-            MainPanel.setRunningLabelText(String.valueOf(((int) MainPanel.running)));
+            if (MainFrame.isPlaying()) {
+                MainPanel.running += 1 * ((float) BottomPanel.timeSlider.getValue()) / 1000;
+                MainPanel.setRunningLabelText(String.valueOf(((int) MainPanel.running)));
 
-            if (((int) MainPanel.running) % 10 == 0) {
-                System.out.println("Lancement de le boucle");
-                MainPanel.running = 1;
+                if (((int) MainPanel.running) % 10 == 0) {
+                    System.out.println("Lancement de la boucle");
+                    MainPanel.running = 1;
+                }
             }
 
             try {
