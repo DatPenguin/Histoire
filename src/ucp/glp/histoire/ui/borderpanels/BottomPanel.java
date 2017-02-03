@@ -5,7 +5,6 @@ import fr.theshark34.swinger.event.SwingerEvent;
 import fr.theshark34.swinger.event.SwingerEventListener;
 import fr.theshark34.swinger.textured.STexturedButton;
 import ucp.glp.histoire.ui.MainFrame;
-import ucp.glp.histoire.ui.MainPanel;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
@@ -19,37 +18,38 @@ import java.awt.*;
 public class BottomPanel extends JPanel implements SwingerEventListener, ChangeListener {
 
     public static JSlider timeSlider = new JSlider();
-    private STexturedButton leftButton = new STexturedButton(Swinger.getResource("leftButton.png"));
-    private STexturedButton rightButton = new STexturedButton(Swinger.getResource("rightButton.png"));
+    private STexturedButton playPauseButton = new STexturedButton(Swinger.getResource("playPauseButton.png"));
+    private STexturedButton fastForwardButton = new STexturedButton(Swinger.getResource("fastForwardButton.png"));
 
     public BottomPanel() {
         this.setLayout(new BorderLayout());
         this.setBackground(null);
 
-        leftButton.setPreferredSize(new Dimension(300, 50));
-        rightButton.setPreferredSize(new Dimension(300, 50));
+        playPauseButton.setPreferredSize(new Dimension(300, 50));
+        fastForwardButton.setPreferredSize(new Dimension(300, 50));
 
-        leftButton.addEventListener(this);
-        rightButton.addEventListener(this);
+        playPauseButton.addEventListener(this);
+        fastForwardButton.addEventListener(this);
 
         timeSlider.setBackground(null);
         timeSlider.addChangeListener(this);
         timeSlider.setMaximum(1000);
+        timeSlider.setValue(0);
 
-        this.add(rightButton, BorderLayout.EAST);
-        this.add(leftButton, BorderLayout.WEST);
+        this.add(fastForwardButton, BorderLayout.EAST);
+        this.add(playPauseButton, BorderLayout.WEST);
         this.add(timeSlider, BorderLayout.CENTER);
     }
 
     @Override
     public void onEvent(SwingerEvent e) {
-        if (e.getSource() == leftButton) {
+        if (e.getSource() == playPauseButton) {
             MainFrame.togglePlay();
             if (MainFrame.isPlaying())
                 System.out.println("Play");
             else
                 System.out.println("Pause");
-        } else if (e.getSource() == rightButton)
+        } else if (e.getSource() == fastForwardButton)
             System.out.println("Fast Forward");
     }
 
@@ -60,7 +60,5 @@ public class BottomPanel extends JPanel implements SwingerEventListener, ChangeL
      */
     @Override
     public void stateChanged(ChangeEvent e) {
-        if (e.getSource() == timeSlider)
-            MainPanel.setBarLabelText(Integer.toString(timeSlider.getValue()));
     }
 }

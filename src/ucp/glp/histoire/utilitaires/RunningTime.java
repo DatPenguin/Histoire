@@ -25,11 +25,13 @@ public class RunningTime implements Runnable {
         while (true) {
             if (MainFrame.isPlaying()) {
                 MainPanel.running += 1 * ((float) BottomPanel.timeSlider.getValue()) / 1000;
+                MainPanel.totalYears += 1 * ((float) BottomPanel.timeSlider.getValue()) / 1000;
                 MainPanel.setRunningLabelText(String.valueOf(((int) MainPanel.running)));
+                MainPanel.setBarLabelText(String.valueOf(((int) MainPanel.totalYears)));
 
-                if (((int) MainPanel.running) % 10 == 0) {
+                if (((int) MainPanel.running) == 10) {
                     System.out.println("Lancement de la boucle");
-                    MainPanel.running = 1;
+                    MainPanel.running = 0;
                 }
             }
 
