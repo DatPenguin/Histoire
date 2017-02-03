@@ -6,7 +6,7 @@ import ucp.glp.histoire.utilitaires.Peuple;
 
 import java.util.ArrayList;
 
-public class EventGlobalManager {
+public class EventGlobalManager extends EventManager{
 	protected ArrayList<GlobalHistoricEvent> GlobalEventList;
 	
 	public EventGlobalManager(){
@@ -14,7 +14,6 @@ public class EventGlobalManager {
 		genererEventList();
 			
 	}
-	
 	public static void actionOnPeuple(GlobalHistoricEvent hEvent,ArrayList<Peuple> listP,int amplitude){
 		for(int i = 0; i < listP.size();i++){
 			calculEffect(hEvent,listP.get(i),amplitude);
@@ -42,11 +41,12 @@ public class EventGlobalManager {
 				break;
 			default:
 			    System.out.println("ERREUR ENTREE action EVENT" + hEvent.getNom());
-
+			    break;
 
 		}
 }
-
+	// TODO Remove
+	/*
 	public static double genereAmpReel(int amplitude) {    // Méthode gérant les différant coeficient multiplicateur
 	switch(amplitude){
 	case 0:
@@ -61,7 +61,7 @@ public class EventGlobalManager {
 	}
 
 }
-
+	*/
 	public void genererEventList() {
 
 		// On ajoutera une instance de chanque classe global event
