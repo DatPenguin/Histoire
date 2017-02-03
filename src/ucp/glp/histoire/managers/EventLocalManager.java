@@ -7,7 +7,7 @@ import ucp.glp.histoire.utilitaires.Peuple;
 
 import java.util.ArrayList;
 
-public class EventLocalManager {
+public class EventLocalManager extends EventManager{
 	protected ArrayList<LocalHistoricEvent> EventList;
 	public EventLocalManager(){
 		EventList = new ArrayList<LocalHistoricEvent>();
@@ -36,11 +36,12 @@ public class EventLocalManager {
 					break;
 				default:
 				    System.out.println("ERREUR ENTREE action EVENT" + hEvent.getNom());
-
+				    break;
 
 		}
 	}
-
+	// TODO Remove
+	/*
 	public static double genereAmpReel(int amplitude) {    // Méthode gérant les différant coeficient multiplicateur
 		switch(amplitude){
 		case 0:
@@ -55,7 +56,7 @@ public class EventLocalManager {
 		}
 
 	}
-
+	*/
 	public void genererEventList() {
 
 		// On ajoutera une instance de chanque classe event
