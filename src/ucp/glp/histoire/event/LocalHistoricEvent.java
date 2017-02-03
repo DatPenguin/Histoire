@@ -1,5 +1,5 @@
 package ucp.glp.histoire.event;
 
-public abstract class LocalHistoricEvent extends HistoricEvent{	//utilisé uniquement pour séparer global et locale
+public abstract class LocalHistoricEvent extends HistoricEvent { // Utilisé uniquement pour séparer global et locale
 
 }

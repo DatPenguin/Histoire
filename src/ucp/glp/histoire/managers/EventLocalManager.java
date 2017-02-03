@@ -40,8 +40,8 @@ public class EventLocalManager {
 
 		}
 	}
-	
-	public static double genereAmpReel(int amplitude){	//méthode gérant les différant coeficient multiplicateur
+
+	public static double genereAmpReel(int amplitude) {    // Méthode gérant les différant coeficient multiplicateur
 		switch(amplitude){
 		case 0:
 			return 0.5;
@@ -57,16 +57,18 @@ public class EventLocalManager {
 	}
 
 	public void genererEventList() {
-		//on ajoutera une instance de chanque classe event
+
+		// On ajoutera une instance de chanque classe event
 		EventList.add(new Famine());
 		EventList.add(new CriseFinanciere());
 	}
 
 	public void action(Peuple p) {
-		// a ajouter : un systeme de condition directement dans les events et une methode de check
-		//remplacer le System.out.println par un ajout a la file des messages a afficher
-		int randEvent = (int) (Math.random() * (EventList.size())); //generera un nombre aléatoire compris entre [0,size]
-		int RandAmp = (int) (Math.random() * (3)); //generera un nombre aléatoire compris entre [0,2]
+
+		// TODO Ajouter : un systeme de condition directement dans les events et une methode de check
+		// TODO Remplacer le System.out.println par un ajout a la file des messages a afficher
+		int randEvent = (int) (Math.random() * (EventList.size()));    // Generera un nombre aléatoire compris entre [0,size]
+		int RandAmp = (int) (Math.random() * (3));                    // Generera un nombre aléatoire compris entre [0,2]
 		//EventList.get(randEvent).action(p, RandAmp);
 		EventLocalManager.actionOnPeuple(EventList.get(randEvent), p, RandAmp);
 		System.out.println(EventList.get(randEvent).toString(p));

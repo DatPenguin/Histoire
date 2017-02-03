@@ -18,7 +18,7 @@ public abstract class GlobalHistoricEvent extends HistoricEvent {
 			default:
 			    System.out.println("ERREUR ENTREE VALEUR EVENT" + this.nom);
 		}
-		return ("un(e) " + amp + " " + this.nom + " touche la région, affectant tout les peuples");		
+		return ("un(e) " + amp + " " + this.nom + " touche la région, affectant tous les peuples");
 	}
 	
 	/*

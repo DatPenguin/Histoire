@@ -11,8 +11,8 @@ public class PeupleManager {
 			PeupleManager.genereEnsemble(listePeuple.get(i));			
 		}
 	}
-	
-	/* fonctions définissant les attributs secondaires */
+
+	// Fonctions définissant les attributs secondaires
 	public static void genereTechnologie(Peuple p){
 		//p.technologie = (p.ressources + p.education)/2;
 		p.setTechnologie((p.getRessources() + p.getEducation()) /2);

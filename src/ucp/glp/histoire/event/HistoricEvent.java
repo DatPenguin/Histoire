@@ -11,7 +11,8 @@ import ucp.glp.histoire.utilitaires.Peuple;
  */
 
 public abstract class HistoricEvent {
-	//sprite location  = location + nom + .png
+
+	// Sprite location  = location + nom + .png
 	protected String nom,spritesLocation;
 	protected int amplitude; //multiplicateur du résultat
 	protected int type;
