@@ -24,26 +24,26 @@ public class EventChanceManager {
 	}
 
 
-	public void actionLocale(ArrayList<Peuple> al) {        // Va pour chaque pays tester si ils leur arrive un evenement ou non
-		for(int i = 0; i < al.size(); i++){
+	public void actionLocale(ArrayList<Peuple> listePeuple) {        // Va pour chaque pays tester si ils leur arrive un evenement ou non
+		for(int i = 0; i < listePeuple.size(); i++){
 			int randNumb = (int) (Math.random() * 101);    // Generera un nombre aléatoire compris entre [0,100]
 			if(randNumb < tauxLocal){
-				eventLocalManager.action(al.get(i));
+				eventLocalManager.action(listePeuple.get(i));
 			}
 		}
 		
 	}
-	public void actionGlobale(ArrayList<Peuple> al){
+	public void actionGlobale(ArrayList<Peuple> listePeuple){
 		int randNumb = (int) (Math.random() * 101);        // Generera un nombre aléatoire compris entre [0,100]
 		if(randNumb < tauxGlobal){
-			eventGlobalManager.action(al);
+			eventGlobalManager.action(listePeuple);
 		}
 	}
-	public void reaction(ArrayList<Peuple> al){
-		for(int i = 0; i < al.size(); i++){
+	public void reaction(ArrayList<Peuple> listePeuple){
+		for(int i = 0; i < listePeuple.size(); i++){
 			int randNumb = (int) (Math.random() * 101);    // Generera un nombre aléatoire compris entre [0,100]
 			if(randNumb < tauxReaction){
-				eventReactionManager.action(al.get(i));
+				eventReactionManager.action(listePeuple.get(i));
 			}
 		}
 	}

@@ -7,7 +7,7 @@ import ucp.glp.histoire.utilitaires.Peuple;
 import java.util.ArrayList;
 
 public class EventGlobalManager extends EventManager{
-	protected ArrayList<GlobalHistoricEvent> GlobalEventList;
+	private ArrayList<GlobalHistoricEvent> GlobalEventList;
 	
 	public EventGlobalManager(){
 		GlobalEventList = new ArrayList<GlobalHistoricEvent>();

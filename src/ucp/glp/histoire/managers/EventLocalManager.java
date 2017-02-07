@@ -8,9 +8,9 @@ import ucp.glp.histoire.utilitaires.Peuple;
 import java.util.ArrayList;
 
 public class EventLocalManager extends EventManager{
-	protected ArrayList<LocalHistoricEvent> EventList;
+	private ArrayList<LocalHistoricEvent> localEventList;
 	public EventLocalManager(){
-		EventList = new ArrayList<LocalHistoricEvent>();
+		localEventList = new ArrayList<LocalHistoricEvent>();
 		genererEventList();
 			
 	}
@@ -60,19 +60,19 @@ public class EventLocalManager extends EventManager{
 	public void genererEventList() {
 
 		// On ajoutera une instance de chanque classe event
-		EventList.add(new Famine());
-		EventList.add(new CriseFinanciere());
+		localEventList.add(new Famine());
+		localEventList.add(new CriseFinanciere());
 	}
 
 	public void action(Peuple p) {
 
 		// TODO Ajouter : un systeme de condition directement dans les events et une methode de check
 		// TODO Remplacer le System.out.println par un ajout a la file des messages a afficher
-		int randEvent = (int) (Math.random() * (EventList.size()));    // Generera un nombre aléatoire compris entre [0,size]
+		int randEvent = (int) (Math.random() * (localEventList.size()));    // Generera un nombre aléatoire compris entre [0,size]
 		int RandAmp = (int) (Math.random() * (3));                    // Generera un nombre aléatoire compris entre [0,2]
 		//EventList.get(randEvent).action(p, RandAmp);
-		EventLocalManager.actionOnPeuple(EventList.get(randEvent), p, RandAmp);
-		System.out.println(EventList.get(randEvent).toString(p));
+		EventLocalManager.actionOnPeuple(localEventList.get(randEvent), p, RandAmp);
+		System.out.println(localEventList.get(randEvent).toString(p));
 	}
 			
 	

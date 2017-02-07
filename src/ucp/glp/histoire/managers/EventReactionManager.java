@@ -2,7 +2,8 @@ package ucp.glp.histoire.managers;
 
 import java.util.ArrayList;
 
-import ucp.glp.histoire.event.LocalHistoricEvent;
+
+import ucp.glp.histoire.event.Conquete;
 import ucp.glp.histoire.event.ReactionEvent;
 import ucp.glp.histoire.utilitaires.Peuple;
 
@@ -43,14 +44,21 @@ public class EventReactionManager extends EventManager{
 	public void genererEventList() {
 	
 		// On ajoutera une instance de chanque classe event
+		ReactionEventList.add(new Conquete());
+
 		
 	}
+	
+	
+	/*
+	 * Testera si pour le peuple donné son attribut est bien supérieur ou égale au seuil de la réaction
+	 */
 	public void action(Peuple p) {
 
 		// TODO Ajouter : un systeme de condition directement dans les events et une methode de check
 		// TODO Remplacer le System.out.println par un ajout a la file des messages a afficher
 		int randEvent = (int) (Math.random() * (ReactionEventList.size()));    // Generera un nombre aléatoire compris entre [0,size]
-		int RandAmp = (int) (Math.random() * (3));                    // Generera un nombre aléatoire compris entre [0,2]
+		int RandAmp = (int) (Math.random() * (3));                 			   // Generera un nombre aléatoire compris entre [0,2]
 		
 		switch(ReactionEventList.get(randEvent).getConditionType()) {			// Testera si l'attribut donné du peuple corresponds est bien supérieur au seuil
 		case 0 :
