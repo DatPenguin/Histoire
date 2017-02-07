@@ -12,15 +12,15 @@ public class EventChanceManager {
 	private static int tauxLocal = 30;
 	private static int tauxGlobal = 50;
 	private static int tauxReaction = 80;
-	EventLocalManager elm;
-	EventGlobalManager egm;
-	EventReactionManager erm;
+	private EventLocalManager eventLocalManager;
+	private EventGlobalManager eventGlobalManager;
+	private EventReactionManager eventReactionManager;
 
 	// L'appel de leur constructeur permettra d'initialiser les différentes listes d'events
 	public EventChanceManager(){
-		elm = new EventLocalManager();
-		egm = new EventGlobalManager();
-		erm = new EventReactionManager();
+		eventLocalManager = new EventLocalManager();
+		eventGlobalManager = new EventGlobalManager();
+		eventReactionManager = new EventReactionManager();
 	}
 
 
@@ -28,22 +28,22 @@ public class EventChanceManager {
 		for(int i = 0; i < al.size(); i++){
 			int randNumb = (int) (Math.random() * 101);    // Generera un nombre aléatoire compris entre [0,100]
 			if(randNumb < tauxLocal){
-				elm.action(al.get(i));
+				eventLocalManager.action(al.get(i));
 			}
 		}
 		
 	}
 	public void actionGlobale(ArrayList<Peuple> al){
 		int randNumb = (int) (Math.random() * 101);        // Generera un nombre aléatoire compris entre [0,100]
-		if(randNumb < tauxLocal){
-			egm.action(al);
+		if(randNumb < tauxGlobal){
+			eventGlobalManager.action(al);
 		}
 	}
 	public void reaction(ArrayList<Peuple> al){
 		for(int i = 0; i < al.size(); i++){
 			int randNumb = (int) (Math.random() * 101);    // Generera un nombre aléatoire compris entre [0,100]
 			if(randNumb < tauxReaction){
-				elm.action(al.get(i));
+				eventReactionManager.action(al.get(i));
 			}
 		}
 	}

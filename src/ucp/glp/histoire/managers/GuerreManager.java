@@ -41,7 +41,7 @@ public class GuerreManager {
 		}
 	}
 	
-	public static void guerre(Peuple p1,Peuple p2){	//Conséquences de la guerre
+	private static void guerre(Peuple p1,Peuple p2){	//Conséquences de la guerre
 
 		// TODO Ajouter un facteur aléatoire
 		p1.setPopulation(p1.getPopulation() - (int)(p2.getPuissanceMilitaire()/10));
