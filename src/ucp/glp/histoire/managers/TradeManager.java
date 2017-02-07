@@ -25,7 +25,7 @@ public class TradeManager {
 	
 	private static void trade(Peuple p1,Peuple p2){	//Conséquences de la guerre
 		//A ajouter : un facteur aléatoire
-		double taux = 0.1;	//à ajouter pour éviter un enrichissement trop rapide
+		double taux = 0.001;	//à ajouter pour éviter un enrichissement trop rapide
 		p1.setRessources(p1.getRessources() + (taux*(p2.getAttractivite()* p1.getPuissancePolitique())));
 		p2.setRessources(p2.getRessources() + (taux*(p1.getAttractivite()* p2.getPuissancePolitique())));
 

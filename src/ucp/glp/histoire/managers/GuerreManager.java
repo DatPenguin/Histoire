@@ -23,20 +23,23 @@ public class GuerreManager {
 		
 		for(int i = 0; i < listePeuple.size();i++){
 
-
+			// TODO affiner 
 			for (int j = (i + 1); j < listePeuple.size(); j++) {     // De cette façon on évitera un dédoublement des guerres
 				
 				if((int)(listePeuple.get(i).getBellicisme() + listePeuple.get(j).getBellicisme()) >= seuil){
 					GuerreManager.guerre(listePeuple.get(i), listePeuple.get(j));
 				}
 				
-				else if((int)(listePeuple.get(i).getBellicisme() + listePeuple.get(j).getAttractivite()) >= seuil){
+				/*
+				 * Algorithmes à revoir, la guerre dure éternelement à cause d'un enrichissement des deux camps
+				 */
+				/*else if((int)(listePeuple.get(i).getBellicisme() + listePeuple.get(j).getAttractivite()) >= seuil){
 					GuerreManager.guerre(listePeuple.get(i), listePeuple.get(j));
-				}
+				}*/
 				
-				else if((int)(listePeuple.get(j).getBellicisme() + listePeuple.get(i).getAttractivite()) >= seuil){
+				/*else if((int)(listePeuple.get(j).getBellicisme() + listePeuple.get(i).getAttractivite()) >= seuil){
 					GuerreManager.guerre(listePeuple.get(i), listePeuple.get(j));
-				}
+				}*/
 			}
 		}
 	}
@@ -44,13 +47,15 @@ public class GuerreManager {
 	private static void guerre(Peuple p1,Peuple p2){	//Conséquences de la guerre
 
 		// TODO Ajouter un facteur aléatoire
-		p1.setPopulation(p1.getPopulation() - (int)(p2.getPuissanceMilitaire()/10));
-		p2.setPopulation(p2.getPopulation() - (int)(p1.getPuissanceMilitaire()/10));
+		double tauxReductionPop = 0.01;
+		p1.setPopulation(p1.getPopulation() - (int)(tauxReductionPop * p2.getPuissanceMilitaire()/10));
+		p2.setPopulation(p2.getPopulation() - (int)(tauxReductionPop * p1.getPuissanceMilitaire()/10));
 
 		// Les puissance millitaires seront recalculées après
-		int perteBrute = 10;    // TODO A ajouter pour éviter une guerre qui durerais infiniment
-		p1.setRessources(p1.getRessources() + (p1.getPuissanceMilitaire() - p2.getPuissanceMilitaire() - perteBrute));    // A voir pour changer les ressources en float
-		p2.setRessources(p2.getRessources() + (p2.getPuissanceMilitaire() - p1.getPuissanceMilitaire() - perteBrute));
+		int perteBrute = 1;    // TODO A ajouter pour éviter une guerre qui durerais infiniment
+		double tauxReductionRessources = 0.01;
+		p1.setRessources(p1.getRessources() + tauxReductionRessources * (p1.getPuissanceMilitaire() - p2.getPuissanceMilitaire() - perteBrute));    // A voir pour changer les ressources en float
+		p2.setRessources(p2.getRessources() + tauxReductionRessources * (p2.getPuissanceMilitaire() - p1.getPuissanceMilitaire() - perteBrute));
 
 		// Ajout dans la liste des ennemis
 		p1.addEnnemies(p2);

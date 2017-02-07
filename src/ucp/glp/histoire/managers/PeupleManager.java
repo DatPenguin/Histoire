@@ -36,7 +36,7 @@ public class PeupleManager {
 	
 	private static void genereBellicisme(Peuple p){
 		//p.bellicisme = (p.richesse + p.agressivite)/2;
-		p.setBellicisme((p.getRichesse() + p.getAgressivite()) /2);
+		p.setBellicisme(((double)Math.log(p.getPopulation() + 1) /4)*(p.getRichesse() + p.getAgressivite()) /2);
 	}
 	
 	private static void genereAttractivite(Peuple p){
