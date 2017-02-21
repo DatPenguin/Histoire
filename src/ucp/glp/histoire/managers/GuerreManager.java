@@ -60,9 +60,10 @@ public class GuerreManager {
 		// Les puissance millitaires seront recalculées après
 		int perteBrute = 1;    // TODO A ajouter pour éviter une guerre qui durerais infiniment
 		double tauxReductionRessources = 0.01;
-		p1.setRessources(p1.getRessources() + tauxReductionRessources * (p1.getPuissanceMilitaire() - p2.getPuissanceMilitaire() - perteBrute));    // A voir pour changer les ressources en float
-		p2.setRessources(p2.getRessources() + tauxReductionRessources * (p2.getPuissanceMilitaire() - p1.getPuissanceMilitaire() - perteBrute));
-
+		//p1.setRessources(p1.getRessources() + tauxReductionRessources * (p1.getPuissanceMilitaire() - p2.getPuissanceMilitaire() - perteBrute));    // A voir pour changer les ressources en float
+		//p2.setRessources(p2.getRessources() + tauxReductionRessources * (p2.getPuissanceMilitaire() - p1.getPuissanceMilitaire() - perteBrute));
+		p1.setRessources(p1.getRessources() - (p1.getRessources() / 100));
+		p2.setRessources(p2.getRessources() - (p2.getRessources() / 100));
 		// Ajout dans la liste des ennemis
 		p1.addEnnemies(p2);
 		p2.addEnnemies(p1);

@@ -40,12 +40,14 @@ public class RunningLoop {
 		
 		PeupleManager.genereEnsembleTotal(listePeuple);
 		
+		GrowthManager.action(listePeuple);
+		
 		this.logDisplayGlobalStat();
 
 	}
 	public void logDisplayGlobalStat(){
 		for(int i = 0; i < listePeuple.size() ; i++){
-			logger.info(listePeuple.get(i).toString() + " iteration : " + TestRunningLoop.nbIteration);
+			logger.trace(listePeuple.get(i).toString() + " iteration : " + TestRunningLoop.nbIteration);
 		}
 	}
 

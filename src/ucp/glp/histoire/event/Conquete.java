@@ -10,7 +10,7 @@ public class Conquete extends ReactionEvent{
 		this.nom = "Conquête";
 		this.puissance = 2.0;
 		this.type = 4;
-		this.seuil = 50;
+		this.seuil = 25;
 		this.conditionType = 2;
 	}
 
