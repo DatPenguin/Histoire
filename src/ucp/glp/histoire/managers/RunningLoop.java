@@ -2,11 +2,17 @@ package ucp.glp.histoire.managers;
 
 import java.util.ArrayList;
 
+import org.apache.log4j.Logger;
+
+import ucp.glp.histoire.log.LoggerUtility;
+import ucp.glp.histoire.test.TestRunningLoop;
 import ucp.glp.histoire.utilitaires.Peuple;
 
 public class RunningLoop {
 	EventChanceManager eventChanceManager;
 	ArrayList<Peuple> listePeuple;
+	private static Logger logger = LoggerUtility.getLogger(RunningLoop.class);
+
 	public RunningLoop (ArrayList<Peuple> listePeuple){
 		this.listePeuple = listePeuple;
 		eventChanceManager = new EventChanceManager();
@@ -33,8 +39,16 @@ public class RunningLoop {
 		eventChanceManager.reaction(listePeuple);
 		
 		PeupleManager.genereEnsembleTotal(listePeuple);
+		
+		GrowthManager.action(listePeuple);
+		
+		this.logDisplayGlobalStat();
 
 	}
-	
+	public void logDisplayGlobalStat(){
+		for(int i = 0; i < listePeuple.size() ; i++){
+			logger.trace(listePeuple.get(i).toString() + " iteration : " + TestRunningLoop.nbIteration);
+		}
+	}
 
 }

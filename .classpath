@@ -3,5 +3,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry exported="true" kind="lib" path="libs/swinger-1.0.0-BETA.jar"/>
+	<classpathentry kind="lib" path="/home/etu/mhannoun/log4j.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

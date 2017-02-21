@@ -9,8 +9,8 @@ import java.util.ArrayList;
 public class EventChanceManager {
 
 	// Le taux représente la chance de déclenchement d'un evenement
-	private static int tauxLocal = 30;
-	private static int tauxGlobal = 50;
+	private static int tauxLocal = 10;
+	private static int tauxGlobal = 20;
 	private static int tauxReaction = 80;
 	private EventLocalManager eventLocalManager;
 	private EventGlobalManager eventGlobalManager;
