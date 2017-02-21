@@ -1,10 +1,16 @@
 package ucp.glp.histoire.managers;
 
+import ucp.glp.histoire.log.LoggerUtility;
+import ucp.glp.histoire.test.TestPeuple;
+import ucp.glp.histoire.test.TestRunningLoop;
 import ucp.glp.histoire.utilitaires.Peuple;
 
 import java.util.ArrayList;
 
+import org.apache.log4j.Logger;
+
 public class GuerreManager {
+	private static Logger logger = LoggerUtility.getLogger(GuerreManager.class);
 
 	//Il faudra lui passer une arraylist contenant tout les pays actuelement en jeu
 	//Cette classe sera instanciée une seule fois et après travaillera par routine à chaque passage de temps
@@ -61,6 +67,7 @@ public class GuerreManager {
 		p1.addEnnemies(p2);
 		p2.addEnnemies(p1);
 
-		System.out.println("La guerre à éclaté entre " + p1.getNom() + " et " + p2.getNom());    // TODO /!\ A REMPLACER PAR L'AJOUT DANS UNE FILE
+		//System.out.println("La guerre à éclaté entre " + p1.getNom() + " et " + p2.getNom());    // TODO /!\ A REMPLACER PAR L'AJOUT DANS UNE FILE
+		logger.info("La guerre à éclaté entre " + p1.getNom() + " et " + p2.getNom() + " iteration : " + TestRunningLoop.nbIteration);
 	}
 }

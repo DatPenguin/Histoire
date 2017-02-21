@@ -1,9 +1,15 @@
 package ucp.glp.histoire.managers;
+import ucp.glp.histoire.log.LoggerUtility;
+import ucp.glp.histoire.test.TestRunningLoop;
 import ucp.glp.histoire.utilitaires.Peuple;
 
 import java.util.ArrayList;
 
+import org.apache.log4j.Logger;
+
 public class TradeManager {
+	private static Logger logger = LoggerUtility.getLogger(TradeManager.class);
+
 
 	public TradeManager() {
 		
@@ -29,7 +35,8 @@ public class TradeManager {
 		p1.setRessources(p1.getRessources() + (taux*(p2.getAttractivite()* p1.getPuissancePolitique())));
 		p2.setRessources(p2.getRessources() + (taux*(p1.getAttractivite()* p2.getPuissancePolitique())));
 
-		System.out.println("Commerce entre " + p1.getNom() + " et " + p2.getNom());	// /!\ A REMPLACER PAR L'AJOUT DANS UNE FILE
+		//System.out.println("Commerce entre " + p1.getNom() + " et " + p2.getNom());	  // TODO /!\ A REMPLACER PAR L'AJOUT DANS UNE FILE
+		logger.info("Commerce entre " + p1.getNom() + " et " + p2.getNom() + " iteration : " + TestRunningLoop.nbIteration);
 
 
 	}

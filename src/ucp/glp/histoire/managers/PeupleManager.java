@@ -8,7 +8,7 @@ public class PeupleManager {
 	
 	public static void genereEnsembleTotal(ArrayList<Peuple> listePeuple){
 		for(int i = 0;i < listePeuple.size();i++){
-			PeupleManager.genereEnsemble(listePeuple.get(i));			
+			PeupleManager.genereEnsemble(listePeuple.get(i));
 		}
 	}
 

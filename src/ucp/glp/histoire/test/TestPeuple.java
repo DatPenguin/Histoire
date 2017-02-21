@@ -2,6 +2,9 @@ package ucp.glp.histoire.test;
 
 import java.util.ArrayList;
 
+import org.apache.log4j.Logger;
+
+import ucp.glp.histoire.log.LoggerUtility;
 import ucp.glp.histoire.managers.EventChanceManager;
 import ucp.glp.histoire.managers.EventLocalManager;
 import ucp.glp.histoire.managers.GuerreManager;
@@ -10,7 +13,6 @@ import ucp.glp.histoire.managers.TradeManager;
 import ucp.glp.histoire.utilitaires.Peuple;
 
 public class TestPeuple {
-
 	public static void main(String[] args) {
 		Peuple p1 = new Peuple(90,40,10,70,10,"belge");
 		Peuple p2 = new Peuple(75,10,10,25,22,"Grec");
