@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class MainFrame extends JFrame {
 
-    public static ArrayList<String> peuplesArrayList = new ArrayList<String>();	//ajout du cast string a l'ArrayList sinon erreur sur ma compilation
+    public static ArrayList<String> peuplesArrayList = new ArrayList<String>();    // Ajout du cast string a l'ArrayList sinon erreur sur la compilation
     public static ArrayList<String> eventArrayList = new ArrayList<String>();
 
     public static boolean playing = true;

@@ -25,8 +25,6 @@ public class RightEventPanel extends JPanel {
         eventDesc.setText(MainFrame.getCurrentEvent());
         eventDesc.setHorizontalAlignment(SwingConstants.CENTER);
         eventDesc.setFont(eventDesc.getFont().deriveFont(20f));
-        eventDesc.setOpaque(false);
-        eventDesc.setBackground(null);
         this.add(eventDesc, BorderLayout.SOUTH);
     }
 }

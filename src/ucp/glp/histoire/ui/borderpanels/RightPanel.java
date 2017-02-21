@@ -16,5 +16,6 @@ public class RightPanel extends JPanel {
         this.setLayout(new BorderLayout());
         this.add(top, BorderLayout.NORTH);
         this.add(bot, BorderLayout.SOUTH);
+        this.setOpaque(false);
     }
 }

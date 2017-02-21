@@ -1,5 +1,6 @@
 package ucp.glp.histoire.ui;
 
+import fr.theshark34.swinger.Swinger;
 import ucp.glp.histoire.ui.borderpanels.BottomPanel;
 import ucp.glp.histoire.ui.borderpanels.CenterPanel;
 import ucp.glp.histoire.ui.borderpanels.LeftPanel;
@@ -59,5 +60,12 @@ public class MainPanel extends JPanel {
 
     public static JLabel getRunningLabel() {
         return runningLabel;
+    }
+
+    @Override
+    public void paintComponent(Graphics g) {
+        super.paintComponents(g);
+
+        Swinger.drawFullsizedImage(g, this, Swinger.getResource("background.jpg"));
     }
 }

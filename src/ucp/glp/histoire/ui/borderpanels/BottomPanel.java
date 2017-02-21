@@ -24,6 +24,7 @@ public class BottomPanel extends JPanel implements SwingerEventListener, ChangeL
     public BottomPanel() {
         this.setLayout(new BorderLayout());
         this.setBackground(null);
+        this.setOpaque(false);
 
         playPauseButton.setPreferredSize(new Dimension(300, 50));
         fastForwardButton.setPreferredSize(new Dimension(300, 50));
@@ -31,7 +32,7 @@ public class BottomPanel extends JPanel implements SwingerEventListener, ChangeL
         playPauseButton.addEventListener(this);
         fastForwardButton.addEventListener(this);
 
-        timeSlider.setBackground(null);
+        timeSlider.setOpaque(false);
         timeSlider.addChangeListener(this);
         timeSlider.setMaximum(1000);
         timeSlider.setValue(0);
@@ -49,8 +50,9 @@ public class BottomPanel extends JPanel implements SwingerEventListener, ChangeL
                 System.out.println("Play");
             else
                 System.out.println("Pause");
-        } else if (e.getSource() == fastForwardButton)
+        } else if (e.getSource() == fastForwardButton) {
             System.out.println("Fast Forward");
+        }
     }
 
     /**
