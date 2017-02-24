@@ -37,6 +37,7 @@ public class MainPanel extends JPanel {
         rightPanel.setBounds(935, 35, 300, 515);
         this.add(rightPanel);
 
+        BottomPanel.mainPanel = this;
         bottomPanel.setBounds(35, 580, 1200, 85);
         this.add(bottomPanel);
 
@@ -60,6 +61,13 @@ public class MainPanel extends JPanel {
 
     public static JLabel getRunningLabel() {
         return runningLabel;
+    }
+
+    public void refresh() {
+        this.remove(centerPanel);
+        centerPanel = new CenterPanel(Color.RED);
+        centerPanel.setBounds(370, 35, 530, 515);
+        this.add(centerPanel);
     }
 
     @Override

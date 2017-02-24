@@ -1,6 +1,6 @@
 package ucp.glp.histoire.test;
 
-import ucp.glp.histoire.test.gui.GraphicalFrame;
+import ucp.glp.histoire.ui.ChosingFrame;
 
 /**
  * @author Matteo STAIANO, Mathieu HANNOUN
@@ -8,6 +8,7 @@ import ucp.glp.histoire.test.gui.GraphicalFrame;
  */
 public class GraphicalTest {
     public static void main(String[] args) {
-        new GraphicalFrame();
+        //new GraphicalFrame();
+        new ChosingFrame();
     }
 }

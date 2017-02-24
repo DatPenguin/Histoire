@@ -1,8 +1,11 @@
 package ucp.glp.histoire.ui.borderpanels;
 
+import ucp.glp.histoire.utilitaires.Peuple;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
+import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -11,14 +14,44 @@ import java.util.Random;
  */
 public class CenterPanel extends JPanel {
 
-    final int nombrePeuples = 5;
-    final int CIRCLE_DIAMETER = 450;
-    final int CIRCLE_RADIUS = CIRCLE_DIAMETER / 2;
+    private final static int nombrePeuples = 5;
+    private static ArrayList<Color> colorList = new ArrayList<>();
+    private static ArrayList<Color> haloColorList = new ArrayList<>();
+    private final int CIRCLE_DIAMETER = 450;
+    private final int CIRCLE_RADIUS = CIRCLE_DIAMETER / 2;
+    private final int PEUPLE_SIZE = 30;
+    private int HALO_SIZE = 36;
     private Graphics g1;
+    private Color haloColor = Color.WHITE;
 
     public CenterPanel() {
         this.setLayout(new BorderLayout());
         this.setOpaque(false);
+
+        initColors();
+    }
+
+    public CenterPanel(Color c) {
+        this.setLayout(new BorderLayout());
+        this.setOpaque(false);
+
+        initColors();
+        haloColor = c;
+    }
+
+    public static void initColors() {
+        Random r = new Random();
+        for (int i = 0; i < nombrePeuples; i++)
+            colorList.add(new Color(r.nextFloat(), r.nextFloat(), r.nextFloat()));
+    }
+
+    public void initHaloColorList(ArrayList<Peuple> peuples) {
+        for (Peuple p : peuples) {
+            if (!p.getListeEnnemies().isEmpty())
+                haloColorList.add(Color.RED);
+            else
+                haloColorList.add(Color.WHITE);
+        }
     }
 
     private void init(Graphics g) {
@@ -28,11 +61,11 @@ public class CenterPanel extends JPanel {
         g2d.drawOval(35, 30, CIRCLE_DIAMETER, CIRCLE_DIAMETER);
 
         for (int i = 1; i <= nombrePeuples; i++) {
-            g2d.setColor(Color.WHITE);
-            g2d.fill(new Ellipse2D.Double(CIRCLE_RADIUS * Math.cos(2 * i * Math.PI / nombrePeuples) + CIRCLE_RADIUS + 17, CIRCLE_RADIUS * Math.sin(2 * i * Math.PI / nombrePeuples) + CIRCLE_RADIUS + 12, 36, 36));
-            g2d.setColor(new Color(r.nextFloat(), r.nextFloat(), r.nextFloat()));
-            g2d.fill(new Ellipse2D.Double(CIRCLE_RADIUS * Math.cos(2 * i * Math.PI / nombrePeuples) + CIRCLE_RADIUS + 20, CIRCLE_RADIUS * Math.sin(2 * i * Math.PI / nombrePeuples) + CIRCLE_RADIUS + 15, 30, 30));
-
+            g2d.setColor(haloColor);
+            // TODO Calculer a chaque tour la taille du halo en fonction de la puissance du pays affiche
+            g2d.fill(new Ellipse2D.Double(CIRCLE_RADIUS * Math.cos(2 * i * Math.PI / nombrePeuples) + CIRCLE_RADIUS + PEUPLE_SIZE / 2, CIRCLE_RADIUS * Math.sin(2 * i * Math.PI / nombrePeuples) + CIRCLE_RADIUS + PEUPLE_SIZE / 2, HALO_SIZE, HALO_SIZE));
+            g2d.setColor(colorList.get(i - 1));
+            g2d.fill(new Ellipse2D.Double(CIRCLE_RADIUS * Math.cos(2 * i * Math.PI / nombrePeuples) + CIRCLE_RADIUS + HALO_SIZE / 2, CIRCLE_RADIUS * Math.sin(2 * i * Math.PI / nombrePeuples) + CIRCLE_RADIUS + HALO_SIZE / 2, PEUPLE_SIZE, PEUPLE_SIZE));
         }
     }
 
@@ -41,8 +74,6 @@ public class CenterPanel extends JPanel {
         super.paintComponents(g);
         g1 = g;
         this.setOpaque(false);
-        //g.setColor(new Color(0, 0, 0, 0));
-        //g.fillRect(0, 0, this.getWidth(), this.getHeight());
         init(g);
     }
 }

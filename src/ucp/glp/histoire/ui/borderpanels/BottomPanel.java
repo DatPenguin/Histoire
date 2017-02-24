@@ -5,6 +5,7 @@ import fr.theshark34.swinger.event.SwingerEvent;
 import fr.theshark34.swinger.event.SwingerEventListener;
 import fr.theshark34.swinger.textured.STexturedButton;
 import ucp.glp.histoire.ui.MainFrame;
+import ucp.glp.histoire.ui.MainPanel;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
@@ -18,6 +19,7 @@ import java.awt.*;
 public class BottomPanel extends JPanel implements SwingerEventListener, ChangeListener {
 
     public static JSlider timeSlider = new JSlider();
+    public static MainPanel mainPanel;
     private STexturedButton playPauseButton = new STexturedButton(Swinger.getResource("playPauseButton.png"));
     private STexturedButton fastForwardButton = new STexturedButton(Swinger.getResource("fastForwardButton.png"));
 
@@ -52,6 +54,8 @@ public class BottomPanel extends JPanel implements SwingerEventListener, ChangeL
                 System.out.println("Pause");
         } else if (e.getSource() == fastForwardButton) {
             System.out.println("Fast Forward");
+            mainPanel.refresh();
+            mainPanel.repaint();
         }
     }
 
