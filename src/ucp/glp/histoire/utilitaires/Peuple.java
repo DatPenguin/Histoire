@@ -5,14 +5,16 @@ import java.util.ArrayList;
 
 public class Peuple {
 	//attributs principaux
-	protected String nom;
-	protected int population;
-	protected double ressources,education,territoire,agressivite;
+	private String nom;
+	private int population;
+	private double ressources,education,territoire,agressivite;
 	//attributs secondaires
-	protected int nbSoldat,imigration;
-	protected double technologie,densite,richesse,attractivite,bellicisme,puissanceMilitaire,puissancePolitique;
+	private int nbSoldat,imigration;
+	private double technologie,densite,richesse,attractivite,bellicisme,puissanceMilitaire,puissancePolitique;
 	//attribut tertiaires
-	protected ArrayList<Peuple> listeEnnemies;
+	private ArrayList<Peuple> listeEnnemies;
+	private ArrayList<Peuple> listeTrade;
+
 	private ImageIcon icon;
 
 
@@ -232,9 +234,21 @@ public class Peuple {
 	public void setListeEnnemies(ArrayList<Peuple> listeEnnemies) {
 		this.listeEnnemies = listeEnnemies;
 	}
+	
 	public void addEnnemies(Peuple p1){
 		this.listeEnnemies.add(p1);
 	}
+	public void addTrade(Peuple p1){
+		this.listeTrade.add(p1);
+	}	
+	public ArrayList<Peuple> getListeTrade() {
+		return listeTrade;
+	}
+
+	public void setListeTrade(ArrayList<Peuple> listeTrade) {
+		this.listeTrade = listeTrade;
+	}
+
 	public String getNom() {
 		return nom;
 	}
