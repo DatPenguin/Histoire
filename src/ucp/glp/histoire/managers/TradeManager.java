@@ -17,6 +17,9 @@ public class TradeManager {
 	public static void TradeChecker(ArrayList<Peuple> listePeuple){	//comparera si quel pays peut entrer en commerce avec un autre
 		//routine de déclenchement ou non du commerce (commerce ponctuel)
 		int seuil =  100;
+		for(int x = 0; x < listePeuple.size();x++){
+			listePeuple.get(x).setListeTrade(new ArrayList<Peuple>());    // On réinitialise à chaque fois la liste des partenaires commerciaux
+		}
 		
 		for(int i = 0; i < listePeuple.size();i++){
 			for(int j = (i+1); j < listePeuple.size(); j++ ){	 //de cette façon on évitera un dédoublement du commerce
