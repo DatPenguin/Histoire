@@ -1,7 +1,6 @@
 package ucp.glp.histoire.managers;
 
 import ucp.glp.histoire.log.LoggerUtility;
-import ucp.glp.histoire.test.TestPeuple;
 import ucp.glp.histoire.test.TestRunningLoop;
 import ucp.glp.histoire.utilitaires.Peuple;
 
@@ -58,8 +57,8 @@ public class GuerreManager {
 		p2.setPopulation(p2.getPopulation() - (int)(tauxReductionPop * p1.getPuissanceMilitaire()/10));
 
 		// Les puissance millitaires seront recalculées après
-		int perteBrute = 1;    // TODO A ajouter pour éviter une guerre qui durerais infiniment
-		double tauxReductionRessources = 0.01;
+		//int perteBrute = 1;    // TODO A ajouter pour éviter une guerre qui durerais infiniment
+		//double tauxReductionRessources = 0.01;
 		//p1.setRessources(p1.getRessources() + tauxReductionRessources * (p1.getPuissanceMilitaire() - p2.getPuissanceMilitaire() - perteBrute));    // A voir pour changer les ressources en float
 		//p2.setRessources(p2.getRessources() + tauxReductionRessources * (p2.getPuissanceMilitaire() - p1.getPuissanceMilitaire() - perteBrute));
 		p1.setRessources(p1.getRessources() - (p1.getRessources() / 100));

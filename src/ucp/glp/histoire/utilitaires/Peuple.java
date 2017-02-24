@@ -9,7 +9,7 @@ public class Peuple {
 	private int population;
 	private double ressources,education,territoire,agressivite;
 	//attributs secondaires
-	private int nbSoldat,imigration;
+	private int nbSoldat,immigration;
 	private double technologie,densite,richesse,attractivite,bellicisme,puissanceMilitaire,puissancePolitique;
 	//attribut tertiaires
 	private ArrayList<Peuple> listeEnnemies;
@@ -111,7 +111,7 @@ public class Peuple {
 		return "Peuple [nom=" + nom + ", population=" + population
 				+ ", ressources=" + ressources + ", education=" + education
 				+ ", territoire=" + territoire + ", agressivite=" + agressivite
-				+ ", nbSoldat=" + nbSoldat + ", imigration=" + imigration
+				+ ", nbSoldat=" + nbSoldat + ", imigration=" + immigration
 				+ ", technologie=" + technologie + ", densite=" + densite
 				+ ", richesse=" + richesse + ", attractivite=" + attractivite
 				+ ", bellicisme=" + bellicisme + ", puissanceMilitaire="
@@ -164,11 +164,11 @@ public class Peuple {
 	}
 
 	public int getImigration() {
-		return imigration;
+		return immigration;
 	}
 
 	public void setImigration(int imigration) {
-		this.imigration = imigration;
+		this.immigration = imigration;
 	}
 
 	public double getTechnologie() {

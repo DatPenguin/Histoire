@@ -19,7 +19,7 @@ public class TestRunningLoop {
 		
 		logger.info("Lancement test");
 
-		Peuple p1 = new Peuple(50,50,50,70,10,"belge");
+		Peuple p1 = new Peuple(50,50,50,70,50,"belge");
 		Peuple p2 = new Peuple(90,80,50,25,22,"Grec");
 		ArrayList<Peuple> listePeuple = new ArrayList<Peuple>();
 		listePeuple.add(p1);
@@ -41,7 +41,7 @@ public class TestRunningLoop {
 			runningLoop.loopAction();
 		}
 		*/
-		for(int i = 0 ; i < 1000 ; i++){
+		for(int i = 0 ; i < 100 ; i++){
 			TestRunningLoop.nbIteration++;
 			runningLoop.loopAction();
 			if(p1.getPopulation() <= 0 ){

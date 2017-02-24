@@ -40,11 +40,18 @@ public class RunningLoop {
 		
 		PeupleManager.genereEnsembleTotal(listePeuple);
 		
-		GrowthManager.action(listePeuple);
+		GrowthManager.growthAction(listePeuple);
+		
+		/*PeupleManager.genereEnsembleTotal(listePeuple);
+		
+		GrowthManager.immigrationAction(listePeuple);*/
 		
 		this.logDisplayGlobalStat();
 
 	}
+	/**
+	 * Enverra toute les stats de chaque pays dans les logs
+	 */
 	public void logDisplayGlobalStat(){
 		for(int i = 0; i < listePeuple.size() ; i++){
 			logger.trace(listePeuple.get(i).toString() + " iteration : " + TestRunningLoop.nbIteration);
