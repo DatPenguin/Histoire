@@ -9,8 +9,12 @@ import javax.swing.*;
  * @date 24/02/2017
  */
 public class ChosingFrame extends JFrame {
+    public MainFrame frame;
+    private ChosingPanel panel = new ChosingPanel();
+
     public ChosingFrame() {
-        this.setContentPane(new ChosingPanel());
+        this.setContentPane(panel);
+        ChosingPanel.frame = this;
         this.setResizable(false);
         this.setLocationRelativeTo(null);
         this.setVisible(true);
@@ -20,5 +24,11 @@ public class ChosingFrame extends JFrame {
         WindowMover mover = new WindowMover(this);
         this.addMouseListener(mover);
         this.addMouseMotionListener(mover);
+        Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
+            @Override
+            public void run() {
+                frame.setVisible(true);
+            }
+        }));
     }
 }

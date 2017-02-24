@@ -8,7 +8,7 @@ import ucp.glp.histoire.ui.ChosingFrame;
  */
 public class GraphicalTest {
     public static void main(String[] args) {
-        //new GraphicalFrame();
         new ChosingFrame();
+        System.err.println("Bonjour");
     }
 }

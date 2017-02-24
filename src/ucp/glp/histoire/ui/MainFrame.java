@@ -18,7 +18,7 @@ public class MainFrame extends JFrame {
 
     public static boolean playing = true;
 
-    public MainFrame() {
+    public MainFrame(boolean visible) {
         peuplesArrayList.add("Peuple X");
         eventArrayList.add("Ouragan");
         WindowMover mover = new WindowMover(this);
@@ -33,7 +33,7 @@ public class MainFrame extends JFrame {
         Swinger.setResourcePath("/ucp/glp/histoire/resources");
 
         this.setContentPane(new MainPanel());
-        this.setVisible(true);
+        this.setVisible(visible);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setSize(1280, 720);
         this.setResizable(false);
