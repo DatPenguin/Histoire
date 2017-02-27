@@ -14,10 +14,10 @@ import java.util.ArrayList;
  */
 public class MainFrame extends JFrame {
 
-    public static ArrayList<Peuple> peuplesArrayList = new ArrayList<>();    // Ajout du cast string a l'ArrayList sinon erreur sur la compilation
+    public static ArrayList<Peuple> peuplesArrayList = new ArrayList<Peuple>();    // Ajout du cast string a l'ArrayList sinon erreur sur la compilation
     public static ArrayList<String> eventArrayList = new ArrayList<String>();
 
-    public static boolean playing = true;
+    private static boolean playing = true;
 
     public MainFrame() {
         eventArrayList.add("Ouragan");
@@ -27,7 +27,7 @@ public class MainFrame extends JFrame {
 
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        } catch (Exception e) {
+        } catch (Exception ignored) {
         }
 
         Swinger.setResourcePath("/ucp/glp/histoire/resources");
@@ -53,7 +53,7 @@ public class MainFrame extends JFrame {
 
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        } catch (Exception e) {
+        } catch (Exception ignored) {
         }
 
         Swinger.setResourcePath("/ucp/glp/histoire/resources");
@@ -68,6 +68,10 @@ public class MainFrame extends JFrame {
         this.setLayout(null);
 
         new RunningTime().run();
+    }
+
+    public static int getPeuplesNumber() {
+        return peuplesArrayList.size();
     }
 
     public static String getCurrentEvent() {

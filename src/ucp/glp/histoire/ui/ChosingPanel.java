@@ -19,10 +19,15 @@ public class ChosingPanel extends JPanel implements ActionListener {
     private JSpinner nbSpinner = new JSpinner(new SpinnerNumberModel(2, 2, 16, 1));
     private JButton validateNumber = new JButton("Valider");
     private JButton validatePeuples = new JButton("Valider");
+    private JLabel choseLabel = new JLabel("Choisissez le nombre de peuples");
 
     public ChosingPanel() {
         initPeuples();
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        this.add(Box.createRigidArea(new Dimension(300, 10)));
+        choseLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+        choseLabel.setFont(choseLabel.getFont().deriveFont(15f));
+        this.add(choseLabel);
         this.add(Box.createRigidArea(new Dimension(200, 10)));
         nbSpinner.setMaximumSize(new Dimension(100, 50));
         nbSpinner.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -51,6 +56,7 @@ public class ChosingPanel extends JPanel implements ActionListener {
         }
         validatePeuples.addActionListener(this);
         this.add(validatePeuples);
+        choseLabel.setText("Choisissez les peuples");
     }
 
     private void populateAL() {

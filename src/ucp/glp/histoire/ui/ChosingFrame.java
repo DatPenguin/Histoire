@@ -9,7 +9,6 @@ import javax.swing.*;
  * @date 24/02/2017
  */
 public class ChosingFrame extends JFrame {
-    public MainFrame frame;
     private ChosingPanel panel = new ChosingPanel();
 
     public ChosingFrame() {

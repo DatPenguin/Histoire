@@ -1,5 +1,6 @@
 package ucp.glp.histoire.ui.borderpanels;
 
+import ucp.glp.histoire.ui.MainFrame;
 import ucp.glp.histoire.utilitaires.Peuple;
 
 import javax.swing.*;
@@ -14,7 +15,7 @@ import java.util.Random;
  */
 public class CenterPanel extends JPanel {
 
-    private final static int nombrePeuples = 5;
+    private final static int nombrePeuples = MainFrame.getPeuplesNumber();
     private static ArrayList<Color> colorList = new ArrayList<>();
     private static ArrayList<Color> haloColorList = new ArrayList<>();
     private final int CIRCLE_DIAMETER = 450;
