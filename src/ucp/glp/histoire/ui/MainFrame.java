@@ -2,6 +2,7 @@ package ucp.glp.histoire.ui;
 
 import fr.theshark34.swinger.Swinger;
 import fr.theshark34.swinger.util.WindowMover;
+import ucp.glp.histoire.utilitaires.Peuple;
 import ucp.glp.histoire.utilitaires.RunningTime;
 
 import javax.swing.*;
@@ -13,13 +14,12 @@ import java.util.ArrayList;
  */
 public class MainFrame extends JFrame {
 
-    public static ArrayList<String> peuplesArrayList = new ArrayList<String>();    // Ajout du cast string a l'ArrayList sinon erreur sur la compilation
+    public static ArrayList<Peuple> peuplesArrayList = new ArrayList<>();    // Ajout du cast string a l'ArrayList sinon erreur sur la compilation
     public static ArrayList<String> eventArrayList = new ArrayList<String>();
 
     public static boolean playing = true;
 
-    public MainFrame(boolean visible) {
-        peuplesArrayList.add("Peuple X");
+    public MainFrame() {
         eventArrayList.add("Ouragan");
         WindowMover mover = new WindowMover(this);
         this.addMouseListener(mover);
@@ -33,7 +33,33 @@ public class MainFrame extends JFrame {
         Swinger.setResourcePath("/ucp/glp/histoire/resources");
 
         this.setContentPane(new MainPanel());
-        this.setVisible(visible);
+        this.setVisible(true);
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        this.setSize(1280, 720);
+        this.setResizable(false);
+        this.setTitle("History Simulator 2017");
+        this.setLocationRelativeTo(null);
+        this.setLayout(null);
+
+        new RunningTime().run();
+    }
+
+    public MainFrame(ArrayList<Peuple> peupleList) {
+        peuplesArrayList = peupleList;
+        eventArrayList.add("Ouragan");
+        WindowMover mover = new WindowMover(this);
+        this.addMouseListener(mover);
+        this.addMouseMotionListener(mover);
+
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception e) {
+        }
+
+        Swinger.setResourcePath("/ucp/glp/histoire/resources");
+
+        this.setContentPane(new MainPanel());
+        this.setVisible(true);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setSize(1280, 720);
         this.setResizable(false);

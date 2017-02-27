@@ -24,11 +24,5 @@ public class ChosingFrame extends JFrame {
         WindowMover mover = new WindowMover(this);
         this.addMouseListener(mover);
         this.addMouseMotionListener(mover);
-        Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
-            @Override
-            public void run() {
-                frame.setVisible(true);
-            }
-        }));
     }
 }
