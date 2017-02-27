@@ -1,6 +1,7 @@
 package ucp.glp.histoire.test;
 
 import ucp.glp.histoire.ui.ChosingFrame;
+import ucp.glp.histoire.ui.MainFrame;
 
 /**
  * @author Matteo STAIANO, Mathieu HANNOUN
@@ -8,7 +9,7 @@ import ucp.glp.histoire.ui.ChosingFrame;
  */
 public class GraphicalTest {
     public static void main(String[] args) {
-        new ChosingFrame();
-        System.err.println("Bonjour");
+        ChosingFrame a = new ChosingFrame();
+        a.frame = new MainFrame(false);
     }
 }
