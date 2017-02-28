@@ -84,7 +84,11 @@ public class ChosingPanel extends JPanel implements ActionListener {
         } else if (e.getSource() == validatePeuples) {
             populateAL();
             frame.dispose();
-            Thread t = new Thread(() -> new MainFrame(peuplesList));
+            Thread t = new Thread() {
+            	public void run() {
+            		new MainFrame(peuplesList);
+            	}
+            };
             t.start();
         }
     }
