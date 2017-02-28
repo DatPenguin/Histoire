@@ -9,13 +9,15 @@ import ucp.glp.histoire.test.TestRunningLoop;
 import ucp.glp.histoire.utilitaires.Peuple;
 
 public class RunningLoop {
-	EventChanceManager eventChanceManager;
-	ArrayList<Peuple> listePeuple;
+	private EventChanceManager eventChanceManager;
+	private ArrayList<Peuple> listePeuple;
+	private GrowthManager growthManager;
 	private static Logger logger = LoggerUtility.getLogger(RunningLoop.class);
 
 	public RunningLoop (ArrayList<Peuple> listePeuple){
 		this.listePeuple = listePeuple;
 		eventChanceManager = new EventChanceManager();
+		this.growthManager = new GrowthManager(this.listePeuple);
 	}
 
 	public void loopAction (){										//voir logigramme
@@ -40,11 +42,11 @@ public class RunningLoop {
 		
 		PeupleManager.genereEnsembleTotal(listePeuple);
 		
-		GrowthManager.growthAction(listePeuple);
+		this.growthManager.growthAction();
 		
-		/*PeupleManager.genereEnsembleTotal(listePeuple);
+		PeupleManager.genereEnsembleTotal(listePeuple);
 		
-		GrowthManager.immigrationAction(listePeuple);*/
+		this.growthManager.immigrationAction();
 		
 		this.logDisplayGlobalStat();
 
