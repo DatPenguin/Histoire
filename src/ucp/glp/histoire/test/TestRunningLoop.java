@@ -1,20 +1,18 @@
 package ucp.glp.histoire.test;
 
-import java.util.ArrayList;
-
 import org.apache.log4j.Logger;
-
 import ucp.glp.histoire.log.LoggerUtility;
 import ucp.glp.histoire.managers.RunningLoop;
-import ucp.glp.histoire.utilitaires.Peuple;
-import ucp.glp.histoire.log.LoggerUtility;
+import ucp.glp.histoire.utilities.Peuple;
+
+import java.util.ArrayList;
 
 
 public class TestRunningLoop {
-		private static Logger logger = LoggerUtility.getLogger(TestRunningLoop.class);
-		
 		// TODO placer nbIteration dans une classe directrice
 		public static int nbIteration = 0;	// Permettra de connaitre à quel itération l'on se trouve pour les logs
+    private static Logger logger = LoggerUtility.getLogger(TestRunningLoop.class);
+
 	public static void main(String[] args) {
 		
 		logger.info("Lancement test");

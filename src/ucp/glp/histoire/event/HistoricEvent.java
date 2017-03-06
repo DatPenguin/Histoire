@@ -1,6 +1,6 @@
 package ucp.glp.histoire.event;
 
-import ucp.glp.histoire.utilitaires.Peuple;
+import ucp.glp.histoire.utilities.Peuple;
 
 /*Different type :
  * 0 : Ressources

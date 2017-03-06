@@ -1,6 +1,6 @@
 package ucp.glp.histoire.ui;
 
-import ucp.glp.histoire.utilitaires.Peuple;
+import ucp.glp.histoire.utilities.Peuple;
 
 import javax.swing.*;
 import java.awt.*;
@@ -58,6 +58,7 @@ public class ChosingPanel extends JPanel implements ActionListener {
         this.add(validatePeuples);
         choseLabel.setText("Choisissez les peuples");
     }
+
 
     private void populateAL() {
         Component[] components = this.getComponents();

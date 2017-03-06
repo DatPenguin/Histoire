@@ -1,11 +1,10 @@
 package ucp.glp.histoire.managers;
 
-import java.util.ArrayList;
-
-
 import ucp.glp.histoire.event.Conquete;
 import ucp.glp.histoire.event.ReactionEvent;
-import ucp.glp.histoire.utilitaires.Peuple;
+import ucp.glp.histoire.utilities.Peuple;
+
+import java.util.ArrayList;
 
 public class EventReactionManager extends EventManager{
 	

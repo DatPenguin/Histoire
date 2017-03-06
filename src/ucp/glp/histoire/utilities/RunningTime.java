@@ -1,4 +1,4 @@
-package ucp.glp.histoire.utilitaires;
+package ucp.glp.histoire.utilities;
 
 import ucp.glp.histoire.ui.MainFrame;
 import ucp.glp.histoire.ui.MainPanel;

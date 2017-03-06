@@ -1,4 +1,4 @@
-package ucp.glp.histoire.utilitaires;
+package ucp.glp.histoire.utilities;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -104,7 +104,9 @@ public class Peuple {
 		return population;
 	}
 
-
+	public void setPopulation(int population) {
+		this.population = population;
+	}
 
 	@Override
 	public String toString() {
@@ -117,10 +119,6 @@ public class Peuple {
 				+ ", bellicisme=" + bellicisme + ", puissanceMilitaire="
 				+ puissanceMilitaire + ", puissancePolitique="
 				+ puissancePolitique + "]";
-	}
-
-	public void setPopulation(int population) {
-		this.population = population;
 	}
 
 	public double getRessources() {
@@ -163,11 +161,11 @@ public class Peuple {
 		this.nbSoldat = nbSoldat;
 	}
 
-	public int getImigration() {
+	public int getImmigration() {
 		return immigration;
 	}
 
-	public void setImigration(int imigration) {
+	public void setImmigration(int imigration) {
 		this.immigration = imigration;
 	}
 

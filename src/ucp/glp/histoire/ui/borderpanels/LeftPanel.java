@@ -9,7 +9,7 @@ import java.awt.*;
  */
 public class LeftPanel extends JPanel {
 
-    private LeftSmallPanel top = new LeftSmallPanel(1);
+    public LeftSmallPanel top = new LeftSmallPanel(1);
     private LeftSmallPanel bot = new LeftSmallPanel(2);
 
     public LeftPanel() {

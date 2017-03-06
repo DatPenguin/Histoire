@@ -1,9 +1,9 @@
 package ucp.glp.histoire.managers;
 
-import java.util.ArrayList;
+import ucp.glp.histoire.utilities.ImmigrationPool;
+import ucp.glp.histoire.utilities.Peuple;
 
-import ucp.glp.histoire.utilitaires.ImmigrationPool;
-import ucp.glp.histoire.utilitaires.Peuple;
+import java.util.ArrayList;
 
 /**
  * Gestionnaire de croissance et d'immigration

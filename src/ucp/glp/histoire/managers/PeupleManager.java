@@ -1,6 +1,6 @@
 package ucp.glp.histoire.managers;
 
-import ucp.glp.histoire.utilitaires.Peuple;
+import ucp.glp.histoire.utilities.Peuple;
 
 import java.util.ArrayList;
 
@@ -36,8 +36,8 @@ public class PeupleManager {
 	
 	private static void genereBellicisme(Peuple p){
 		//p.bellicisme = (p.richesse + p.agressivite)/2;
-		p.setBellicisme(((double)Math.log(p.getPopulation() + 1) /4)*(p.getRichesse() + p.getAgressivite()) /2);
-	}
+        p.setBellicisme((Math.log(p.getPopulation() + 1) / 4) * (p.getRichesse() + p.getAgressivite()) / 2);
+    }
 	
 	private static void genereAttractivite(Peuple p){
 		//p.attractivite = (p.richesse + p.technologie)/2;
@@ -55,8 +55,8 @@ public class PeupleManager {
 	}
 	private static void genereImigration(Peuple p){
 		//p.imigration = (int)(p.densite + p.richesse)/10;
-		p.setImigration((int)(p.getDensite() + p.getRichesse()) /10);
-	}
+        p.setImmigration((int) (p.getDensite() + p.getRichesse()) / 10);
+    }
 	
 	private static void genereEnsemble(Peuple p){
 		PeupleManager.genereTechnologie(p);

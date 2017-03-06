@@ -1,17 +1,16 @@
 package ucp.glp.histoire.test;
 
-import static org.junit.Assert.*;
-
-import java.util.ArrayList;
-
 import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
 import ucp.glp.histoire.log.LoggerUtility;
 import ucp.glp.histoire.managers.RunningLoop;
-import ucp.glp.histoire.utilitaires.Peuple;
+import ucp.glp.histoire.utilities.Peuple;
+
+import java.util.ArrayList;
+
+import static org.junit.Assert.assertTrue;
 
 public class RunningLoopTestjUnit {
 	private static Logger logger = LoggerUtility.getLogger(RunningLoopTestjUnit.class);

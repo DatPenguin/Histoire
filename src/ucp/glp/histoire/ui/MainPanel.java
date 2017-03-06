@@ -1,10 +1,8 @@
 package ucp.glp.histoire.ui;
 
 import fr.theshark34.swinger.Swinger;
-import ucp.glp.histoire.ui.borderpanels.BottomPanel;
-import ucp.glp.histoire.ui.borderpanels.CenterPanel;
-import ucp.glp.histoire.ui.borderpanels.LeftPanel;
-import ucp.glp.histoire.ui.borderpanels.RightPanel;
+import ucp.glp.histoire.ui.borderpanels.*;
+import ucp.glp.histoire.utilities.Peuple;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,7 +17,7 @@ public class MainPanel extends JPanel {
     public static float totalYears = 0;
     private static JLabel barLabel = new JLabel();
     private static JLabel runningLabel = new JLabel();
-    private CenterPanel centerPanel = new CenterPanel();
+    private JPanel centerPanel = new GraphicalPanel();
     private LeftPanel leftPanel = new LeftPanel();
     private RightPanel rightPanel = new RightPanel();
     private BottomPanel bottomPanel = new BottomPanel();
@@ -49,6 +47,8 @@ public class MainPanel extends JPanel {
         runningLabel.setFont(runningLabel.getFont().deriveFont(20f));
         runningLabel.setForeground(Color.white);
         this.add(runningLabel);
+
+        leftPanel.top.mainPanel = this;
     }
 
     public static void setBarLabelText(String barLabel) {
@@ -63,9 +63,16 @@ public class MainPanel extends JPanel {
         return runningLabel;
     }
 
+    public void swapCenter(Peuple p) {
+        this.remove(centerPanel);
+        centerPanel = new DetailsPanel(p);
+        centerPanel.setBounds(370, 35, 530, 515);
+        this.add(centerPanel);
+    }
+
     public void refresh() {
         this.remove(centerPanel);
-        centerPanel = new CenterPanel(Color.RED);
+        centerPanel = new GraphicalPanel(Color.RED);
         centerPanel.setBounds(370, 35, 530, 515);
         this.add(centerPanel);
     }

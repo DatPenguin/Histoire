@@ -1,18 +1,17 @@
 package ucp.glp.histoire.managers;
 
-import java.util.ArrayList;
-
 import org.apache.log4j.Logger;
-
 import ucp.glp.histoire.log.LoggerUtility;
 import ucp.glp.histoire.test.TestRunningLoop;
-import ucp.glp.histoire.utilitaires.Peuple;
+import ucp.glp.histoire.utilities.Peuple;
+
+import java.util.ArrayList;
 
 public class RunningLoop {
+	private static Logger logger = LoggerUtility.getLogger(RunningLoop.class);
 	private EventChanceManager eventChanceManager;
 	private ArrayList<Peuple> listePeuple;
 	private GrowthManager growthManager;
-	private static Logger logger = LoggerUtility.getLogger(RunningLoop.class);
 
 	public RunningLoop (ArrayList<Peuple> listePeuple){
 		this.listePeuple = listePeuple;

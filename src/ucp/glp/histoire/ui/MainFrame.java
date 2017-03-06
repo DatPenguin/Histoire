@@ -2,8 +2,8 @@ package ucp.glp.histoire.ui;
 
 import fr.theshark34.swinger.Swinger;
 import fr.theshark34.swinger.util.WindowMover;
-import ucp.glp.histoire.utilitaires.Peuple;
-import ucp.glp.histoire.utilitaires.RunningTime;
+import ucp.glp.histoire.utilities.Peuple;
+import ucp.glp.histoire.utilities.RunningTime;
 
 import javax.swing.*;
 import java.util.ArrayList;

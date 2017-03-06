@@ -1,11 +1,11 @@
 package ucp.glp.histoire.managers;
-import ucp.glp.histoire.log.LoggerUtility;
-import ucp.glp.histoire.test.TestRunningLoop;
-import ucp.glp.histoire.utilitaires.Peuple;
-
-import java.util.ArrayList;
 
 import org.apache.log4j.Logger;
+import ucp.glp.histoire.log.LoggerUtility;
+import ucp.glp.histoire.test.TestRunningLoop;
+import ucp.glp.histoire.utilities.Peuple;
+
+import java.util.ArrayList;
 
 public class TradeManager {
 	private static Logger logger = LoggerUtility.getLogger(TradeManager.class);

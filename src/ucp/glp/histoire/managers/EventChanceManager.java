@@ -1,6 +1,6 @@
 package ucp.glp.histoire.managers;
 
-import ucp.glp.histoire.utilitaires.Peuple;
+import ucp.glp.histoire.utilities.Peuple;
 
 import java.util.ArrayList;
 

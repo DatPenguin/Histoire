@@ -1,7 +1,7 @@
 package ucp.glp.histoire.ui.borderpanels;
 
 import ucp.glp.histoire.ui.MainFrame;
-import ucp.glp.histoire.utilitaires.Peuple;
+import ucp.glp.histoire.utilities.Peuple;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,7 +13,7 @@ import java.util.Random;
  * @author Matteo STAIANO, Mathieu HANNOUN
  * @date 19/01/2017
  */
-public class CenterPanel extends JPanel {
+public class GraphicalPanel extends JPanel {
 
     private final static int nombrePeuples = MainFrame.getPeuplesNumber();
     private static ArrayList<Color> colorList = new ArrayList<>();
@@ -25,14 +25,14 @@ public class CenterPanel extends JPanel {
     private Graphics g1;
     private Color haloColor = Color.WHITE;
 
-    public CenterPanel() {
+    public GraphicalPanel() {
         this.setLayout(new BorderLayout());
         this.setOpaque(false);
 
         initColors();
     }
 
-    public CenterPanel(Color c) {
+    public GraphicalPanel(Color c) {
         this.setLayout(new BorderLayout());
         this.setOpaque(false);
 

@@ -1,16 +1,12 @@
 package ucp.glp.histoire.test;
 
-import java.util.ArrayList;
-
-import org.apache.log4j.Logger;
-
-import ucp.glp.histoire.log.LoggerUtility;
 import ucp.glp.histoire.managers.EventChanceManager;
-import ucp.glp.histoire.managers.EventLocalManager;
 import ucp.glp.histoire.managers.GuerreManager;
 import ucp.glp.histoire.managers.PeupleManager;
 import ucp.glp.histoire.managers.TradeManager;
-import ucp.glp.histoire.utilitaires.Peuple;
+import ucp.glp.histoire.utilities.Peuple;
+
+import java.util.ArrayList;
 
 public class TestPeuple {
 	public static void main(String[] args) {
