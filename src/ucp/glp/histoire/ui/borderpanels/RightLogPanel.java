@@ -11,8 +11,8 @@ import java.awt.*;
  */
 public class RightLogPanel extends JPanel {
 
-    JTextArea logArea = new JTextArea();
-    JScrollPane scrollPane = new JScrollPane(logArea);
+    private JTextArea logArea = new JTextArea();
+    private JScrollPane scrollPane = new JScrollPane(logArea);
 
     public RightLogPanel() {
         this.setLayout(new BorderLayout());

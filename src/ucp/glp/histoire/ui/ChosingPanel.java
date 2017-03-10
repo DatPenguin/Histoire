@@ -13,7 +13,7 @@ import java.util.ArrayList;
  * @date 24/02/2017
  */
 public class ChosingPanel extends JPanel implements ActionListener {
-    public static ChosingFrame frame;
+    private static ChosingFrame frame;
     private static ArrayList<Peuple> availablePeuples = new ArrayList<>();
     private static ArrayList<Peuple> peuplesList = new ArrayList<>();
     private JSpinner nbSpinner = new JSpinner(new SpinnerNumberModel(2, 2, 16, 1));
@@ -37,6 +37,10 @@ public class ChosingPanel extends JPanel implements ActionListener {
         validateNumber.addActionListener(this);
         this.add(validateNumber);
         this.add(Box.createRigidArea(new Dimension(200, 10)));
+    }
+
+    public static void setFrame(ChosingFrame frame) {
+        ChosingPanel.frame = frame;
     }
 
     private static void initPeuples() {

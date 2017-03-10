@@ -15,7 +15,7 @@ import java.awt.event.ActionListener;
  */
 public class LeftSmallPanel extends JPanel implements ActionListener {
 
-    public MainPanel mainPanel = null;
+    private MainPanel mainPanel = null;
     private JComboBox<String> comboBox;
     private JButton button = new JButton();
     private int type = 0;
@@ -26,18 +26,22 @@ public class LeftSmallPanel extends JPanel implements ActionListener {
         button.addActionListener(this);
 
         if (type == 1) {
-            comboBox = new JComboBox(MainFrame.peuplesArrayList.toArray());
+            comboBox = new JComboBox(MainFrame.getPeuplesArrayList().toArray());
             comboBox.insertItemAt("Aucun", 0);
             button.setText("Sélectionnez un peuple");
             this.type = 1;
         }
         else {
-            comboBox = new JComboBox(MainFrame.eventArrayList.toArray());
+            comboBox = new JComboBox(MainFrame.getEventArrayList().toArray());
             button.setText("Sélectionnez un évènement");
         }
 
         this.add(button, BorderLayout.SOUTH);
         this.add(comboBox, BorderLayout.NORTH);
+    }
+
+    public void setMainPanel(MainPanel mainPanel) {
+        this.mainPanel = mainPanel;
     }
 
     @Override

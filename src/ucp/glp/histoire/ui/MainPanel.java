@@ -13,8 +13,8 @@ import java.awt.*;
  */
 public class MainPanel extends JPanel {
 
-    public static float running = 0;
-    public static float totalYears = 0;
+    private static float running = 0;
+    private static float totalYears = 0;
     private static JLabel barLabel = new JLabel();
     private static JLabel runningLabel = new JLabel();
     private JPanel centerPanel = new GraphicalPanel();
@@ -35,7 +35,7 @@ public class MainPanel extends JPanel {
         rightPanel.setBounds(935, 35, 300, 515);
         this.add(rightPanel);
 
-        BottomPanel.mainPanel = this;
+        BottomPanel.setMainPanel(this);
         bottomPanel.setBounds(35, 580, 1200, 85);
         this.add(bottomPanel);
 
@@ -48,7 +48,7 @@ public class MainPanel extends JPanel {
         runningLabel.setForeground(Color.white);
         this.add(runningLabel);
 
-        leftPanel.top.mainPanel = this;
+        leftPanel.getTop().setMainPanel(this);
     }
 
     public static void setBarLabelText(String barLabel) {
@@ -61,6 +61,22 @@ public class MainPanel extends JPanel {
 
     public static JLabel getRunningLabel() {
         return runningLabel;
+    }
+
+    public static float getRunning() {
+        return running;
+    }
+
+    public static void setRunning(float running) {
+        MainPanel.running = running;
+    }
+
+    public static float getTotalYears() {
+        return totalYears;
+    }
+
+    public static void setTotalYears(float totalYears) {
+        MainPanel.totalYears = totalYears;
     }
 
     public void swapCenter(Peuple p) {

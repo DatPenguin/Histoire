@@ -13,7 +13,7 @@ public class ChosingFrame extends JFrame {
 
     public ChosingFrame() {
         this.setContentPane(panel);
-        ChosingPanel.frame = this;
+        ChosingPanel.setFrame(this);
         this.setResizable(false);
         this.setLocationRelativeTo(null);
         this.setVisible(true);

@@ -9,7 +9,7 @@ import java.awt.*;
  */
 public class LeftPanel extends JPanel {
 
-    public LeftSmallPanel top = new LeftSmallPanel(1);
+    private LeftSmallPanel top = new LeftSmallPanel(1);
     private LeftSmallPanel bot = new LeftSmallPanel(2);
 
     public LeftPanel() {
@@ -18,5 +18,9 @@ public class LeftPanel extends JPanel {
         this.add(top, BorderLayout.NORTH);
         this.add(bot, BorderLayout.SOUTH);
         this.setOpaque(false);
+    }
+
+    public LeftSmallPanel getTop() {
+        return top;
     }
 }

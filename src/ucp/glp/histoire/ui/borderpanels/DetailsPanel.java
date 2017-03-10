@@ -11,7 +11,7 @@ import java.awt.*;
  * @date 06/03/2017
  */
 public class DetailsPanel extends JPanel {
-    DetailsArea textArea = new DetailsArea();
+    private DetailsArea textArea = new DetailsArea();
 
     public DetailsPanel(Peuple p) {
         this.setOpaque(true);

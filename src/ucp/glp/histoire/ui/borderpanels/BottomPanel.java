@@ -18,8 +18,8 @@ import java.awt.*;
  */
 public class BottomPanel extends JPanel implements SwingerEventListener, ChangeListener {
 
-    public static JSlider timeSlider = new JSlider();
-    public static MainPanel mainPanel;
+    private static JSlider timeSlider = new JSlider();
+    private static MainPanel mainPanel;
     private STexturedButton playPauseButton = new STexturedButton(Swinger.getResource("playPauseButton.png"));
     private STexturedButton fastForwardButton = new STexturedButton(Swinger.getResource("fastForwardButton.png"));
 
@@ -44,6 +44,22 @@ public class BottomPanel extends JPanel implements SwingerEventListener, ChangeL
         this.add(timeSlider, BorderLayout.CENTER);
     }
 
+    public static JSlider getTimeSlider() {
+        return timeSlider;
+    }
+
+    public static void setTimeSlider(JSlider timeSlider) {
+        BottomPanel.timeSlider = timeSlider;
+    }
+
+    public static MainPanel getMainPanel() {
+        return mainPanel;
+    }
+
+    public static void setMainPanel(MainPanel mainPanel) {
+        BottomPanel.mainPanel = mainPanel;
+    }
+
     @Override
     public void onEvent(SwingerEvent e) {
         if (e.getSource() == playPauseButton) {
@@ -54,8 +70,6 @@ public class BottomPanel extends JPanel implements SwingerEventListener, ChangeL
                 System.out.println("Pause");
         } else if (e.getSource() == fastForwardButton) {
             System.out.println("Fast Forward");
-            mainPanel.refresh();
-            mainPanel.repaint();
         }
     }
 

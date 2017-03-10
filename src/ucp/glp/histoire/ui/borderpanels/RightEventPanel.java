@@ -13,8 +13,8 @@ import java.awt.*;
  */
 public class RightEventPanel extends JPanel {
 
-    JLabel eventImage = new JLabel();
-    JLabel eventDesc = new JLabel();
+    private JLabel eventImage = new JLabel();
+    private JLabel eventDesc = new JLabel();
 
     public RightEventPanel() {
         this.setLayout(new BorderLayout());

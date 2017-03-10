@@ -14,9 +14,9 @@ import java.util.ArrayList;
  */
 public class MainFrame extends JFrame {
 
-    public static ArrayList<Peuple> peuplesArrayList = new ArrayList<Peuple>();    // Ajout du cast string a l'ArrayList sinon erreur sur la compilation
-    public static ArrayList<String> eventArrayList = new ArrayList<String>();
-    public static ArrayList<String> logArrayList = new ArrayList<String>();
+    private static ArrayList<Peuple> peuplesArrayList = new ArrayList<Peuple>();    // Ajout du cast string a l'ArrayList sinon erreur sur la compilation
+    private static ArrayList<String> eventArrayList = new ArrayList<String>();
+    private static ArrayList<String> logArrayList = new ArrayList<String>();
 
     private static boolean playing = true;
 
@@ -85,5 +85,29 @@ public class MainFrame extends JFrame {
 
     public static boolean isPlaying() {
         return playing;
+    }
+
+    public static ArrayList<Peuple> getPeuplesArrayList() {
+        return peuplesArrayList;
+    }
+
+    public static void setPeuplesArrayList(ArrayList<Peuple> peuplesArrayList) {
+        MainFrame.peuplesArrayList = peuplesArrayList;
+    }
+
+    public static ArrayList<String> getEventArrayList() {
+        return eventArrayList;
+    }
+
+    public static void setEventArrayList(ArrayList<String> eventArrayList) {
+        MainFrame.eventArrayList = eventArrayList;
+    }
+
+    public static ArrayList<String> getLogArrayList() {
+        return logArrayList;
+    }
+
+    public static void setLogArrayList(ArrayList<String> logArrayList) {
+        MainFrame.logArrayList = logArrayList;
     }
 }

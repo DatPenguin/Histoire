@@ -62,11 +62,11 @@ public class GraphicalPanel extends JPanel {
         g2d.drawOval(35, 30, CIRCLE_DIAMETER, CIRCLE_DIAMETER);
 
         for (int i = 1; i <= nombrePeuples; i++) {
-            if (!MainFrame.peuplesArrayList.get(i - 1).getListeEnnemies().isEmpty())
+/*            if (!MainFrame.getPeuplesArrayList().get(i).getListeEnnemies().isEmpty())
                 g2d.setColor(Color.RED);
-            else if (!MainFrame.peuplesArrayList.get(i - 1).getListeTrade().isEmpty())
+            else if (!MainFrame.getPeuplesArrayList().get(i - 1).getListeTrade().isEmpty())
                 g2d.setColor(Color.GREEN);
-            else
+            else*/
                 g2d.setColor(haloColor);
             // TODO Calculer a chaque tour la taille du halo en fonction de la puissance du pays affiche
             g2d.fill(new Ellipse2D.Double(CIRCLE_RADIUS * Math.cos(2 * i * Math.PI / nombrePeuples) + CIRCLE_RADIUS + PEUPLE_SIZE / 2, CIRCLE_RADIUS * Math.sin(2 * i * Math.PI / nombrePeuples) + CIRCLE_RADIUS + PEUPLE_SIZE / 2, HALO_SIZE, HALO_SIZE));
