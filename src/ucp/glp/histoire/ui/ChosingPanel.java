@@ -56,6 +56,7 @@ public class ChosingPanel extends JPanel implements ActionListener {
         }
         validatePeuples.addActionListener(this);
         this.add(validatePeuples);
+        this.add(Box.createRigidArea(new Dimension(100, 10)));
         choseLabel.setText("Choisissez les peuples");
     }
 

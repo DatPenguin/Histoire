@@ -27,6 +27,7 @@ public class LeftSmallPanel extends JPanel implements ActionListener {
 
         if (type == 1) {
             comboBox = new JComboBox(MainFrame.peuplesArrayList.toArray());
+            comboBox.insertItemAt("Aucun", 0);
             button.setText("Sélectionnez un peuple");
             this.type = 1;
         }
@@ -42,9 +43,13 @@ public class LeftSmallPanel extends JPanel implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == button && type == 1) {
-            mainPanel.swapCenter((Peuple) comboBox.getSelectedItem());
-            mainPanel.repaint();
-            System.err.println("caca" + comboBox.getSelectedItem().toString());
+            if (comboBox.getSelectedItem().equals("Aucun")) {
+                mainPanel.refresh();
+                mainPanel.repaint();
+            } else {
+                mainPanel.swapCenter((Peuple) comboBox.getSelectedItem());
+                mainPanel.repaint();
+            }
         }
     }
 }

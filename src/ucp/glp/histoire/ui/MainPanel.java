@@ -72,7 +72,7 @@ public class MainPanel extends JPanel {
 
     public void refresh() {
         this.remove(centerPanel);
-        centerPanel = new GraphicalPanel(Color.RED);
+        centerPanel = new GraphicalPanel();
         centerPanel.setBounds(370, 35, 530, 515);
         this.add(centerPanel);
     }
