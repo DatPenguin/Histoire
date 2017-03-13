@@ -12,6 +12,11 @@ import java.util.ArrayList;
 
 import static org.junit.Assert.assertTrue;
 
+/**
+ * @author Matteo STAIANO, Mathieu HANNOUN
+ * @project GLP Histoire (L2S4 I) - Université de Cergy-Pontoise
+ * @date 2016-2017
+ */
 public class RunningLoopTestjUnit {
 	private static Logger logger = LoggerUtility.getLogger(RunningLoopTestjUnit.class);
 
@@ -27,14 +32,15 @@ public class RunningLoopTestjUnit {
 
 		listePeuple.add(p1);
 		listePeuple.add(p2);
-		
+
 		runningLoop = new RunningLoop(listePeuple);
 
 	}
+
 	@Test
 	public void test() {
 		this.index = 0;
-		
+
 		// Résultat incohérent passé 100 000 itération
 		for(int i = 0 ; i < 10000 ; i++){
 			runningLoop.loopAction();
@@ -47,7 +53,7 @@ public class RunningLoopTestjUnit {
 
 		}
 	}
-	
+
 	@After
 	public void after() {
 		for(int n = 0 ; n < listePeuple.size() ; n++){

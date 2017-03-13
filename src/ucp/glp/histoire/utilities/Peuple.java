@@ -3,6 +3,11 @@ package ucp.glp.histoire.utilities;
 import javax.swing.*;
 import java.util.ArrayList;
 
+/**
+ * @author Matteo STAIANO, Mathieu HANNOUN
+ * @project GLP Histoire (L2S4 I) - Université de Cergy-Pontoise
+ * @date 2016-2017
+ */
 public class Peuple {
 	//attributs principaux
 	private String nom;
@@ -18,12 +23,11 @@ public class Peuple {
 	private ImageIcon icon;
 
 
+	public Peuple(ImageIcon i) {
+		this.icon = i;
+	}
 
-    public Peuple(ImageIcon i) {
-        this.icon = i;
-    }
-
-    public Peuple(int ressources, int population, int education, int territoire, int agressivite,String nom) {
+	public Peuple(int ressources, int population, int education, int territoire, int agressivite,String nom) {
 		this.ressources = ressources;
 		this.population = population;
 		this.education = education;
@@ -94,11 +98,8 @@ public class Peuple {
 				+ "]";
 	}
 	*/
-    
-    
-    
-    
-    
+
+
 	/* Différent getter et setter */
 	public int getPopulation() {
 		return population;
@@ -224,21 +225,23 @@ public class Peuple {
 	public void setPuissancePolitique(double puissancePolitique) {
 		this.puissancePolitique = puissancePolitique;
 	}
-	
-    public ArrayList<Peuple> getListeEnnemies() {
+
+	public ArrayList<Peuple> getListeEnnemies() {
 		return listeEnnemies;
 	}
 
 	public void setListeEnnemies(ArrayList<Peuple> listeEnnemies) {
 		this.listeEnnemies = listeEnnemies;
 	}
-	
+
 	public void addEnnemies(Peuple p1){
 		this.listeEnnemies.add(p1);
 	}
+
 	public void addTrade(Peuple p1){
 		this.listeTrade.add(p1);
-	}	
+	}
+
 	public ArrayList<Peuple> getListeTrade() {
 		return listeTrade;
 	}

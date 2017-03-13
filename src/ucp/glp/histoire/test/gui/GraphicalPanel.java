@@ -7,7 +7,8 @@ import java.util.Random;
 
 /**
  * @author Matteo STAIANO, Mathieu HANNOUN
- * @date 03/02/2017
+ * @project GLP Histoire (L2S4 I) - Université de Cergy-Pontoise
+ * @date 2016-2017
  */
 public class GraphicalPanel extends JPanel {
 

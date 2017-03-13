@@ -5,7 +5,8 @@ import java.awt.*;
 
 /**
  * @author Matteo STAIANO, Mathieu HANNOUN
- * @date 23/01/2017
+ * @project GLP Histoire (L2S4 I) - Université de Cergy-Pontoise
+ * @date 2016-2017
  */
 public class LeftPanel extends JPanel {
 

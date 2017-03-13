@@ -10,7 +10,8 @@ import java.util.ArrayList;
 
 /**
  * @author Matteo STAIANO, Mathieu HANNOUN
- * @date 24/02/2017
+ * @project GLP Histoire (L2S4 I) - Université de Cergy-Pontoise
+ * @date 2016-2017
  */
 public class ChosingPanel extends JPanel implements ActionListener {
     private static ChosingFrame frame;
@@ -75,11 +76,6 @@ public class ChosingPanel extends JPanel implements ActionListener {
         System.out.println(peuplesList);
     }
 
-    /**
-     * Invoked when an action occurs.
-     *
-     * @param e
-     */
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == validateNumber) {

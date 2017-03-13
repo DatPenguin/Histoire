@@ -4,7 +4,8 @@ import javax.swing.*;
 
 /**
  * @author Matteo STAIANO, Mathieu HANNOUN
- * @date 06/03/2017
+ * @project GLP Histoire (L2S4 I) - Université de Cergy-Pontoise
+ * @date 2016-2017
  */
 public class DetailsArea extends JTextArea {
     public void appendln(String s) {

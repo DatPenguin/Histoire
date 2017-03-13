@@ -6,9 +6,10 @@ import ucp.glp.histoire.utilities.Peuple;
 import java.util.ArrayList;
 
 /**
+ * @author Matteo STAIANO, Mathieu HANNOUN
+ * @project GLP Histoire (L2S4 I) - Université de Cergy-Pontoise
+ * @date 2016-2017
  * Gestionnaire de croissance et d'immigration
- * @author mhannoun
- *
  */
 public class GrowthManager {
 	private ImmigrationPool immigrationPool;
@@ -22,7 +23,6 @@ public class GrowthManager {
 	
 	/**
 	 * Gère la croissance à chaque tour pour chaque pays
-	 * @param listePeuple
 	 */
 	public void growthAction(){
 		
@@ -35,7 +35,6 @@ public class GrowthManager {
 	
 	/**
 	 * Gère la croissance à chaque tour pour chaque pays
-	 * @param listePeuple
 	 */
 	public void immigrationAction (){
 		// TODO affiner l'imigration

@@ -10,34 +10,39 @@ import ucp.glp.histoire.utilities.Peuple;
  * 4 : territoire 
  */
 
+/**
+ * @author Matteo STAIANO, Mathieu HANNOUN
+ * @project GLP Histoire (L2S4 I) - Université de Cergy-Pontoise
+ * @date 2016-2017
+ */
 public abstract class HistoricEvent {
 
-	// Sprite location  = location + nom + .png
-	protected String nom,spritesLocation;
-	protected int amplitude; //multiplicateur du résultat
-	protected int type;
-	protected double ampReel,puissance;
-	
-	public HistoricEvent(){
-	}
-	
-	public String toString(Peuple p){
-		String amp = "";
-		switch(amplitude){
-			case 0:
-				amp = "petit(e)";
-				break;
-			case 1 :
-				amp = "moyen(nne)";
-				break;
-			case 2 :
-				amp = "grand(e)";
-				break;
-			default:
-			    System.out.println("ERREUR ENTREE VALEUR EVENT" + this.nom);
-		}
-		return ("un(e) " + amp + " " + this.nom + " touche " + p.getNom());		
-	}
+    // Sprite location  = location + nom + .png
+    protected String nom,spritesLocation;
+    protected int amplitude; //multiplicateur du résultat
+    protected int type;
+    protected double ampReel,puissance;
+
+    public HistoricEvent(){
+    }
+
+    public String toString(Peuple p){
+        String amp = "";
+        switch(amplitude){
+            case 0:
+                amp = "petit(e)";
+                break;
+            case 1 :
+                amp = "moyen(nne)";
+                break;
+            case 2 :
+                amp = "grand(e)";
+                break;
+            default:
+                System.out.println("ERREUR ENTREE VALEUR EVENT" + this.nom);
+        }
+        return ("un(e) " + amp + " " + this.nom + " touche " + p.getNom());
+    }
 	
 	/*
 	public void genereAmpReel(){	//méthode gérant les différant coeficient multiplicateur
@@ -84,38 +89,38 @@ public abstract class HistoricEvent {
 		}
 	}
 	*/
-	
-	public String getNom() {
-		return nom;
-	}
 
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
+    public String getNom() {
+        return nom;
+    }
 
-	public int getType() {
-		return type;
-	}
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
 
-	public double getPuissance() {
-		return puissance;
-	}
+    public int getType() {
+        return type;
+    }
 
-	public String getSpritesLocation() {
-		return spritesLocation;
-	}
+    public double getPuissance() {
+        return puissance;
+    }
 
-	public void setSpritesLocation(String spritesLocation) {
-		this.spritesLocation = spritesLocation;
-	}
+    public String getSpritesLocation() {
+        return spritesLocation;
+    }
 
-	public int getAmplitude() {
-		return amplitude;
-	}
+    public void setSpritesLocation(String spritesLocation) {
+        this.spritesLocation = spritesLocation;
+    }
 
-	public void setAmplitude(int amplitude) {
-		this.amplitude = amplitude;
-	}
-	
+    public int getAmplitude() {
+        return amplitude;
+    }
+
+    public void setAmplitude(int amplitude) {
+        this.amplitude = amplitude;
+    }
+
 
 }

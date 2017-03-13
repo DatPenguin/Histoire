@@ -1,8 +1,10 @@
 package ucp.glp.histoire.managers;
 
-import ucp.glp.histoire.event.CriseFinanciere;
-import ucp.glp.histoire.event.Famine;
-
+/**
+ * @author Matteo STAIANO, Mathieu HANNOUN
+ * @project GLP Histoire (L2S4 I) - Université de Cergy-Pontoise
+ * @date 2016-2017
+ */
 public abstract class EventManager {
 	
 	

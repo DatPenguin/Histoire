@@ -7,7 +7,11 @@ import ucp.glp.histoire.utilities.Peuple;
 
 import java.util.ArrayList;
 
-
+/**
+ * @author Matteo STAIANO, Mathieu HANNOUN
+ * @project GLP Histoire (L2S4 I) - Université de Cergy-Pontoise
+ * @date 2016-2017
+ */
 public class TestRunningLoop {
 		// TODO placer nbIteration dans une classe directrice
 		public static int nbIteration = 0;	// Permettra de connaitre à quel itération l'on se trouve pour les logs

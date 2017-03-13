@@ -8,6 +8,11 @@ import ucp.glp.histoire.utilities.Peuple;
 
 import java.util.ArrayList;
 
+/**
+ * @author Matteo STAIANO, Mathieu HANNOUN
+ * @project GLP Histoire (L2S4 I) - Université de Cergy-Pontoise
+ * @date 2016-2017
+ */
 public class TestPeuple {
 	public static void main(String[] args) {
 		Peuple p1 = new Peuple(90,40,10,70,10,"belge");
@@ -15,8 +20,8 @@ public class TestPeuple {
 		EventChanceManager ecm = new EventChanceManager();
 		ArrayList<Peuple> listePeuple = new ArrayList<Peuple>();
 		listePeuple.add(p1);
-		
-		for(int i=0; i < 50; i++){
+
+		for(int i = 0; i < 50; i++){
 			//System.out.println(p1.toString());
 			PeupleManager.genereEnsembleTotal(listePeuple);
 			ecm.actionLocale(listePeuple);
@@ -31,8 +36,7 @@ public class TestPeuple {
 			System.out.println(i + "");
 		}
 
-		
-		
+
 	}
 
 }

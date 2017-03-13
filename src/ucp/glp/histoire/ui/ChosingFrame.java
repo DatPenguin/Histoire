@@ -6,7 +6,8 @@ import javax.swing.*;
 
 /**
  * @author Matteo STAIANO, Mathieu HANNOUN
- * @date 24/02/2017
+ * @project GLP Histoire (L2S4 I) - Université de Cergy-Pontoise
+ * @date 2016-2017
  */
 public class ChosingFrame extends JFrame {
     private ChosingPanel panel = new ChosingPanel();

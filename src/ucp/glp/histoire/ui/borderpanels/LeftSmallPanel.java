@@ -11,7 +11,8 @@ import java.awt.event.ActionListener;
 
 /**
  * @author Matteo STAIANO, Mathieu HANNOUN
- * @date 23/01/2017
+ * @project GLP Histoire (L2S4 I) - Université de Cergy-Pontoise
+ * @date 2016-2017
  */
 public class LeftSmallPanel extends JPanel implements ActionListener {
 
