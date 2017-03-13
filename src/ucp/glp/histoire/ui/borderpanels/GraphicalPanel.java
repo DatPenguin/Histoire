@@ -6,6 +6,7 @@ import ucp.glp.histoire.utilities.Peuple;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
+import java.awt.geom.Line2D;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -46,6 +47,20 @@ public class GraphicalPanel extends JPanel {
             colorList.add(new Color(r.nextFloat(), r.nextFloat(), r.nextFloat()));
     }
 
+    public void createBond(int a, int b) {
+        Graphics2D g2d = (Graphics2D) g1.create();
+        g2d.setColor(Color.RED);
+        g2d.setStroke(new BasicStroke(5));
+        g2d.draw(new Line2D.Double(CIRCLE_RADIUS * Math.cos(2 * a * Math.PI / nombrePeuples) + CIRCLE_RADIUS + HALO_SIZE, CIRCLE_RADIUS * Math.sin(2 * a * Math.PI / nombrePeuples) + CIRCLE_RADIUS + HALO_SIZE, CIRCLE_RADIUS * Math.cos(2 * b * Math.PI / nombrePeuples) + CIRCLE_RADIUS + HALO_SIZE, CIRCLE_RADIUS * Math.sin(2 * b * Math.PI / nombrePeuples) + CIRCLE_RADIUS + HALO_SIZE));
+    }
+
+    public void createBond(int a, int b, Color c) {
+        Graphics2D g2d = (Graphics2D) g1.create();
+        g2d.setColor(c);
+        g2d.setStroke(new BasicStroke(5));
+        g2d.draw(new Line2D.Double(CIRCLE_RADIUS * Math.cos(2 * a * Math.PI / nombrePeuples) + CIRCLE_RADIUS + HALO_SIZE, CIRCLE_RADIUS * Math.sin(2 * a * Math.PI / nombrePeuples) + CIRCLE_RADIUS + HALO_SIZE, CIRCLE_RADIUS * Math.cos(2 * b * Math.PI / nombrePeuples) + CIRCLE_RADIUS + HALO_SIZE, CIRCLE_RADIUS * Math.sin(2 * b * Math.PI / nombrePeuples) + CIRCLE_RADIUS + HALO_SIZE));
+    }
+
     public void initHaloColorList(ArrayList<Peuple> peuples) {
         for (Peuple p : peuples) {
             if (!p.getListeEnnemies().isEmpty())
@@ -60,6 +75,14 @@ public class GraphicalPanel extends JPanel {
         Graphics2D g2d = (Graphics2D) g.create();
         g2d.setColor(Color.BLACK);
         g2d.drawOval(35, 30, CIRCLE_DIAMETER, CIRCLE_DIAMETER);
+
+        for (int i = 0; i < nombrePeuples; i++)
+            for (int j = 0; j < nombrePeuples; j++) {
+                if (j % 2 == 0)
+                    createBond(i, j, new Color(178, 62, 76));
+                else
+                    createBond(i, j, new Color(71, 175, 255));
+            }
 
         for (int i = 1; i <= nombrePeuples; i++) {
 /*            if (!MainFrame.getPeuplesArrayList().get(i).getListeEnnemies().isEmpty())
