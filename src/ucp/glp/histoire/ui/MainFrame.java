@@ -42,6 +42,7 @@ public class MainFrame extends JFrame {
         this.setTitle("History Simulator 2017");
         this.setLocationRelativeTo(null);
         this.setLayout(null);
+        this.setIconImage(Swinger.getResource("Icone.png"));
 
         new RunningTime().run();
     }
@@ -68,6 +69,8 @@ public class MainFrame extends JFrame {
         this.setTitle("History Simulator 2017");
         this.setLocationRelativeTo(null);
         this.setLayout(null);
+
+        this.setIconImage(Swinger.getResource("Icone.png"));
 
         new RunningTime().run();
     }

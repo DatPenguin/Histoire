@@ -24,8 +24,8 @@ public class GraphicalPanel extends JPanel {
     private static ArrayList<Color> haloColorList = new ArrayList<>();
     private final int CIRCLE_DIAMETER = 450;
     private final int CIRCLE_RADIUS = CIRCLE_DIAMETER / 2;
-    private final int PEUPLE_SIZE = 30;
-    private int HALO_SIZE = 36;
+    private final int PEUPLE_SIZE = 30 /* * 2*/;
+    private int HALO_SIZE = PEUPLE_SIZE + 6;
     private Graphics g1;
     private Color haloColor = Color.WHITE;
 
@@ -78,6 +78,14 @@ public class GraphicalPanel extends JPanel {
         Graphics2D g2d = (Graphics2D) g.create();
         g2d.setColor(Color.BLACK);
         g2d.drawOval(35, 30, CIRCLE_DIAMETER, CIRCLE_DIAMETER);
+
+        for (int i = 0; i < nombrePeuples; i++)
+            for (int j = 0; j < nombrePeuples; j++) {
+                if (j % 2 == 0)
+                    createBond(i, j, WAR_COLOR);
+                else
+                    createBond(i, j, TRADE_COLOR);
+            }
 
         for (int i = 1; i <= nombrePeuples; i++) {
             if (MainFrame.getPeuplesArrayList().get(i - 1).getListeEnnemies() != null && !MainFrame.getPeuplesArrayList().get(i - 1).getListeEnnemies().isEmpty())

@@ -1,5 +1,6 @@
 package ucp.glp.histoire.ui;
 
+import fr.theshark34.swinger.Swinger;
 import fr.theshark34.swinger.util.WindowMover;
 
 import javax.swing.*;
@@ -20,6 +21,8 @@ public class ChosingFrame extends JFrame {
         this.setVisible(true);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.pack();
+        Swinger.setResourcePath("/ucp/glp/histoire/resources");
+        this.setIconImage(Swinger.getResource("Icone.png"));
 
         WindowMover mover = new WindowMover(this);
         this.addMouseListener(mover);
