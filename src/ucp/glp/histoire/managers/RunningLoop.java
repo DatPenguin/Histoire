@@ -17,6 +17,7 @@ public class RunningLoop {
     private EventChanceManager eventChanceManager;
     private ArrayList<Peuple> listePeuple;
     private GrowthManager growthManager;
+    private ArrayList<String> textLog;
 
     public RunningLoop (ArrayList<Peuple> listePeuple){
         this.listePeuple = listePeuple;
@@ -64,5 +65,11 @@ public class RunningLoop {
             logger.trace(listePeuple.get(i).toString() + " iteration : " + TestRunningLoop.nbIteration);
         }
     }
+    public void addTotextLog(String stringToAdd){
+    	textLog.add(stringToAdd);
+    }
 
+	public ArrayList<String> getTextLog() {
+		return textLog;
+	}
 }
