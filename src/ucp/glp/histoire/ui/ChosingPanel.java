@@ -48,6 +48,7 @@ public class ChosingPanel extends JPanel implements ActionListener {
         // TODO Creer ici tous les peuples choisissables
         availablePeuples.add(new Peuple(50, 50, 50, 70, 50, "Belges"));
         availablePeuples.add(new Peuple(90, 80, 50, 25, 22, "Grecs"));
+        availablePeuples.add(new Peuple(90, 80, 50, 25, 122, "Gandhi"));
     }
 
     private void createComponents(int nb) {

@@ -18,6 +18,8 @@ import java.util.Random;
 public class GraphicalPanel extends JPanel {
 
     private final static int nombrePeuples = MainFrame.getPeuplesNumber();
+    private final static Color WAR_COLOR = new Color(178, 62, 76);
+    private final static Color TRADE_COLOR = new Color(71, 175, 255);
     private static ArrayList<Color> colorList = new ArrayList<>();
     private static ArrayList<Color> haloColorList = new ArrayList<>();
     private final int CIRCLE_DIAMETER = 450;
@@ -77,20 +79,12 @@ public class GraphicalPanel extends JPanel {
         g2d.setColor(Color.BLACK);
         g2d.drawOval(35, 30, CIRCLE_DIAMETER, CIRCLE_DIAMETER);
 
-        for (int i = 0; i < nombrePeuples; i++)
-            for (int j = 0; j < nombrePeuples; j++) {
-                if (j % 2 == 0)
-                    createBond(i, j, new Color(178, 62, 76));
-                else
-                    createBond(i, j, new Color(71, 175, 255));
-            }
-
         for (int i = 1; i <= nombrePeuples; i++) {
-/*            if (!MainFrame.getPeuplesArrayList().get(i).getListeEnnemies().isEmpty())
-                g2d.setColor(Color.RED);
-            else if (!MainFrame.getPeuplesArrayList().get(i - 1).getListeTrade().isEmpty())
-                g2d.setColor(Color.GREEN);
-            else*/
+            if (MainFrame.getPeuplesArrayList().get(i - 1).getListeEnnemies() != null && !MainFrame.getPeuplesArrayList().get(i - 1).getListeEnnemies().isEmpty())
+                g2d.setColor(WAR_COLOR);
+            else if (MainFrame.getPeuplesArrayList().get(i - 1).getListeTrade() != null && !MainFrame.getPeuplesArrayList().get(i - 1).getListeTrade().isEmpty())
+                g2d.setColor(TRADE_COLOR);
+            else
                 g2d.setColor(haloColor);
             // TODO Calculer a chaque tour la taille du halo en fonction de la puissance du pays affiche
             g2d.fill(new Ellipse2D.Double(CIRCLE_RADIUS * Math.cos(2 * i * Math.PI / nombrePeuples) + CIRCLE_RADIUS + PEUPLE_SIZE / 2, CIRCLE_RADIUS * Math.sin(2 * i * Math.PI / nombrePeuples) + CIRCLE_RADIUS + PEUPLE_SIZE / 2, HALO_SIZE, HALO_SIZE));

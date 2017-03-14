@@ -1,5 +1,6 @@
 package ucp.glp.histoire.utilities;
 
+import ucp.glp.histoire.managers.RunningLoop;
 import ucp.glp.histoire.ui.MainFrame;
 import ucp.glp.histoire.ui.MainPanel;
 import ucp.glp.histoire.ui.borderpanels.BottomPanel;
@@ -10,6 +11,14 @@ import ucp.glp.histoire.ui.borderpanels.BottomPanel;
  * @date 2016-2017
  */
 public class RunningTime implements Runnable {
+    private static RunningLoop loop = new RunningLoop(MainFrame.getPeuplesArrayList());
+
+    public static void fastForward() {
+        System.out.println("Lancement de la boucle");
+        loop.loopAction();
+        MainPanel.setRunning(0);
+    }
+
     @Override
     public void run() {
         while (true) {
@@ -21,6 +30,7 @@ public class RunningTime implements Runnable {
 
                 if (((int) MainPanel.getRunning()) == 10) {
                     System.out.println("Lancement de la boucle");
+                    loop.loopAction();
                     MainPanel.setRunning(0);
                 }
             }

@@ -6,6 +6,7 @@ import fr.theshark34.swinger.event.SwingerEventListener;
 import fr.theshark34.swinger.textured.STexturedButton;
 import ucp.glp.histoire.ui.MainFrame;
 import ucp.glp.histoire.ui.MainPanel;
+import ucp.glp.histoire.utilities.RunningTime;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
@@ -71,6 +72,7 @@ public class BottomPanel extends JPanel implements SwingerEventListener, ChangeL
                 System.out.println("Pause");
         } else if (e.getSource() == fastForwardButton) {
             System.out.println("Fast Forward");
+            RunningTime.fastForward();
         }
     }
 

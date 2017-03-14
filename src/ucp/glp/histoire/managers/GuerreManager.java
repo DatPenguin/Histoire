@@ -13,6 +13,7 @@ import java.util.ArrayList;
  * @date 2016-2017
  */
 public class GuerreManager {
+    private static final int GUERRE_SEUIL = 120;
     private static Logger logger = LoggerUtility.getLogger(GuerreManager.class);
 
     //Il faudra lui passer une arraylist contenant tout les pays actuelement en jeu
@@ -24,7 +25,6 @@ public class GuerreManager {
     public static void guerreChecker(ArrayList<Peuple> listePeuple) {    // Comparera si quel pays peut entrer en guerre avec un autre
 
         // Routine de déclenchement ou non de la guerre (guerre ponctuelle)
-        int seuil =  150;
         for(int x = 0; x < listePeuple.size(); x++){
             listePeuple.get(x).setListeEnnemies(new ArrayList<Peuple>());    // On réinitialise à chaque fois la liste des ennemies
         }
@@ -35,7 +35,7 @@ public class GuerreManager {
             // TODO affiner
             for (int j = (i + 1); j < listePeuple.size(); j++) {     // De cette façon on évitera un dédoublement des guerres
 
-                if((int)(listePeuple.get(i).getBellicisme() + listePeuple.get(j).getBellicisme()) >= seuil){
+                if ((int) (listePeuple.get(i).getBellicisme() + listePeuple.get(j).getBellicisme()) >= GUERRE_SEUIL) {
                     GuerreManager.guerre(listePeuple.get(i), listePeuple.get(j));
                 }
 				
