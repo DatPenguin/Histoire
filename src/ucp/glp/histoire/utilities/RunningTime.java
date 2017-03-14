@@ -18,6 +18,8 @@ public class RunningTime implements Runnable {
         loop.loopAction();
         MainPanel.setRunning(0);
         MainPanel.getEvent().hasLooped();
+        MainPanel.addToLog(loop.getTextLog());
+        loop.getTextLog().clear();
     }
 
     @Override
@@ -34,6 +36,8 @@ public class RunningTime implements Runnable {
                     loop.loopAction();
                     MainPanel.setRunning(0);
                     MainPanel.getEvent().hasLooped();
+                    MainPanel.addToLog(loop.getTextLog());
+                    loop.getTextLog().clear();
                 }
             }
 

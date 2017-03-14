@@ -19,4 +19,8 @@ public class RightPanel extends JPanel {
         this.add(bot, BorderLayout.SOUTH);
         this.setOpaque(false);
     }
+
+    public RightLogPanel getLogPanel() {
+        return bot;
+    }
 }

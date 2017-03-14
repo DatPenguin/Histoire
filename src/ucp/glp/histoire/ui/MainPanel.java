@@ -8,6 +8,7 @@ import ucp.glp.histoire.utilities.Peuple;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 /**
  * @author Matteo STAIANO, Mathieu HANNOUN
@@ -22,9 +23,9 @@ public class MainPanel extends JPanel implements LoopListener {
     private static float totalYears = 0;
     private static JLabel barLabel = new JLabel();
     private static JLabel runningLabel = new JLabel();
+    private static RightPanel rightPanel = new RightPanel();
     private JPanel centerPanel = new GraphicalPanel();
     private LeftPanel leftPanel = new LeftPanel();
-    private RightPanel rightPanel = new RightPanel();
     private BottomPanel bottomPanel = new BottomPanel();
 
     public MainPanel() {
@@ -88,6 +89,10 @@ public class MainPanel extends JPanel implements LoopListener {
 
     public static LoopEvent getEvent() {
         return e;
+    }
+
+    public static void addToLog(ArrayList<String> logList) {
+        rightPanel.getLogPanel().appendText(logList);
     }
 
     public void swapCenter(Peuple p) {
