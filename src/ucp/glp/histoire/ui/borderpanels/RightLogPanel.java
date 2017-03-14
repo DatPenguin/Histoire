@@ -21,13 +21,12 @@ public class RightLogPanel extends JPanel {
         logArea.setEditable(false);
         logArea.setRows(10);
         logArea.setLineWrap(true);
-        /*for (int i = 0; i < 42; i++)
-            logArea.append(MainFrame.getCurrentEvent() + "\n");*/
+        scrollPane.getVerticalScrollBar().setValue(scrollPane.getVerticalScrollBar().getMaximum());
         this.add(scrollPane);
     }
 
     public void appendText(ArrayList<String> sList) {
-        logArea.append("\t--- ANNEE " + RunningLoop.nbIteration + " ---\n\n");
+        logArea.append("\n\t--- ANNEE " + RunningLoop.nbIteration + " ---\n\n");
         for (String s : sList)
             logArea.append(s + '\n');
     }
