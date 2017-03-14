@@ -68,6 +68,7 @@ public class ChosingPanel extends JPanel implements ActionListener {
 
 
     private void populateAL() {
+        //TODO Faire en sorte de ne pas envoyer les memes objets
         Component[] components = this.getComponents();
         for (Component c : components) {
             if (c instanceof JComboBox)
