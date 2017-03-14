@@ -17,6 +17,7 @@ public class RunningTime implements Runnable {
         System.out.println("Lancement de la boucle");
         loop.loopAction();
         MainPanel.setRunning(0);
+        MainPanel.e.hasLooped();
     }
 
     @Override
@@ -32,6 +33,7 @@ public class RunningTime implements Runnable {
                     System.out.println("Lancement de la boucle");
                     loop.loopAction();
                     MainPanel.setRunning(0);
+                    MainPanel.e.hasLooped();
                 }
             }
 

@@ -2,6 +2,8 @@ package ucp.glp.histoire.ui;
 
 import fr.theshark34.swinger.Swinger;
 import ucp.glp.histoire.ui.borderpanels.*;
+import ucp.glp.histoire.ui.events.LoopEvent;
+import ucp.glp.histoire.ui.events.LoopListener;
 import ucp.glp.histoire.utilities.Peuple;
 
 import javax.swing.*;
@@ -12,7 +14,9 @@ import java.awt.*;
  * @project GLP Histoire (L2S4 I) - Université de Cergy-Pontoise
  * @date 2016-2017
  */
-public class MainPanel extends JPanel {
+public class MainPanel extends JPanel implements LoopListener {
+
+    public static LoopEvent e = new LoopEvent();
 
     private static float running = 0;
     private static float totalYears = 0;
@@ -50,6 +54,8 @@ public class MainPanel extends JPanel {
         this.add(runningLabel);
 
         leftPanel.getTop().setMainPanel(this);
+
+        e.addListener(this);
     }
 
     public static void setBarLabelText(String barLabel) {
@@ -99,5 +105,10 @@ public class MainPanel extends JPanel {
         super.paintComponents(g);
 
         Swinger.drawFullsizedImage(g, this, Swinger.getResource("background.jpg"));
+    }
+
+    @Override
+    public void looped() {
+        this.getParent().repaint();
     }
 }
