@@ -43,7 +43,7 @@ public class TestRunningLoop {
 			runningLoop.loopAction();
 		}
 		*/
-		for(int i = 0 ; i < 100 ; i++){
+		for(int i = 0 ; i < 1000 ; i++){
 			TestRunningLoop.nbIteration++;
 			runningLoop.loopAction();
 			if(p1.getPopulation() <= 0 ){
