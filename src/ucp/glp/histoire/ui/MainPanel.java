@@ -16,7 +16,7 @@ import java.awt.*;
  */
 public class MainPanel extends JPanel implements LoopListener {
 
-    public static LoopEvent e = new LoopEvent();
+    private static LoopEvent e = new LoopEvent();
 
     private static float running = 0;
     private static float totalYears = 0;
@@ -84,6 +84,10 @@ public class MainPanel extends JPanel implements LoopListener {
 
     public static void setTotalYears(float totalYears) {
         MainPanel.totalYears = totalYears;
+    }
+
+    public static LoopEvent getEvent() {
+        return e;
     }
 
     public void swapCenter(Peuple p) {
