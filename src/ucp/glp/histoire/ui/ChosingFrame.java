@@ -21,7 +21,7 @@ public class ChosingFrame extends JFrame {
         this.setVisible(true);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.pack();
-        Swinger.setResourcePath("/ucp/glp/histoire/resources");
+        Swinger.setResourcePath("/ucp/glp/histoire/resources/" + MainFrame.THEME);
         this.setIconImage(Swinger.getResource("Icone.png"));
 
         WindowMover mover = new WindowMover(this);

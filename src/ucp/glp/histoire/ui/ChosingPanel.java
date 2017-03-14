@@ -22,6 +22,8 @@ public class ChosingPanel extends JPanel implements ActionListener {
     private JButton validatePeuples = new JButton("Valider");
     private JLabel choseLabel = new JLabel("Choisissez le nombre de peuples");
 
+    private JComboBox<String> themeCB = new JComboBox<String>();
+
     public ChosingPanel() {
         initPeuples();
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
@@ -64,18 +66,28 @@ public class ChosingPanel extends JPanel implements ActionListener {
         this.add(validatePeuples);
         this.add(Box.createRigidArea(new Dimension(100, 10)));
         choseLabel.setText("Choisissez les peuples");
+
+        ArrayList<String> themeList = initThemes();
+        for (String s : themeList)
+            themeCB.addItem(s);
+        this.add(themeCB);
+        this.add(Box.createRigidArea(new Dimension(100, 10)));
     }
 
+    private ArrayList<String> initThemes() {
+        ArrayList<String> out = new ArrayList<String>();
+        out.add("standard");
+        out.add("alternatif");
+        return out;
+    }
 
     private void populateAL() {
         //TODO Faire en sorte de ne pas envoyer les memes objets
         Component[] components = this.getComponents();
         for (Component c : components) {
-            if (c instanceof JComboBox)
+            if (c instanceof JComboBox && ((JComboBox) c).getSelectedItem() instanceof Peuple)
                 peuplesList.add((Peuple) ((JComboBox) c).getSelectedItem());
         }
-
-        System.out.println(peuplesList);
     }
 
     @Override
@@ -90,8 +102,8 @@ public class ChosingPanel extends JPanel implements ActionListener {
             frame.dispose();
             Thread t = new Thread() {
             	public void run() {
-            		new MainFrame(peuplesList);
-            	}
+                    new MainFrame(peuplesList, (String) themeCB.getSelectedItem());
+                }
             };
             t.start();
         }

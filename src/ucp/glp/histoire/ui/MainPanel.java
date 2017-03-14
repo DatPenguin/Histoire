@@ -113,7 +113,7 @@ public class MainPanel extends JPanel implements LoopListener {
     public void paintComponent(Graphics g) {
         super.paintComponents(g);
 
-        Swinger.drawFullsizedImage(g, this, Swinger.getResource("background.jpg"));
+        Swinger.drawFullsizedImage(g, this, Swinger.getResource("background.png"));
     }
 
     @Override

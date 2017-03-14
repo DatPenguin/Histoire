@@ -15,10 +15,10 @@ import java.util.ArrayList;
  */
 public class MainFrame extends JFrame {
 
+    public static String THEME = "standard";
     private static ArrayList<Peuple> peuplesArrayList = new ArrayList<Peuple>();    // Ajout du cast string a l'ArrayList sinon erreur sur la compilation
     private static ArrayList<String> eventArrayList = new ArrayList<String>();
     private static ArrayList<String> logArrayList = new ArrayList<String>();
-
     private static boolean playing = true;
 
     public MainFrame() {
@@ -32,7 +32,7 @@ public class MainFrame extends JFrame {
         } catch (Exception ignored) {
         }
 
-        Swinger.setResourcePath("/ucp/glp/histoire/resources");
+        Swinger.setResourcePath("/ucp/glp/histoire/resources/" + THEME);
 
         this.setContentPane(new MainPanel());
         this.setVisible(true);
@@ -47,7 +47,8 @@ public class MainFrame extends JFrame {
         new RunningTime().run();
     }
 
-    public MainFrame(ArrayList<Peuple> peupleList) {
+    public MainFrame(ArrayList<Peuple> peupleList, String theme) {
+        THEME = theme;
         peuplesArrayList = peupleList;
         eventArrayList.add("Ouragan");
         WindowMover mover = new WindowMover(this);
@@ -59,7 +60,7 @@ public class MainFrame extends JFrame {
         } catch (Exception ignored) {
         }
 
-        Swinger.setResourcePath("/ucp/glp/histoire/resources");
+        Swinger.setResourcePath("/ucp/glp/histoire/resources/" + THEME);
 
         this.setContentPane(new MainPanel());
         this.setVisible(true);
