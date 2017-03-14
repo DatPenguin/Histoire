@@ -43,7 +43,7 @@ public class TestRunningLoop {
 			runningLoop.loopAction();
 		}
 		*/
-		for(int i = 0 ; i < 1000 ; i++){
+		for(int i = 0 ; i < 100 ; i++){
 			TestRunningLoop.nbIteration++;
 			runningLoop.loopAction();
 			if(p1.getPopulation() <= 0 ){
@@ -57,8 +57,12 @@ public class TestRunningLoop {
 		System.out.println(p1.toString()); 
 		System.out.println(p2.toString());
 		System.out.println(nbIteration); 
-
-
+		
+		// Ce for est utilisé pour afficher le textLog de la runningLoop
+		/*for(int i = 0 ; i < runningLoop.getTextLog().size() ; i++){
+			System.out.println(runningLoop.getTextLog().get(i));
+		}
+		*/
 		
 		
 	}
