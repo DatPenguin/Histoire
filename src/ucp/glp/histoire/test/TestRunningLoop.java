@@ -14,7 +14,6 @@ import java.util.ArrayList;
  */
 public class TestRunningLoop {
 		// TODO placer nbIteration dans une classe directrice
-		public static int nbIteration = 0;	// Permettra de connaitre à quel itération l'on se trouve pour les logs
     private static Logger logger = LoggerUtility.getLogger(TestRunningLoop.class);
 
 	public static void main(String[] args) {
@@ -36,7 +35,7 @@ public class TestRunningLoop {
 		System.out.println(p2.toString());
 
 		
-		TestRunningLoop.nbIteration = 0;
+		RunningLoop.nbIteration = 0;
 		/*
 		while(p1.getPopulation() > 0 && p2.getPopulation() > 0){
 			TestRunningLoop.nbIteration++;
@@ -44,19 +43,18 @@ public class TestRunningLoop {
 		}
 		*/
 		for(int i = 0 ; i < 100 ; i++){
-			TestRunningLoop.nbIteration++;
 			runningLoop.loopAction();
 			if(p1.getPopulation() <= 0 ){
-				logger.warn("POPULATION NULLE p1 pop  = " + p1.getPopulation() + " iteration : " + TestRunningLoop.nbIteration);
+				logger.warn("POPULATION NULLE p1 pop  = " + p1.getPopulation() + " iteration : " + RunningLoop.nbIteration);
 			}
 			if(p2.getPopulation() <= 0 ){
-				logger.warn("POPULATION NULLE p2 pop  = " + p2.getPopulation() + " iteration : " + TestRunningLoop.nbIteration);
+				logger.warn("POPULATION NULLE p2 pop  = " + p2.getPopulation() + " iteration : " + RunningLoop.nbIteration);
 
 			}
 		}
 		System.out.println(p1.toString()); 
 		System.out.println(p2.toString());
-		System.out.println(nbIteration); 
+		System.out.println(RunningLoop.nbIteration); 
 		
 		// Ce for est utilisé pour afficher le textLog de la runningLoop
 		/*for(int i = 0 ; i < runningLoop.getTextLog().size() ; i++){

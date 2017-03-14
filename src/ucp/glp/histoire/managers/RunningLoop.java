@@ -1,6 +1,7 @@
 package ucp.glp.histoire.managers;
 
 import org.apache.log4j.Logger;
+
 import ucp.glp.histoire.log.LoggerUtility;
 import ucp.glp.histoire.test.TestRunningLoop;
 import ucp.glp.histoire.utilities.Peuple;
@@ -18,6 +19,7 @@ public class RunningLoop {
     private ArrayList<Peuple> listePeuple;
     private GrowthManager growthManager;
     private static ArrayList<String> textLog;	// A été rendus static pour faciliter son accès depuis les différentes classes
+	public static int nbIteration = 0;	// Permettra de connaitre à quel itération l'on se trouve pour les logs
 
     public RunningLoop (ArrayList<Peuple> listePeuple){
     	RunningLoop.textLog = new ArrayList<String>();
@@ -56,6 +58,8 @@ public class RunningLoop {
 
         this.logDisplayGlobalStat();
 
+		RunningLoop.nbIteration++;
+
     }
 
     /**
@@ -63,7 +67,7 @@ public class RunningLoop {
      */
     public void logDisplayGlobalStat(){
         for(int i = 0; i < listePeuple.size() ; i++){
-            logger.trace(listePeuple.get(i).toString() + " iteration : " + TestRunningLoop.nbIteration);
+            logger.trace(listePeuple.get(i).toString() + " iteration : " + RunningLoop.nbIteration);
         }
     }
     /**

@@ -46,9 +46,9 @@ public class TradeManager {
         p2.setRessources(p2.getRessources() + (taux*(p1.getAttractivite()* p2.getPuissancePolitique())));
 
         //System.out.println("Commerce entre " + p1.getNom() + " et " + p2.getNom());	  // TODO /!\ A REMPLACER PAR L'AJOUT DANS UNE FILE
-        RunningLoop.addTotextLog("Commerce entre " + p1.getNom() + " et " + p2.getNom());
+        RunningLoop.addTotextLog("Commerce entre " + p1.getNom() + " et " + p2.getNom() + " iteration : " + RunningLoop.nbIteration);
 
-        logger.info("Commerce entre " + p1.getNom() + " et " + p2.getNom() + " iteration : " + TestRunningLoop.nbIteration);
+        logger.info("Commerce entre " + p1.getNom() + " et " + p2.getNom() + " iteration : " + RunningLoop.nbIteration);
 
 
     }

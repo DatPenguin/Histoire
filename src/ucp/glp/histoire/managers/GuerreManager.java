@@ -71,9 +71,9 @@ public class GuerreManager {
         p1.addEnnemies(p2);
         p2.addEnnemies(p1);
         
-        RunningLoop.addTotextLog("La guerre à éclaté entre " + p1.getNom() + " et " + p2.getNom());
 
         //System.out.println("La guerre à éclaté entre " + p1.getNom() + " et " + p2.getNom());    // TODO /!\ A REMPLACER PAR L'AJOUT DANS UNE FILE
-        logger.info("La guerre à éclaté entre " + p1.getNom() + " et " + p2.getNom() + " iteration : " + TestRunningLoop.nbIteration);
-    }
+        logger.info("La guerre à éclaté entre " + p1.getNom() + " et " + p2.getNom() + " iteration : " + RunningLoop.nbIteration);
+        RunningLoop.addTotextLog("La guerre à éclaté entre " + p1.getNom() + " et " + p2.getNom() + " iteration : " + RunningLoop.nbIteration);
+ }
 }
