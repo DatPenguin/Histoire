@@ -17,9 +17,10 @@ public class RunningLoop {
     private EventChanceManager eventChanceManager;
     private ArrayList<Peuple> listePeuple;
     private GrowthManager growthManager;
-    private ArrayList<String> textLog;
+    private static ArrayList<String> textLog;	// A été rendus static pour faciliter son accès depuis les différentes classes
 
     public RunningLoop (ArrayList<Peuple> listePeuple){
+    	RunningLoop.textLog = new ArrayList<String>();
         this.listePeuple = listePeuple;
         eventChanceManager = new EventChanceManager();
         this.growthManager = new GrowthManager(this.listePeuple);
@@ -65,7 +66,11 @@ public class RunningLoop {
             logger.trace(listePeuple.get(i).toString() + " iteration : " + TestRunningLoop.nbIteration);
         }
     }
-    public void addTotextLog(String stringToAdd){
+    /**
+     * Permettra depuis d'autre classe (Cf : Managers) d'ajouter des lignes au logs
+     * @param stringToAdd
+     */
+    public static void addTotextLog(String stringToAdd){
     	textLog.add(stringToAdd);
     }
 
