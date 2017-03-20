@@ -19,7 +19,7 @@ public class MainFrame extends JFrame {
     private static ArrayList<Peuple> peuplesArrayList = new ArrayList<Peuple>();    // Ajout du cast string a l'ArrayList sinon erreur sur la compilation
     private static ArrayList<String> eventArrayList = new ArrayList<String>();
     private static ArrayList<String> logArrayList = new ArrayList<String>();
-    private static boolean playing = true;
+    private static boolean playing = false;
 
     public MainFrame() {
         eventArrayList.add("Ouragan");

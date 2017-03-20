@@ -39,7 +39,7 @@ public class BottomPanel extends JPanel implements SwingerEventListener, ChangeL
         timeSlider.setOpaque(false);
         timeSlider.addChangeListener(this);
         timeSlider.setMaximum(1000);
-        timeSlider.setValue(0);
+        timeSlider.setValue(500);
 
         this.add(fastForwardButton, BorderLayout.EAST);
         this.add(playPauseButton, BorderLayout.WEST);

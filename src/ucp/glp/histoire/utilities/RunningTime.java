@@ -26,8 +26,8 @@ public class RunningTime implements Runnable {
     public void run() {
         while (true) {
             if (MainFrame.isPlaying()) {
-                MainPanel.setRunning(MainPanel.getRunning() + 1 * ((float) BottomPanel.getTimeSlider().getValue()) / 1000);
-                MainPanel.setTotalYears(MainPanel.getTotalYears() + 1 * ((float) BottomPanel.getTimeSlider().getValue()) / 1000);
+                MainPanel.setRunning(MainPanel.getRunning() + 2 * ((float) BottomPanel.getTimeSlider().getValue()) / 1000);
+                MainPanel.setTotalYears(MainPanel.getTotalYears() + 2 * ((float) BottomPanel.getTimeSlider().getValue()) / 1000);
                 MainPanel.setRunningLabelText(String.valueOf(((int) MainPanel.getRunning())));
                 MainPanel.setBarLabelText(String.valueOf(((int) MainPanel.getTotalYears())));
 
