@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class MainFrame extends JFrame {
 
     public static String THEME = "standard";
-    private static ArrayList<Peuple> peuplesArrayList = new ArrayList<Peuple>();    // Ajout du cast string a l'ArrayList sinon erreur sur la compilation
+    private static ArrayList<Peuple> peuplesArrayList = new ArrayList<Peuple>();
     private static ArrayList<String> eventArrayList = new ArrayList<String>();
     private static ArrayList<String> logArrayList = new ArrayList<String>();
     private static boolean playing = false;

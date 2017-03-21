@@ -30,6 +30,7 @@ public class ChosingPanel extends JPanel implements ActionListener {
     public ChosingPanel() {
         initPeuples();
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        this.setBorder(BorderFactory.createEmptyBorder(0, 10, 0, 10));
         this.add(Box.createRigidArea(new Dimension(300, 10)));
         choseLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         choseLabel.setFont(choseLabel.getFont().deriveFont(15f));
@@ -72,6 +73,7 @@ public class ChosingPanel extends JPanel implements ActionListener {
             this.add(Box.createRigidArea(new Dimension(100, 10)));
         }
         validatePeuples.addActionListener(this);
+        validatePeuples.setAlignmentX(Component.CENTER_ALIGNMENT);
         this.add(validatePeuples);
         this.add(Box.createRigidArea(new Dimension(100, 10)));
         choseLabel.setText("Choisissez les peuples");
@@ -79,6 +81,7 @@ public class ChosingPanel extends JPanel implements ActionListener {
         ArrayList<String> themeList = initThemes();
         for (String s : themeList)
             themeCB.addItem(s);
+        themeCB.setAlignmentX(Component.LEFT_ALIGNMENT);
         this.add(themeCB);
         this.add(Box.createRigidArea(new Dimension(100, 10)));
     }
