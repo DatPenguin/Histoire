@@ -1,6 +1,9 @@
 package ucp.glp.histoire.ui;
 
 import ucp.glp.histoire.utilities.Peuple;
+import ucp.glp.histoire.utilities.inherited.Belges;
+import ucp.glp.histoire.utilities.inherited.Gandhi;
+import ucp.glp.histoire.utilities.inherited.Grecs;
 
 import javax.swing.*;
 import java.awt.*;
@@ -48,16 +51,22 @@ public class ChosingPanel extends JPanel implements ActionListener {
 
     private static void initPeuples() {
         // TODO Creer ici tous les peuples choisissables
-        availablePeuples.add(new Peuple(50, 50, 50, 70, 50, "Belges"));
-        availablePeuples.add(new Peuple(90, 80, 50, 25, 22, "Grecs"));
-        availablePeuples.add(new Peuple(90, 80, 50, 25, 122, "Gandhi"));
+        availablePeuples.add(new Belges());
+        availablePeuples.add(new Grecs());
+        availablePeuples.add(new Gandhi());
     }
 
     private void createComponents(int nb) {
         for (int i = 0; i < nb; i++) {
             JComboBox<Peuple> peupleBox = new JComboBox<>();
-            for (Object p : availablePeuples)
-                peupleBox.addItem((Peuple) p);
+            for (Object p : availablePeuples) {
+                if (p instanceof Belges)
+                    peupleBox.addItem(new Belges());
+                else if (p instanceof Grecs)
+                    peupleBox.addItem(new Grecs());
+                else if (p instanceof Gandhi)
+                    peupleBox.addItem(new Gandhi());
+            }
             peupleBox.setAlignmentX(Component.CENTER_ALIGNMENT);
             this.add(peupleBox);
             this.add(Box.createRigidArea(new Dimension(100, 10)));

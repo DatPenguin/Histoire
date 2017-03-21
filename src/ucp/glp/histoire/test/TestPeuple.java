@@ -6,6 +6,7 @@ import ucp.glp.histoire.managers.PeupleManager;
 import ucp.glp.histoire.managers.TradeManager;
 import ucp.glp.histoire.utilities.Peuple;
 
+import java.awt.*;
 import java.util.ArrayList;
 
 /**
@@ -15,9 +16,9 @@ import java.util.ArrayList;
  */
 public class TestPeuple {
 	public static void main(String[] args) {
-		Peuple p1 = new Peuple(90,40,10,70,10,"belge");
-		Peuple p2 = new Peuple(75,10,10,25,22,"Grec");
-		EventChanceManager ecm = new EventChanceManager();
+        Peuple p1 = new Peuple(90, 40, 10, 70, 10, "belge", Color.black);
+        Peuple p2 = new Peuple(75, 10, 10, 25, 22, "Grec", Color.BLUE);
+        EventChanceManager ecm = new EventChanceManager();
 		ArrayList<Peuple> listePeuple = new ArrayList<Peuple>();
 		listePeuple.add(p1);
 

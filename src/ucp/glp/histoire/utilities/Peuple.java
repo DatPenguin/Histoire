@@ -1,6 +1,7 @@
 package ucp.glp.histoire.utilities;
 
 import javax.swing.*;
+import java.awt.*;
 import java.util.ArrayList;
 
 /**
@@ -19,6 +20,7 @@ public class Peuple {
 	//attribut tertiaires
 	private ArrayList<Peuple> listeEnnemies;
 	private ArrayList<Peuple> listeTrade;
+	private Color couleur;
 
 	private ImageIcon icon;
 
@@ -27,13 +29,18 @@ public class Peuple {
 		this.icon = i;
 	}
 
-	public Peuple(int ressources, int population, int education, int territoire, int agressivite,String nom) {
+	public Peuple(int ressources, int population, int education, int territoire, int agressivite, String nom, Color couleur) {
 		this.ressources = ressources;
 		this.population = population;
 		this.education = education;
 		this.territoire = territoire;
 		this.agressivite = agressivite;
 		this.nom = nom;
+		this.couleur = couleur;
+	}
+
+	public Color getColor() {
+		return couleur;
 	}
 
 	public ImageIcon getIcon() {

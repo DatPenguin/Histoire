@@ -5,6 +5,7 @@ import ucp.glp.histoire.log.LoggerUtility;
 import ucp.glp.histoire.managers.RunningLoop;
 import ucp.glp.histoire.utilities.Peuple;
 
+import java.awt.*;
 import java.util.ArrayList;
 
 /**
@@ -20,9 +21,9 @@ public class TestRunningLoop {
 		
 		logger.info("Lancement test");
 
-		Peuple p1 = new Peuple(50,50,50,70,50,"belge");
-		Peuple p2 = new Peuple(90,80,50,25,22,"Grec");
-		ArrayList<Peuple> listePeuple = new ArrayList<Peuple>();
+        Peuple p1 = new Peuple(50, 50, 50, 70, 50, "belge", Color.black);
+        Peuple p2 = new Peuple(90, 80, 50, 25, 22, "Grec", Color.blue);
+        ArrayList<Peuple> listePeuple = new ArrayList<Peuple>();
 		listePeuple.add(p1);
 		listePeuple.add(p2);
 		

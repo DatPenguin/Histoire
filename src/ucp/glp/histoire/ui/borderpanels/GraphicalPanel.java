@@ -94,7 +94,7 @@ public class GraphicalPanel extends JPanel {
             // TODO Calculer a chaque tour la taille du halo en fonction de la puissance du pays affiche
             g2d.fill(new Ellipse2D.Double(CIRCLE_RADIUS * Math.cos(2 * i * Math.PI / nombrePeuples) + CIRCLE_RADIUS + PEUPLE_SIZE / 2, CIRCLE_RADIUS * Math.sin(2 * i * Math.PI / nombrePeuples) + CIRCLE_RADIUS + PEUPLE_SIZE / 2, HALO_SIZE, HALO_SIZE));
 
-            g2d.setColor(colorList.get(i - 1));
+            g2d.setColor(MainFrame.getPeuplesArrayList().get(i - 1).getColor());
             g2d.fill(new Ellipse2D.Double(CIRCLE_RADIUS * Math.cos(2 * i * Math.PI / nombrePeuples) + CIRCLE_RADIUS + HALO_SIZE / 2, CIRCLE_RADIUS * Math.sin(2 * i * Math.PI / nombrePeuples) + CIRCLE_RADIUS + HALO_SIZE / 2, PEUPLE_SIZE, PEUPLE_SIZE));
         }
     }
