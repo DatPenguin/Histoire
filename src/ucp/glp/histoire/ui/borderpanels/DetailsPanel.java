@@ -1,5 +1,6 @@
 package ucp.glp.histoire.ui.borderpanels;
 
+import ucp.glp.histoire.ui.MainPanel;
 import ucp.glp.histoire.ui.borderpanels.utilities.DetailsArea;
 import ucp.glp.histoire.utilities.Peuple;
 
@@ -12,6 +13,7 @@ import java.awt.*;
  * @date 2016-2017
  */
 public class DetailsPanel extends JPanel {
+    public MainPanel mainPanel = null;
     private DetailsArea textArea = new DetailsArea();
 
     public DetailsPanel(Peuple p) {

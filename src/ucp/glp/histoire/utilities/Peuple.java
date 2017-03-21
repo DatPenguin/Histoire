@@ -111,7 +111,7 @@ public class Peuple {
 
 	@Override
 	public String toString() {
-		return "Peuple [nom=" + nom + ", population=" + population
+		/*return "Peuple [nom=" + nom + ", population=" + population
 				+ ", ressources=" + ressources + ", education=" + education
 				+ ", territoire=" + territoire + ", agressivite=" + agressivite
 				+ ", nbSoldat=" + nbSoldat + ", imigration=" + immigration
@@ -119,7 +119,8 @@ public class Peuple {
 				+ ", richesse=" + richesse + ", attractivite=" + attractivite
 				+ ", bellicisme=" + bellicisme + ", puissanceMilitaire="
 				+ puissanceMilitaire + ", puissancePolitique="
-				+ puissancePolitique + "]";
+				+ puissancePolitique + "]";*/
+		return this.nom;
 	}
 
 	public double getRessources() {

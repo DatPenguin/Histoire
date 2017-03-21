@@ -8,6 +8,7 @@ import ucp.glp.histoire.utilities.Peuple;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 
 /**
@@ -119,5 +120,6 @@ public class MainPanel extends JPanel implements LoopListener {
     @Override
     public void looped() {
         this.getParent().repaint();
+        leftPanel.getTop().actionPerformed(new ActionEvent(this, 42, "refresh"));
     }
 }

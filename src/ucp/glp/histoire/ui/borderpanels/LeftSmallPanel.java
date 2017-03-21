@@ -55,6 +55,9 @@ public class LeftSmallPanel extends JPanel implements ActionListener {
                 mainPanel.swapCenter((Peuple) comboBox.getSelectedItem());
                 mainPanel.repaint();
             }
+        } else if (e.getActionCommand().equals("refresh")) {
+            mainPanel.swapCenter((Peuple) comboBox.getSelectedItem());
+            mainPanel.repaint();
         }
     }
 }
