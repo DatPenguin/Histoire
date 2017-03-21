@@ -41,7 +41,12 @@ public class PeupleManager {
 
     private static void genereBellicisme(Peuple p){
         //p.bellicisme = (p.richesse + p.agressivite)/2;
-        p.setBellicisme((Math.log(p.getPopulation() + 1) / 4) * (p.getRichesse() + p.getAgressivite()) / 2);
+    	if(p.getPopulation() < 15){ // Pour éviter les résultat NaN lié au ln
+    		p.setBellicisme(0);
+    	}
+    	else{
+    		p.setBellicisme((Math.log(p.getPopulation() + 1) / 4) * (p.getRichesse() + p.getAgressivite()) / 2);
+    	}
     }
 
     private static void genereAttractivite(Peuple p){
