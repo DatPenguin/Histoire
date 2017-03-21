@@ -42,6 +42,8 @@ public class TradeManager {
         double taux = 0.001;	//à ajouter pour éviter un enrichissement trop rapide
         p1.setRessources(p1.getRessources() + (taux*(p2.getAttractivite()* p1.getPuissancePolitique())));
         p2.setRessources(p2.getRessources() + (taux*(p1.getAttractivite()* p2.getPuissancePolitique())));
+        p1.addTrade(p2);
+        p2.addTrade(p1);
 
         //System.out.println("Commerce entre " + p1.getNom() + " et " + p2.getNom());	  // TODO /!\ A REMPLACER PAR L'AJOUT DANS UNE FILE
         RunningLoop.addTotextLog("Commerce entre " + p1.getNom() + " et " + p2.getNom());
