@@ -55,9 +55,9 @@ public class GuerreManager {
     private static void guerre(Peuple p1,Peuple p2){	//Conséquences de la guerre
 
         // TODO Ajouter un facteur aléatoire
-        double tauxReductionPop = 0.01;
-        p1.setPopulation(p1.getPopulation() - (int)(tauxReductionPop * p2.getPuissanceMilitaire()/10));
-        p2.setPopulation(p2.getPopulation() - (int)(tauxReductionPop * p1.getPuissanceMilitaire()/10));
+        double tauxReductionPop = 0.001;
+        p1.setPopulation(p1.getPopulation() - (int)(tauxReductionPop * p2.getPuissanceMilitaire()));
+        p2.setPopulation(p2.getPopulation() - (int)(tauxReductionPop * p1.getPuissanceMilitaire()));
 
         // Les puissance millitaires seront recalculées après
         //int perteBrute = 1;    // TODO A ajouter pour éviter une guerre qui durerais infiniment
