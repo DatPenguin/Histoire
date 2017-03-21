@@ -50,27 +50,19 @@ public class GraphicalPanel extends JPanel {
             colorList.add(new Color(r.nextFloat(), r.nextFloat(), r.nextFloat()));
     }
 
-    public void createBond(int a, int b) {
-        Graphics2D g2d = (Graphics2D) g1.create();
-        g2d.setColor(Color.RED);
-        g2d.setStroke(new BasicStroke(5));
-        g2d.draw(new Line2D.Double(CIRCLE_RADIUS * Math.cos(2 * a * Math.PI / nombrePeuples) + CIRCLE_RADIUS + HALO_SIZE, CIRCLE_RADIUS * Math.sin(2 * a * Math.PI / nombrePeuples) + CIRCLE_RADIUS + HALO_SIZE, CIRCLE_RADIUS * Math.cos(2 * b * Math.PI / nombrePeuples) + CIRCLE_RADIUS + HALO_SIZE, CIRCLE_RADIUS * Math.sin(2 * b * Math.PI / nombrePeuples) + CIRCLE_RADIUS + HALO_SIZE));
-    }
-
-    public void createBond(int a, int b, Color c) {
+    private void createBond(int a, int b, Color c) {
         Graphics2D g2d = (Graphics2D) g1.create();
         g2d.setColor(c);
         g2d.setStroke(new BasicStroke(5));
         g2d.draw(new Line2D.Double(CIRCLE_RADIUS * Math.cos(2 * a * Math.PI / nombrePeuples) + CIRCLE_RADIUS + HALO_SIZE, CIRCLE_RADIUS * Math.sin(2 * a * Math.PI / nombrePeuples) + CIRCLE_RADIUS + HALO_SIZE, CIRCLE_RADIUS * Math.cos(2 * b * Math.PI / nombrePeuples) + CIRCLE_RADIUS + HALO_SIZE, CIRCLE_RADIUS * Math.sin(2 * b * Math.PI / nombrePeuples) + CIRCLE_RADIUS + HALO_SIZE));
     }
 
-    public void initHaloColorList(ArrayList<Peuple> peuples) {
-        for (Peuple p : peuples) {
-            if (!p.getListeEnnemies().isEmpty())
-                haloColorList.add(Color.RED);
-            else
-                haloColorList.add(Color.WHITE);
+    private int getAlterIndex(Peuple p) {
+        for (int i = 0; i < nombrePeuples; i++) {
+            if (MainFrame.getPeuplesArrayList().get(i) == p)
+                return i;
         }
+        return 0;
     }
 
     private void init(Graphics g) {
@@ -79,13 +71,18 @@ public class GraphicalPanel extends JPanel {
         g2d.setColor(Color.BLACK);
         g2d.drawOval(35, 30, CIRCLE_DIAMETER, CIRCLE_DIAMETER);
 
-        for (int i = 0; i < nombrePeuples; i++)
-            for (int j = 0; j < nombrePeuples; j++) {
-                if (j % 2 == 0)
-                    createBond(i, j, WAR_COLOR);
-                else
-                    createBond(i, j, TRADE_COLOR);
+        for (int i = 0; i < nombrePeuples; i++) {
+            if (MainFrame.getPeuplesArrayList().get(i).getListeEnnemies() != null) {
+                for (Peuple p : MainFrame.getPeuplesArrayList().get(i).getListeEnnemies()) {
+                    createBond(i, getAlterIndex(p), WAR_COLOR);
+                }
             }
+            if (MainFrame.getPeuplesArrayList().get(i).getListeTrade() != null) {
+                for (Peuple p : MainFrame.getPeuplesArrayList().get(i).getListeTrade()) {
+                    createBond(i, getAlterIndex(p), TRADE_COLOR);
+                }
+            }
+        }
 
         for (int i = 1; i <= nombrePeuples; i++) {
             if (MainFrame.getPeuplesArrayList().get(i - 1).getListeEnnemies() != null && !MainFrame.getPeuplesArrayList().get(i - 1).getListeEnnemies().isEmpty())
