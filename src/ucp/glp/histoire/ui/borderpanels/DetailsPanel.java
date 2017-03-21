@@ -20,6 +20,7 @@ public class DetailsPanel extends JPanel {
         this.setOpaque(true);
         this.setLayout(new BorderLayout());
         this.add(textArea, BorderLayout.CENTER);
+        textArea.setEditable(false);
         initTextArea(p);
     }
 
