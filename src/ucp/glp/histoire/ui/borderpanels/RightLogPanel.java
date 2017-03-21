@@ -27,7 +27,10 @@ public class RightLogPanel extends JPanel {
     public void appendText(ArrayList<String> sList) {
         for (String s : sList)
             logArea.insert(s + '\n', 0);
-        logArea.insert("\t--- ANNEE " + RunningLoop.nbIteration + " ---\n\n", 0);
+        if (RunningLoop.nbIteration == 1)
+            logArea.insert("\t--- ANNÉE 0 ---\n\n", 0);
+        else
+            logArea.insert("\t--- ANNÉE " + (RunningLoop.nbIteration - 1) + "0 ---\n\n", 0);
         scrollPane.getVerticalScrollBar().setValue(scrollPane.getVerticalScrollBar().getMinimum());
     }
 }
