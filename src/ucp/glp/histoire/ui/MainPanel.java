@@ -96,6 +96,10 @@ public class MainPanel extends JPanel implements LoopListener {
         rightPanel.getLogPanel().appendText(logList);
     }
 
+    public JPanel getCenterPanel() {
+        return centerPanel;
+    }
+
     public void swapCenter(Peuple p) {
         this.remove(centerPanel);
         centerPanel = new DetailsPanel(p);
