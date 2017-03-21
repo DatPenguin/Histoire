@@ -1,7 +1,6 @@
 package ucp.glp.histoire.ui;
 
 import fr.theshark34.swinger.Swinger;
-import ucp.glp.histoire.managers.RunningLoop;
 import ucp.glp.histoire.ui.borderpanels.*;
 import ucp.glp.histoire.ui.events.LoopEvent;
 import ucp.glp.histoire.ui.events.LoopListener;
@@ -101,6 +100,10 @@ public class MainPanel extends JPanel implements LoopListener {
         rightPanel.addToSeries(x, y);
     }
 
+    public void refreshSeries() {
+        rightPanel.refreshSeries();
+    }
+
     public JPanel getCenterPanel() {
         return centerPanel;
     }
@@ -133,6 +136,7 @@ public class MainPanel extends JPanel implements LoopListener {
             totalPop += p.getPopulation();
         this.getParent().repaint();
         leftPanel.getTop().actionPerformed(new ActionEvent(this, 42, "refresh"));
-        addToSeries(RunningLoop.nbIteration, totalPop);
+        //addToSeries(RunningLoop.nbIteration, totalPop);
+        refreshSeries();
     }
 }

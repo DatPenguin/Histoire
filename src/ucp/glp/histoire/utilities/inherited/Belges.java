@@ -11,6 +11,6 @@ import java.awt.*;
  */
 public class Belges extends Peuple {
     public Belges() {
-        super(50, 50, 50, 70, 50, "Belges", Color.YELLOW);
+        super(50, 50, 50, 70, 50, "Belges", new Color(255, 213, 0));
     }
 }
