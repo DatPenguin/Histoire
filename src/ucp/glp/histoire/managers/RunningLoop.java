@@ -67,7 +67,7 @@ public class RunningLoop {
      */
     public void logDisplayGlobalStat(){
         for(int i = 0; i < listePeuple.size() ; i++){
-            logger.trace(listePeuple.get(i).toString() + " iteration : " + RunningLoop.nbIteration);
+            logger.trace(listePeuple.get(i).displayInfo() + " iteration : " + RunningLoop.nbIteration);
         }
     }
     /**

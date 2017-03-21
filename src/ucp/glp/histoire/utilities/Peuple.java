@@ -129,6 +129,17 @@ public class Peuple {
 				+ puissancePolitique + "]";*/
 		return this.nom;
 	}
+	public String displayInfo(){
+		return "Peuple [nom=" + nom + ", population=" + population
+		+ ", ressources=" + ressources + ", education=" + education
+		+ ", territoire=" + territoire + ", agressivite=" + agressivite
+		+ ", nbSoldat=" + nbSoldat + ", imigration=" + immigration
+		+ ", technologie=" + technologie + ", densite=" + densite
+		+ ", richesse=" + richesse + ", attractivite=" + attractivite
+		+ ", bellicisme=" + bellicisme + ", puissanceMilitaire="
+		+ puissanceMilitaire + ", puissancePolitique="
+		+ puissancePolitique + "]";
+	}
 
 	public double getRessources() {
 		return ressources;
