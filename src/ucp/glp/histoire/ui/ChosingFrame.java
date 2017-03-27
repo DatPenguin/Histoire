@@ -14,6 +14,10 @@ public class ChosingFrame extends JFrame {
     private ChosingPanel panel = new ChosingPanel();
 
     public ChosingFrame() {
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception ignored) {
+        }
         this.setContentPane(panel);
         ChosingPanel.setFrame(this);
         this.setResizable(false);

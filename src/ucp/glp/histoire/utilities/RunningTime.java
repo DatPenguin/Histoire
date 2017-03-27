@@ -29,7 +29,6 @@ public class RunningTime implements Runnable {
                 MainPanel.setRunning(MainPanel.getRunning() + 2 * ((float) BottomPanel.getTimeSlider().getValue()) / 1000);
                 MainPanel.setTotalYears(MainPanel.getTotalYears() + 2 * ((float) BottomPanel.getTimeSlider().getValue()) / 1000);
                 MainPanel.setRunningLabelText(String.valueOf(((int) MainPanel.getRunning())));
-                MainPanel.setBarLabelText(String.valueOf(((int) MainPanel.getTotalYears())));
 
                 if (((int) MainPanel.getRunning()) >= 10) {
                     System.out.println("Lancement de la boucle");

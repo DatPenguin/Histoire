@@ -32,7 +32,7 @@ public class DetailsPanel extends JPanel {
         textArea.appendln("Bellicisme : " + p.getBellicisme());
         textArea.appendln("Densité : " + p.getDensite());
         textArea.appendln("Education : " + p.getEducation());
-        textArea.appendln("Education : " + p.getImmigration());
+        textArea.appendln("Immigration : " + p.getImmigration());
         textArea.appendln("Nombre de soldats : " + p.getNbSoldat());
         textArea.appendln("Population : " + p.getPopulation());
         textArea.appendln("Ressources : " + p.getRessources());

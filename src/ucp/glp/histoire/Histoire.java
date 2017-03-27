@@ -1,6 +1,8 @@
 package ucp.glp.histoire;
 
-import ucp.glp.histoire.ui.MainFrame;
+import ucp.glp.histoire.ui.ChosingFrame;
+
+import java.util.ArrayList;
 
 /**
  * @author Matteo STAIANO, Mathieu HANNOUN
@@ -11,6 +13,6 @@ public class Histoire {
 
 
     public static void main(String[] args) {
-        new MainFrame();
+        new ChosingFrame();
     }
 }

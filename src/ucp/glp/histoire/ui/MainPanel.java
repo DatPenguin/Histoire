@@ -22,7 +22,6 @@ public class MainPanel extends JPanel implements LoopListener {
 
     private static float running = 0;
     private static float totalYears = 0;
-    private static JLabel barLabel = new JLabel();
     private static JLabel runningLabel = new JLabel();
     private static RightPanel rightPanel = new RightPanel();
     private JPanel centerPanel = new GraphicalPanel();
@@ -46,22 +45,15 @@ public class MainPanel extends JPanel implements LoopListener {
         bottomPanel.setBounds(35, 580, 1200, 85);
         this.add(bottomPanel);
 
-        barLabel.setBounds(35, 35, 100, 30);
-        barLabel.setFont(barLabel.getFont().deriveFont(20f));
-        barLabel.setForeground(Color.white);
-        this.add(barLabel);
         runningLabel.setBounds(35, 70, 100, 30);
         runningLabel.setFont(runningLabel.getFont().deriveFont(20f));
         runningLabel.setForeground(Color.white);
+        runningLabel.setVisible(false);
         this.add(runningLabel);
 
         leftPanel.getTop().setMainPanel(this);
 
         e.addListener(this);
-    }
-
-    public static void setBarLabelText(String barLabel) {
-        MainPanel.barLabel.setText(barLabel);
     }
 
     public static void setRunningLabelText(String runningLabel) {
@@ -104,6 +96,10 @@ public class MainPanel extends JPanel implements LoopListener {
         rightPanel.refreshSeries();
     }
 
+    public void refreshDetailedSeries() {
+        rightPanel.refreshDetailedSeries();
+    }
+
     public JPanel getCenterPanel() {
         return centerPanel;
     }
@@ -136,7 +132,7 @@ public class MainPanel extends JPanel implements LoopListener {
             totalPop += p.getPopulation();
         this.getParent().repaint();
         leftPanel.getTop().actionPerformed(new ActionEvent(this, 42, "refresh"));
-        //addToSeries(RunningLoop.nbIteration, totalPop);
         refreshSeries();
+        refreshDetailedSeries();
     }
 }
