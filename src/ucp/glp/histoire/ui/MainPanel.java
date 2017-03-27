@@ -39,6 +39,7 @@ public class MainPanel extends JPanel implements LoopListener {
         this.add(leftPanel);
 
         rightPanel.setBounds(935, 35, 300, 515);
+        rightPanel.mainPanel = this;
         this.add(rightPanel);
 
         BottomPanel.setMainPanel(this);
@@ -109,6 +110,7 @@ public class MainPanel extends JPanel implements LoopListener {
         centerPanel = new DetailsPanel(p);
         centerPanel.setBounds(370, 35, 530, 515);
         this.add(centerPanel);
+        rightPanel.swapCharts();
     }
 
     public void refresh() {
@@ -116,6 +118,11 @@ public class MainPanel extends JPanel implements LoopListener {
         centerPanel = new GraphicalPanel();
         centerPanel.setBounds(370, 35, 530, 515);
         this.add(centerPanel);
+        rightPanel.goGlobal();
+    }
+
+    public int getSelectedIndex() {
+        return leftPanel.getSelectedIndex();
     }
 
     @Override

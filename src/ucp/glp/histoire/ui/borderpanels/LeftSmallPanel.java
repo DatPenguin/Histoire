@@ -45,6 +45,14 @@ public class LeftSmallPanel extends JPanel implements ActionListener {
         this.mainPanel = mainPanel;
     }
 
+    public Peuple getSelected() {
+        return (Peuple) comboBox.getSelectedItem();
+    }
+
+    public int getSelectedIndex() {
+        return comboBox.getSelectedIndex();
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == button && type == 1) {
@@ -56,8 +64,13 @@ public class LeftSmallPanel extends JPanel implements ActionListener {
                 mainPanel.repaint();
             }
         } else if (e.getActionCommand().equals("refresh") && mainPanel.getCenterPanel() instanceof DetailsPanel) {
-            mainPanel.swapCenter((Peuple) comboBox.getSelectedItem());
-            mainPanel.repaint();
+            if (comboBox.getSelectedItem().equals("Aucun")) {
+                mainPanel.refresh();
+                mainPanel.repaint();
+            } else {
+                mainPanel.swapCenter((Peuple) comboBox.getSelectedItem());
+                mainPanel.repaint();
+            }
         }
     }
 }

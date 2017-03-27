@@ -21,6 +21,10 @@ public class LeftPanel extends JPanel {
         this.setOpaque(false);
     }
 
+    public int getSelectedIndex() {
+        return top.getSelectedIndex();
+    }
+
     public LeftSmallPanel getTop() {
         return top;
     }

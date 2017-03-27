@@ -10,6 +10,7 @@ import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
 import ucp.glp.histoire.managers.RunningLoop;
 import ucp.glp.histoire.ui.MainFrame;
+import ucp.glp.histoire.ui.MainPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -21,16 +22,15 @@ import java.util.ArrayList;
  * @date 2016-2017
  */
 public class RightPanel extends JPanel {
+    public MainPanel mainPanel;
     private XYSeries series = new XYSeries("Population");
     private XYSeriesCollection dataset = new XYSeriesCollection();
     private ArrayList<XYSeriesCollection> datasetsList = new ArrayList<XYSeriesCollection>();
     private XYLineAndShapeRenderer renderer = new XYLineAndShapeRenderer();
-
     private RightLogPanel bot = new RightLogPanel();
-    private JFreeChart popChart = ChartFactory.createXYLineChart("Population", "Temps", "Nb d'habitants", dataset, PlotOrientation.VERTICAL, true, true, false);
+    private JFreeChart popChart = ChartFactory.createXYLineChart("Population globale", "Temps", "Nb d'habitants", dataset, PlotOrientation.VERTICAL, true, true, false);
     private ArrayList<JFreeChart> chartsList = new ArrayList<JFreeChart>();
     private ChartPanel cPanel = new ChartPanel(popChart);
-    //private ChartPanel cPanel;
 
     public RightPanel() {
         this.setBackground(null);
@@ -42,16 +42,29 @@ public class RightPanel extends JPanel {
             renderer.setSeriesShapesVisible(i, false);
         }
 
-        //initDatasets();
+        initDatasets();
 
         ((XYPlot) popChart.getPlot()).setRenderer(renderer);
 
-        //cPanel = new ChartPanel(chartsList.get(0));
         cPanel.setPreferredSize(new Dimension(10, 300));
         popChart.getXYPlot().getRangeAxis().setAutoRange(true);
         this.add(cPanel, BorderLayout.NORTH);
         this.add(bot, BorderLayout.SOUTH);
         this.setOpaque(false);
+    }
+
+    public void swapCharts() {
+        this.remove(cPanel);
+        cPanel = new ChartPanel(chartsList.get(mainPanel.getSelectedIndex() - 1));
+        this.add(cPanel);
+        this.repaint();
+    }
+
+    public void goGlobal() {
+        this.remove(cPanel);
+        cPanel = new ChartPanel(popChart);
+        this.add(cPanel);
+        this.repaint();
     }
 
     public void initDatasets() {
@@ -75,7 +88,7 @@ public class RightPanel extends JPanel {
     }
 
     public void refreshDetailedSeries() {
-        /*for (int i = 0; i < MainFrame.getPeuplesArrayList().size(); i++) {
+        for (int i = 0; i < MainFrame.getPeuplesArrayList().size(); i++) {
             datasetsList.get(i).getSeries(0).add(RunningLoop.nbIteration, MainFrame.getPeuplesArrayList().get(i).getAgressivite());
             datasetsList.get(i).getSeries(1).add(RunningLoop.nbIteration, MainFrame.getPeuplesArrayList().get(i).getAttractivite());
             datasetsList.get(i).getSeries(2).add(RunningLoop.nbIteration, MainFrame.getPeuplesArrayList().get(i).getBellicisme());
@@ -88,7 +101,7 @@ public class RightPanel extends JPanel {
             datasetsList.get(i).getSeries(9).add(RunningLoop.nbIteration, MainFrame.getPeuplesArrayList().get(i).getRichesse());
             datasetsList.get(i).getSeries(10).add(RunningLoop.nbIteration, MainFrame.getPeuplesArrayList().get(i).getTechnologie());
             datasetsList.get(i).getSeries(11).add(RunningLoop.nbIteration, MainFrame.getPeuplesArrayList().get(i).getTerritoire());
-        }*/
+        }
     }
 
     public void refreshSeries() {
