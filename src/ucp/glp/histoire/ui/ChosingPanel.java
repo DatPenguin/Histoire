@@ -90,6 +90,7 @@ public class ChosingPanel extends JPanel implements ActionListener {
         ArrayList<String> out = new ArrayList<String>();
         out.add("standard");
         out.add("alternatif");
+        out.add("warcraft");
         return out;
     }
 
