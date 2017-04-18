@@ -1,8 +1,11 @@
 package ucp.glp.histoire.managers;
 
+import ucp.glp.histoire.event.Babyboom;
 import ucp.glp.histoire.event.CriseFinanciere;
 import ucp.glp.histoire.event.Famine;
+import ucp.glp.histoire.event.Inondation;
 import ucp.glp.histoire.event.LocalHistoricEvent;
+import ucp.glp.histoire.event.SurplusNourriture;
 import ucp.glp.histoire.utilities.Peuple;
 
 import java.util.ArrayList;
@@ -69,6 +72,9 @@ public class EventLocalManager extends EventManager{
         // On ajoutera une instance de chanque classe event
         localEventList.add(new Famine());
         localEventList.add(new CriseFinanciere());
+        localEventList.add(new Babyboom());
+        localEventList.add(new Inondation());
+        localEventList.add(new SurplusNourriture());
     }
 
     public void action(Peuple p) {

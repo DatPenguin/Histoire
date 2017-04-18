@@ -13,8 +13,8 @@ public class EventChanceManager {
 
 	// Le taux représente la chance de déclenchement d'un evenement
 	private static int tauxLocal = 10;
-	private static int tauxGlobal = 20;
-	private static int tauxReaction = 30;
+	private static int tauxGlobal = 15;
+	private static int tauxReaction = 20;
 	private EventLocalManager eventLocalManager;
 	private EventGlobalManager eventGlobalManager;
 	private EventReactionManager eventReactionManager;

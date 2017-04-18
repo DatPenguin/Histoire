@@ -1,5 +1,7 @@
 package ucp.glp.histoire.managers;
 
+import ucp.glp.histoire.event.AmeliorationEducation;
+import ucp.glp.histoire.event.AmeliorationProduction;
 import ucp.glp.histoire.event.Conquete;
 import ucp.glp.histoire.event.ReactionEvent;
 import ucp.glp.histoire.utilities.Peuple;
@@ -20,7 +22,12 @@ public class EventReactionManager extends EventManager{
         genererEventList();
 
     }
-
+    /**
+     * Les actions affecteront uniquements les ressources primaires
+     * @param hEvent
+     * @param p
+     * @param amplitude
+     */
     public static void actionOnPeuple(ReactionEvent hEvent, Peuple p, int amplitude){
 
         switch(hEvent.getType()){
@@ -45,17 +52,27 @@ public class EventReactionManager extends EventManager{
 
         }
     }
-
+    /**
+     * Va ajouter tout les évenements neccessaire à la liste d'évenements possible
+     */
     public void genererEventList() {
 
-        // On ajoutera une instance de chanque classe event
+        // On ajoutera une instance de chaque classe event
         ReactionEventList.add(new Conquete());
+        ReactionEventList.add(new AmeliorationEducation());
+        ReactionEventList.add(new AmeliorationProduction());
 
 
     }
 
 
-    /*
+    /**
+     * Les attributs utilisé sont ici les attributs secondaires
+     * 0 : technologie
+     * 1 : richesses
+     * 2 : bellicisme
+     * 3 : Densité de population
+     * 4 : Unités militaires
      * Testera si pour le peuple donné son attribut est bien supérieur ou égale au seuil de la réaction
      */
     public void action(Peuple p) {
@@ -67,31 +84,31 @@ public class EventReactionManager extends EventManager{
 
         switch(ReactionEventList.get(randEvent).getConditionType()) {			// Testera si l'attribut donné du peuple corresponds est bien supérieur au seuil
             case 0 :
-                if(p.getRessources() >= ReactionEventList.get(randEvent).getSeuil()){
+                if(p.getTechnologie() >= ReactionEventList.get(randEvent).getSeuil()){
                     EventReactionManager.actionOnPeuple(ReactionEventList.get(randEvent), p, RandAmp);
                     System.out.println(ReactionEventList.get(randEvent).toString(p));
                 }
                 break;
             case 1 :
-                if(p.getPopulation() >= ReactionEventList.get(randEvent).getSeuil()){
+                if(p.getRichesse() >= ReactionEventList.get(randEvent).getSeuil()){
                     EventReactionManager.actionOnPeuple(ReactionEventList.get(randEvent), p, RandAmp);
                     System.out.println(ReactionEventList.get(randEvent).toString(p));
                 }
                 break;
             case 2:
-                if(p.getAgressivite() >= ReactionEventList.get(randEvent).getSeuil()){
+                if(p.getBellicisme() >= ReactionEventList.get(randEvent).getSeuil()){
                     EventReactionManager.actionOnPeuple(ReactionEventList.get(randEvent), p, RandAmp);
                     System.out.println(ReactionEventList.get(randEvent).toString(p));
                 }
                 break;
             case 3 :
-                if(p.getEducation() >= ReactionEventList.get(randEvent).getSeuil()){
+                if(p.getDensite() >= ReactionEventList.get(randEvent).getSeuil()){
                     EventReactionManager.actionOnPeuple(ReactionEventList.get(randEvent), p, RandAmp);
                     System.out.println(ReactionEventList.get(randEvent).toString(p));
                 }
                 break;
             case 4 :
-                if(p.getTerritoire() >= ReactionEventList.get(randEvent).getSeuil()){
+                if(p.getNbSoldat() >= ReactionEventList.get(randEvent).getSeuil()){
                     EventReactionManager.actionOnPeuple(ReactionEventList.get(randEvent), p, RandAmp);
                     System.out.println(ReactionEventList.get(randEvent).toString(p));
                 }
