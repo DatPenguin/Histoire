@@ -50,6 +50,7 @@ public class EventGlobalManager extends EventManager{
                 break;
 
         }
+        
 }
 
     // TODO Remove
@@ -84,6 +85,8 @@ public class EventGlobalManager extends EventManager{
         //GlobalEventList.get(randEvent).action(listP, RandAmp);
         EventGlobalManager.actionOnPeuple(GlobalEventList.get(randEvent), listP, RandAmp);
         System.out.println(GlobalEventList.get(randEvent).toString());
+        RunningLoop.addTotextLog(GlobalEventList.get(randEvent).toString());
+
     }
 
 

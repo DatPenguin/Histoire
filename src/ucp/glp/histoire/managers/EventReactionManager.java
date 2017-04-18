@@ -117,6 +117,7 @@ public class EventReactionManager extends EventManager{
                 System.out.println("ERREUR ENTREE action EVENT CHECK");
                 break;
         }
+        RunningLoop.addTotextLog(ReactionEventList.get(randEvent).toString(p));
 
     }
 
