@@ -86,6 +86,8 @@ public class EventLocalManager extends EventManager{
         //EventList.get(randEvent).action(p, RandAmp);
         EventLocalManager.actionOnPeuple(localEventList.get(randEvent), p, RandAmp);
         System.out.println(localEventList.get(randEvent).toString(p));
+        RunningLoop.addTotextLog(localEventList.get(randEvent).toString(p));
+
     }
 
 
