@@ -25,19 +25,23 @@ public class DetailsPanel extends JPanel {
     }
 
     private void initTextArea(Peuple p) {
+
         textArea.appendln("Attributs primaires :");
         textArea.appendln("Nom : " + p.getNom());
+        textArea.appendln("Population : " + p.getPopulation());
+        textArea.appendln("Ressources : " + p.getRessources());
         textArea.appendln("Agressivité : " + p.getAgressivite());
+        textArea.appendln("Education : " + p.getEducation());
+        textArea.appendln("Territoire : " + p.getTerritoire() + '\n');
+
+
+        textArea.appendln("Attributs secondaires :");
         textArea.appendln("Attractivité : " + p.getAttractivite());
         textArea.appendln("Bellicisme : " + p.getBellicisme());
         textArea.appendln("Densité : " + p.getDensite());
-        textArea.appendln("Education : " + p.getEducation());
         textArea.appendln("Immigration : " + p.getImmigration());
         textArea.appendln("Nombre de soldats : " + p.getNbSoldat());
-        textArea.appendln("Population : " + p.getPopulation());
-        textArea.appendln("Ressources : " + p.getRessources());
         textArea.appendln("Richesse : " + p.getRichesse());
         textArea.appendln("Technologie : " + p.getTechnologie());
-        textArea.appendln("Territoire : " + p.getTerritoire());
     }
 }

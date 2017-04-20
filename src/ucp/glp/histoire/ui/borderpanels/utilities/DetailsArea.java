@@ -7,8 +7,9 @@ import javax.swing.*;
  * @project GLP Histoire (L2S4 I) - Université de Cergy-Pontoise
  * @date 2016-2017
  */
-public class DetailsArea extends JTextArea {
+public class DetailsArea extends JTextPane {
     public void appendln(String s) {
-        super.append(s + '\n');
+        //super.append(s + '\n');
+        this.setText(this.getText() + s + '\n');
     }
 }

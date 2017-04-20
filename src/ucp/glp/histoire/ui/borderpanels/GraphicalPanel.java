@@ -17,9 +17,9 @@ import java.util.Random;
  */
 public class GraphicalPanel extends JPanel {
 
+    public final static Color WAR_COLOR = new Color(178, 62, 76);
+    public final static Color TRADE_COLOR = new Color(71, 175, 255);
     private final static int nombrePeuples = MainFrame.getPeuplesNumber();
-    private final static Color WAR_COLOR = new Color(178, 62, 76);
-    private final static Color TRADE_COLOR = new Color(71, 175, 255);
     private static ArrayList<Color> colorList = new ArrayList<>();
     private static ArrayList<Color> haloColorList = new ArrayList<>();
     private final int CIRCLE_DIAMETER = 450;
