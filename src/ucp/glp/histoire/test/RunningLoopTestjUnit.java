@@ -19,47 +19,47 @@ import static org.junit.Assert.assertTrue;
  * @date 2016-2017
  */
 public class RunningLoopTestjUnit {
-	private static Logger logger = LoggerUtility.getLogger(RunningLoopTestjUnit.class);
+    private static final Logger logger = LoggerUtility.getLogger(RunningLoopTestjUnit.class);
 
-	private RunningLoop runningLoop;
-	private ArrayList<Peuple> listePeuple;
-	private int index;
+    private RunningLoop runningLoop;
+    private ArrayList<Peuple> listePeuple;
+    private int index;
 
-	@Before
-	public void setUp() throws Exception {
+    @Before
+    public void setUp() throws Exception {
         Peuple p1 = new Peuple(50, 50, 50, 70, 50, "belge", Color.black);
         Peuple p2 = new Peuple(90, 80, 50, 25, 22, "Grec", Color.blue);
         this.listePeuple = new ArrayList<Peuple>();
 
-		listePeuple.add(p1);
-		listePeuple.add(p2);
+        listePeuple.add(p1);
+        listePeuple.add(p2);
 
-		runningLoop = new RunningLoop(listePeuple);
+        runningLoop = new RunningLoop(listePeuple);
 
-	}
+    }
 
-	@Test
-	public void test() {
-		this.index = 0;
+    @Test
+    public void test() {
+        this.index = 0;
 
-		// Résultat incohérent passé 100 000 itération
-		for(int i = 0 ; i < 10000 ; i++){
-			runningLoop.loopAction();
-			index = i;
-		}
-		// Testera si tout les peuples ont bien une population positive
-		for(int n = 0 ; n < listePeuple.size() ; n++){
-			assertTrue(0<this.listePeuple.get(n).getPopulation());
-			//logger.warn("POPULATION P" + n + " : " + listePeuple.get(n).getPopulation());
+        // Résultat incohérent passé 100 000 itération
+        for (int i = 0; i < 10000; i++) {
+            runningLoop.loopAction();
+            index = i;
+        }
+        // Testera si tout les peuples ont bien une population positive
+        for (Peuple aListePeuple : listePeuple) {
+            assertTrue(0 < aListePeuple.getPopulation());
+            //logger.warn("POPULATION P" + n + " : " + listePeuple.get(n).getPopulation());
 
-		}
-	}
+        }
+    }
 
-	@After
-	public void after() {
-		for(int n = 0 ; n < listePeuple.size() ; n++){
-			logger.warn("POPULATION P" + n + " : " + listePeuple.get(n).getPopulation());
-		}
-	}
+    @After
+    public void after() {
+        for (int n = 0; n < listePeuple.size(); n++) {
+            logger.warn("POPULATION P" + n + " : " + listePeuple.get(n).getPopulation());
+        }
+    }
 
 }

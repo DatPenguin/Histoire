@@ -1,9 +1,9 @@
 package ucp.glp.histoire.ui;
 
 import ucp.glp.histoire.utilities.Peuple;
-import ucp.glp.histoire.utilities.inherited.Belges;
-import ucp.glp.histoire.utilities.inherited.Gandhi;
-import ucp.glp.histoire.utilities.inherited.Grecs;
+import ucp.glp.histoire.utilities.peuples.Belges;
+import ucp.glp.histoire.utilities.peuples.Gandhi;
+import ucp.glp.histoire.utilities.peuples.Grecs;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,15 +17,15 @@ import java.util.ArrayList;
  * @date 2016-2017
  */
 public class ChosingPanel extends JPanel implements ActionListener {
+    private static final ArrayList<Peuple> availablePeuples = new ArrayList<>();
+    private static final ArrayList<Peuple> peuplesList = new ArrayList<>();
     private static ChosingFrame frame;
-    private static ArrayList<Peuple> availablePeuples = new ArrayList<>();
-    private static ArrayList<Peuple> peuplesList = new ArrayList<>();
-    private JSpinner nbSpinner = new JSpinner(new SpinnerNumberModel(2, 2, 16, 1));
-    private JButton validateNumber = new JButton("Valider");
-    private JButton validatePeuples = new JButton("Valider");
-    private JLabel choseLabel = new JLabel("Choisissez le nombre de peuples");
-
-    private JComboBox<String> themeCB = new JComboBox<String>();
+    private final JSpinner nbSpinner = new JSpinner(new SpinnerNumberModel(2, 2, 16, 1));
+    private final JButton validateNumber = new JButton("Valider");
+    private final JButton validatePeuples = new JButton("Valider");
+    private final JLabel choseLabel = new JLabel("Choisissez le nombre de peuples");
+    private final JLabel themeLabel = new JLabel("Thème :");
+    private final JComboBox<String> themeCB = new JComboBox<String>();
 
     public ChosingPanel() {
         initPeuples();
@@ -82,6 +82,7 @@ public class ChosingPanel extends JPanel implements ActionListener {
         for (String s : themeList)
             themeCB.addItem(s);
         themeCB.setAlignmentX(Component.LEFT_ALIGNMENT);
+        this.add(themeLabel);
         this.add(themeCB);
         this.add(Box.createRigidArea(new Dimension(100, 10)));
     }
@@ -95,12 +96,10 @@ public class ChosingPanel extends JPanel implements ActionListener {
     }
 
     private void populateAL() {
-        //TODO Faire en sorte de ne pas envoyer les memes objets
         Component[] components = this.getComponents();
-        for (Component c : components) {
+        for (Component c : components)
             if (c instanceof JComboBox && ((JComboBox) c).getSelectedItem() instanceof Peuple)
                 peuplesList.add((Peuple) ((JComboBox) c).getSelectedItem());
-        }
     }
 
     @Override
@@ -114,7 +113,7 @@ public class ChosingPanel extends JPanel implements ActionListener {
             populateAL();
             frame.dispose();
             Thread t = new Thread() {
-            	public void run() {
+                public void run() {
                     new MainFrame(peuplesList, (String) themeCB.getSelectedItem());
                 }
             };

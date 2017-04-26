@@ -22,14 +22,14 @@ import java.util.ArrayList;
  * @date 2016-2017
  */
 public class RightPanel extends JPanel {
+    private final XYSeries series = new XYSeries("Population");
+    private final XYSeriesCollection dataset = new XYSeriesCollection();
+    private final ArrayList<XYSeriesCollection> datasetsList = new ArrayList<XYSeriesCollection>();
+    private final XYLineAndShapeRenderer renderer = new XYLineAndShapeRenderer();
+    private final RightLogPanel bot = new RightLogPanel();
+    private final JFreeChart popChart = ChartFactory.createXYLineChart("Population globale", "Temps", "Nb d'habitants", dataset, PlotOrientation.VERTICAL, true, true, false);
+    private final ArrayList<JFreeChart> chartsList = new ArrayList<JFreeChart>();
     public MainPanel mainPanel;
-    private XYSeries series = new XYSeries("Population");
-    private XYSeriesCollection dataset = new XYSeriesCollection();
-    private ArrayList<XYSeriesCollection> datasetsList = new ArrayList<XYSeriesCollection>();
-    private XYLineAndShapeRenderer renderer = new XYLineAndShapeRenderer();
-    private RightLogPanel bot = new RightLogPanel();
-    private JFreeChart popChart = ChartFactory.createXYLineChart("Population globale", "Temps", "Nb d'habitants", dataset, PlotOrientation.VERTICAL, true, true, false);
-    private ArrayList<JFreeChart> chartsList = new ArrayList<JFreeChart>();
     private ChartPanel cPanel = new ChartPanel(popChart);
 
     public RightPanel() {
@@ -43,7 +43,6 @@ public class RightPanel extends JPanel {
         }
 
         initDatasets();
-
         ((XYPlot) popChart.getPlot()).setRenderer(renderer);
 
         cPanel.setPreferredSize(new Dimension(10, 300));
@@ -67,7 +66,7 @@ public class RightPanel extends JPanel {
         this.repaint();
     }
 
-    public void initDatasets() {
+    private void initDatasets() {
         for (int i = 0; i < MainFrame.getPeuplesArrayList().size(); i++) {
             datasetsList.add(new XYSeriesCollection());
             XYSeriesCollection c = datasetsList.get(i);
@@ -105,9 +104,8 @@ public class RightPanel extends JPanel {
     }
 
     public void refreshSeries() {
-        for (int i = 0; i < MainFrame.getPeuplesArrayList().size(); i++) {
+        for (int i = 0; i < MainFrame.getPeuplesArrayList().size(); i++)
             dataset.getSeries(i).add(RunningLoop.nbIteration, MainFrame.getPeuplesArrayList().get(i).getPopulation());
-        }
     }
 
     public void addToSeries(int x, double y) {

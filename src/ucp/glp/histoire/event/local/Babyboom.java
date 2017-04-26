@@ -7,9 +7,9 @@ package ucp.glp.histoire.event.local;
  */
 public class Babyboom extends LocalHistoricEvent {
 
-    public Babyboom(){
-		this.nom = "Babyboom";
-		this.puissance = 2.0;
-		this.type = 1;
-	}
+    public Babyboom() {
+        this.nom = "Babyboom";
+        this.puissance = 2.0;
+        this.type = 1;
+    }
 }

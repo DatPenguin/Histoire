@@ -12,7 +12,7 @@ import java.util.Random;
  */
 public class GraphicalPanel extends JPanel {
 
-    int n = 10;
+    private final int n = 10;
 
     public GraphicalPanel() {
         this.setLayout(null);

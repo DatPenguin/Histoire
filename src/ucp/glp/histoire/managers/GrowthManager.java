@@ -12,35 +12,32 @@ import java.util.ArrayList;
  * Gestionnaire de croissance et d'immigration
  */
 public class GrowthManager {
-	private ImmigrationPool immigrationPool;
-	private ArrayList<Peuple> listePeuple;
-	
-	public GrowthManager(ArrayList<Peuple> listePeuple){
-		this.listePeuple = listePeuple;
-		immigrationPool = new ImmigrationPool(this.listePeuple);
-	}
-	
-	
-	/**
-	 * Gère la croissance à chaque tour pour chaque pays
-	 */
-	public void growthAction(){
-		
-		// TODO affiner la croissance
-		int growth = 1;
-		for(int i = 0 ; i < listePeuple.size() ; i++){
-			listePeuple.get(i).setPopulation(listePeuple.get(i).getPopulation() + growth);
-		}
-	}
-	
-	/**
-	 * Gère la croissance à chaque tour pour chaque pays
-	 */
-	public void immigrationAction (){
-		// TODO affiner l'imigration
-		this.immigrationPool.fillPool();
-		this.immigrationPool.emptyPool();
-	}
-	
+    private final ImmigrationPool immigrationPool;
+    private final ArrayList<Peuple> listePeuple;
 
+    public GrowthManager(ArrayList<Peuple> listePeuple) {
+        this.listePeuple = listePeuple;
+        immigrationPool = new ImmigrationPool(this.listePeuple);
+    }
+
+    /**
+     * Gère la croissance à chaque tour pour chaque pays
+     */
+    public void growthAction() {
+
+        // TODO affiner la croissance
+        int growth = 1;
+        for (Peuple aListePeuple : listePeuple) {
+            aListePeuple.setPopulation(aListePeuple.getPopulation() + growth);
+        }
+    }
+
+    /**
+     * Gère la croissance à chaque tour pour chaque pays
+     */
+    public void immigrationAction() {
+        // TODO affiner l'imigration
+        this.immigrationPool.fillPool();
+        this.immigrationPool.emptyPool();
+    }
 }

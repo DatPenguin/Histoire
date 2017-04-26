@@ -18,24 +18,22 @@ import ucp.glp.histoire.utilities.Peuple;
 public abstract class HistoricEvent {
 
     // Sprite location  = location + nom + .png
-    protected String nom,spritesLocation;
+    protected String nom;
     protected int amplitude; //multiplicateur du résultat
     protected int type;
-    protected double ampReel,puissance;
+    protected double ampReel, puissance;
+    private String spritesLocation;
 
-    public HistoricEvent(){
-    }
-
-    public String toString(Peuple p){
+    public String toString(Peuple p) {
         String amp = "";
-        switch(amplitude){
+        switch (amplitude) {
             case 0:
                 amp = "petit(e)";
                 break;
-            case 1 :
+            case 1:
                 amp = "moyen(nne)";
                 break;
-            case 2 :
+            case 2:
                 amp = "grand(e)";
                 break;
             default:
@@ -43,52 +41,6 @@ public abstract class HistoricEvent {
         }
         return ("un(e) " + amp + " " + this.nom + " touche " + p.getNom());
     }
-	
-	/*
-	public void genereAmpReel(){	//méthode gérant les différant coeficient multiplicateur
-		switch(this.amplitude){
-		case 0:
-			ampReel = 0.5;
-			break;
-		case 1 :
-			ampReel = 1;
-			break;
-		case 2 :
-			ampReel = 2;
-			break;
-		default:
-		    System.out.println("ERREUR ENTREE genereAmpReel EVENT" + this.nom);
-		}
-	}
-	*/
-	
-	/*
-	public void action(Peuple p,int amplitude){
-		this.amplitude = amplitude;
-		genereAmpReel();
-		
-		switch(type){
-			case 0 :
-				p.setRessources(p.getRessources() + (this.puissance * this.ampReel));
-				break;
-			case 1 :
-				p.setPopulation(p.getPopulation() + (int)(this.puissance * this.ampReel));
-				break;
-			case 2 : 
-				p.setAgressivite(p.getAgressivite() + (this.puissance * this.ampReel));
-				break;
-			case 3 :
-				p.setEducation(p.getEducation() + (this.puissance * this.ampReel));
-				break;
-			case 4 :
-				p.setTerritoire(p.getTerritoire() + (this.puissance * this.ampReel));
-				break;
-			default:
-			    System.out.println("ERREUR ENTREE action EVENT" + this.nom);
-		
-		}
-	}
-	*/
 
     public String getNom() {
         return nom;
@@ -121,6 +73,4 @@ public abstract class HistoricEvent {
     public void setAmplitude(int amplitude) {
         this.amplitude = amplitude;
     }
-
-
 }

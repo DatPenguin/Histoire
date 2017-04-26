@@ -6,7 +6,6 @@ import ucp.glp.histoire.ui.borderpanels.utilities.LogArea;
 import javax.swing.*;
 import javax.swing.text.Style;
 import javax.swing.text.StyleConstants;
-import javax.swing.text.StyledDocument;
 import java.awt.*;
 import java.util.ArrayList;
 
@@ -17,8 +16,8 @@ import java.util.ArrayList;
  */
 public class RightLogPanel extends JPanel {
 
-    private LogArea logArea = new LogArea();
-    private JScrollPane scrollPane = new JScrollPane(logArea);
+    private final LogArea logArea = new LogArea();
+    private final JScrollPane scrollPane = new JScrollPane(logArea);
 
     public RightLogPanel() {
         this.setLayout(new BorderLayout());
@@ -28,8 +27,6 @@ public class RightLogPanel extends JPanel {
     }
 
     public void appendText(ArrayList<String> sList) {
-        StyledDocument doc = logArea.getStyledDocument();
-
         Style war = logArea.addStyle("war", null);
         StyleConstants.setForeground(war, GraphicalPanel.WAR_COLOR);
 
@@ -42,16 +39,16 @@ public class RightLogPanel extends JPanel {
 
         for (String s : sList) {
             if (s.contains("guerre"))
-                logArea.insert(s + '\n', 0, war);
+                logArea.insert(s + '\n', war);
             else if (s.toLowerCase().contains("commerce"))
-                logArea.insert(s + '\n', 0, trade);
+                logArea.insert(s + '\n', trade);
             else
-                logArea.insert(s + '\n', 0, event);
+                logArea.insert(s + '\n', event);
         }
         if (RunningLoop.nbIteration == 1)
-            logArea.insert("\t--- ANNÉE 0 ---\n\n", 0, null);
+            logArea.insert("\t--- ANNÉE 0 ---\n\n", null);
         else
-            logArea.insert("\t--- ANNÉE " + (RunningLoop.nbIteration - 1) + "0 ---\n\n", 0, null);
+            logArea.insert("\t--- ANNÉE " + (RunningLoop.nbIteration - 1) + "0 ---\n\n", null);
         logArea.setCaretPosition(0);
     }
 }

@@ -1,6 +1,5 @@
 package ucp.glp.histoire.utilities;
 
-import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
@@ -10,270 +9,191 @@ import java.util.ArrayList;
  * @date 2016-2017
  */
 public class Peuple {
-	//attributs principaux
-	private String nom;
-	private int population;
-	private double ressources,education,territoire,agressivite;
-	//attributs secondaires
-	private int nbSoldat,immigration;
-	private double technologie,densite,richesse,attractivite,bellicisme,puissanceMilitaire,puissancePolitique;
-	//attribut tertiaires
-	private ArrayList<Peuple> listeEnnemies;
-	private ArrayList<Peuple> listeTrade;
-	private Color couleur;
+    //attributs principaux
+    private String nom;
+    private int population;
+    private double ressources, education, territoire, agressivite;
+    //attributs secondaires
+    private int nbSoldat, immigration;
+    private double technologie, densite, richesse, attractivite, bellicisme, puissanceMilitaire, puissancePolitique;
+    //attribut tertiaires
+    private ArrayList<Peuple> listeEnnemies;
+    private ArrayList<Peuple> listeTrade;
+    private Color couleur;
 
-	private ImageIcon icon;
+    public Peuple(int ressources, int population, int education, int territoire, int agressivite, String nom, Color couleur) {
+        this.ressources = ressources;
+        this.population = population;
+        this.education = education;
+        this.territoire = territoire;
+        this.agressivite = agressivite;
+        this.nom = nom;
+        this.couleur = couleur;
+    }
 
-
-	public Peuple(ImageIcon i) {
-		this.icon = i;
-	}
-
-	public Peuple(int ressources, int population, int education, int territoire, int agressivite, String nom, Color couleur) {
-		this.ressources = ressources;
-		this.population = population;
-		this.education = education;
-		this.territoire = territoire;
-		this.agressivite = agressivite;
-		this.nom = nom;
-		this.couleur = couleur;
-	}
-
-	public Color getColor() {
-		return couleur;
-	}
-
-	public ImageIcon getIcon() {
-		return icon;
-	}
-	
-	/* fonctions définissant les attributs secondaires */
-    /*
-	public void genereTechnologie(){
-		this.technologie = (this.ressources + this.education)/2;
-	}
-	
-	public void genereDensite(){
-		this.densite = (this.territoire - this.population);
-	}
-	
-	public void genereRichesse(){
-		this.richesse = (this.ressources + this.territoire)/2;
-	}
-	
-	public void genereNbSoldat(){
-		this.nbSoldat = (int)(this.population +this.agressivite)/2;
-	}
-	
-	public void genereBellicisme(){
-		this.bellicisme = (this.richesse + this.agressivite)/2;
-	}
-	
-	public void genereAttractivite(){
-		this.attractivite = (this.richesse + this.technologie)/2;
-	}
-	
-	public void generePuissanceMilitaire(){
-		this.puissanceMilitaire = (this.technologie + this.nbSoldat)/2;
-	}
-	
-	public void generePuissancePolitique(){
-		this.puissancePolitique = (this.puissanceMilitaire + this.richesse)/2;
-	}
-	public void genereImigration(){
-		this.imigration = (int)(this.densite + this.richesse)/10;
-	}
-	
-	public void genereEnsemble(){
-		genereTechnologie();
-		genereDensite();
-		genereRichesse();
-		genereNbSoldat();
-		genereBellicisme();
-		genereAttractivite();
-		generePuissanceMilitaire();
-		generePuissancePolitique();
-		genereImigration();
-	}
-	*/
-    /*
-    	@Override
-	public String toString() {
-		return "Peuple [nom=" + nom + ", population=" + population
-				+ ", ressources=" + ressources + ", education=" + education
-				+ ", territoire=" + territoire + ", agressivite=" + agressivite
-				+ "]";
-	}
-	*/
-
+    public Color getColor() {
+        return couleur;
+    }
 
 	/* Différent getter et setter */
-	public int getPopulation() {
-		return population;
-	}
+    public int getPopulation() {
+        return population;
+    }
 
-	public void setPopulation(int population) {
-		this.population = population;
-	}
+    public void setPopulation(int population) {
+        this.population = population;
+    }
 
-	@Override
-	public String toString() {
-		/*return "Peuple [nom=" + nom + ", population=" + population
-				+ ", ressources=" + ressources + ", education=" + education
-				+ ", territoire=" + territoire + ", agressivite=" + agressivite
-				+ ", nbSoldat=" + nbSoldat + ", imigration=" + immigration
-				+ ", technologie=" + technologie + ", densite=" + densite
-				+ ", richesse=" + richesse + ", attractivite=" + attractivite
-				+ ", bellicisme=" + bellicisme + ", puissanceMilitaire="
-				+ puissanceMilitaire + ", puissancePolitique="
-				+ puissancePolitique + "]";*/
-		return this.nom;
-	}
-	public String displayInfo(){
-		return "Peuple [nom=" + nom + ", population=" + population
-		+ ", ressources=" + ressources + ", education=" + education
-		+ ", territoire=" + territoire + ", agressivite=" + agressivite
-		+ ", nbSoldat=" + nbSoldat + ", imigration=" + immigration
-		+ ", technologie=" + technologie + ", densite=" + densite
-		+ ", richesse=" + richesse + ", attractivite=" + attractivite
-		+ ", bellicisme=" + bellicisme + ", puissanceMilitaire="
-		+ puissanceMilitaire + ", puissancePolitique="
-		+ puissancePolitique + "]";
-	}
+    @Override
+    public String toString() {
+        return this.nom;
+    }
 
-	public double getRessources() {
-		return ressources;
-	}
+    public String displayInfo() {
+        return "Peuple [nom=" + nom + ", population=" + population
+                + ", ressources=" + ressources + ", education=" + education
+                + ", territoire=" + territoire + ", agressivite=" + agressivite
+                + ", nbSoldat=" + nbSoldat + ", imigration=" + immigration
+                + ", technologie=" + technologie + ", densite=" + densite
+                + ", richesse=" + richesse + ", attractivite=" + attractivite
+                + ", bellicisme=" + bellicisme + ", puissanceMilitaire="
+                + puissanceMilitaire + ", puissancePolitique="
+                + puissancePolitique + "]";
+    }
 
-	public void setRessources(double ressources) {
-		this.ressources = ressources;
-	}
+    public double getRessources() {
+        return ressources;
+    }
 
-	public double getEducation() {
-		return education;
-	}
+    public void setRessources(double ressources) {
+        this.ressources = ressources;
+    }
 
-	public void setEducation(double education) {
-		this.education = education;
-	}
+    public double getEducation() {
+        return education;
+    }
 
-	public double getTerritoire() {
-		return territoire;
-	}
+    public void setEducation(double education) {
+        this.education = education;
+    }
 
-	public void setTerritoire(double territoire) {
-		this.territoire = territoire;
-	}
+    public double getTerritoire() {
+        return territoire;
+    }
 
-	public double getAgressivite() {
-		return agressivite;
-	}
+    public void setTerritoire(double territoire) {
+        this.territoire = territoire;
+    }
 
-	public void setAgressivite(double agressivite) {
-		this.agressivite = agressivite;
-	}
+    public double getAgressivite() {
+        return agressivite;
+    }
 
-	public int getNbSoldat() {
-		return nbSoldat;
-	}
+    public void setAgressivite(double agressivite) {
+        this.agressivite = agressivite;
+    }
 
-	public void setNbSoldat(int nbSoldat) {
-		this.nbSoldat = nbSoldat;
-	}
+    public int getNbSoldat() {
+        return nbSoldat;
+    }
 
-	public int getImmigration() {
-		return immigration;
-	}
+    public void setNbSoldat(int nbSoldat) {
+        this.nbSoldat = nbSoldat;
+    }
 
-	public void setImmigration(int imigration) {
-		this.immigration = imigration;
-	}
+    public int getImmigration() {
+        return immigration;
+    }
 
-	public double getTechnologie() {
-		return technologie;
-	}
+    public void setImmigration(int imigration) {
+        this.immigration = imigration;
+    }
 
-	public void setTechnologie(double technologie) {
-		this.technologie = technologie;
-	}
+    public double getTechnologie() {
+        return technologie;
+    }
 
-	public double getDensite() {
-		return densite;
-	}
+    public void setTechnologie(double technologie) {
+        this.technologie = technologie;
+    }
 
-	public void setDensite(double densite) {
-		this.densite = densite;
-	}
+    public double getDensite() {
+        return densite;
+    }
 
-	public double getRichesse() {
-		return richesse;
-	}
+    public void setDensite(double densite) {
+        this.densite = densite;
+    }
 
-	public void setRichesse(double richesse) {
-		this.richesse = richesse;
-	}
+    public double getRichesse() {
+        return richesse;
+    }
 
-	public double getAttractivite() {
-		return attractivite;
-	}
+    public void setRichesse(double richesse) {
+        this.richesse = richesse;
+    }
 
-	public void setAttractivite(double attractivite) {
-		this.attractivite = attractivite;
-	}
+    public double getAttractivite() {
+        return attractivite;
+    }
 
-	public double getBellicisme() {
-		return bellicisme;
-	}
+    public void setAttractivite(double attractivite) {
+        this.attractivite = attractivite;
+    }
 
-	public void setBellicisme(double bellicisme) {
-		this.bellicisme = bellicisme;
-	}
+    public double getBellicisme() {
+        return bellicisme;
+    }
 
-	public double getPuissanceMilitaire() {
-		return puissanceMilitaire;
-	}
+    public void setBellicisme(double bellicisme) {
+        this.bellicisme = bellicisme;
+    }
 
-	public void setPuissanceMilitaire(double puissanceMilitaire) {
-		this.puissanceMilitaire = puissanceMilitaire;
-	}
+    public double getPuissanceMilitaire() {
+        return puissanceMilitaire;
+    }
 
-	public double getPuissancePolitique() {
-		return puissancePolitique;
-	}
+    public void setPuissanceMilitaire(double puissanceMilitaire) {
+        this.puissanceMilitaire = puissanceMilitaire;
+    }
 
-	public void setPuissancePolitique(double puissancePolitique) {
-		this.puissancePolitique = puissancePolitique;
-	}
+    public double getPuissancePolitique() {
+        return puissancePolitique;
+    }
 
-	public ArrayList<Peuple> getListeEnnemies() {
-		return listeEnnemies;
-	}
+    public void setPuissancePolitique(double puissancePolitique) {
+        this.puissancePolitique = puissancePolitique;
+    }
 
-	public void setListeEnnemies(ArrayList<Peuple> listeEnnemies) {
-		this.listeEnnemies = listeEnnemies;
-	}
+    public ArrayList<Peuple> getListeEnnemies() {
+        return listeEnnemies;
+    }
 
-	public void addEnnemies(Peuple p1){
-		this.listeEnnemies.add(p1);
-	}
+    public void setListeEnnemies(ArrayList<Peuple> listeEnnemies) {
+        this.listeEnnemies = listeEnnemies;
+    }
 
-	public void addTrade(Peuple p1){
-		this.listeTrade.add(p1);
-	}
+    public void addEnnemies(Peuple p1) {
+        this.listeEnnemies.add(p1);
+    }
 
-	public ArrayList<Peuple> getListeTrade() {
-		return listeTrade;
-	}
+    public void addTrade(Peuple p1) {
+        this.listeTrade.add(p1);
+    }
 
-	public void setListeTrade(ArrayList<Peuple> listeTrade) {
-		this.listeTrade = listeTrade;
-	}
+    public ArrayList<Peuple> getListeTrade() {
+        return listeTrade;
+    }
 
-	public String getNom() {
-		return nom;
-	}
+    public void setListeTrade(ArrayList<Peuple> listeTrade) {
+        this.listeTrade = listeTrade;
+    }
 
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
 }

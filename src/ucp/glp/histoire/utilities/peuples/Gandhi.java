@@ -1,4 +1,4 @@
-package ucp.glp.histoire.utilities.inherited;
+package ucp.glp.histoire.utilities.peuples;
 
 import ucp.glp.histoire.utilities.Peuple;
 
@@ -9,8 +9,8 @@ import java.awt.*;
  * @project GLP Histoire (L2S4 I) - Université de Cergy-Pontoise
  * @date 2016-2017
  */
-public class Grecs extends Peuple {
-    public Grecs() {
-        super(90, 80, 50, 25, 22, "Grecs", Color.green);
+public class Gandhi extends Peuple {
+    public Gandhi() {
+        super(90, 80, 50, 25, 122, "Gandhi", Color.red);
     }
 }

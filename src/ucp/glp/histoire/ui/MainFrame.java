@@ -19,8 +19,8 @@ import java.util.HashMap;
  */
 public class MainFrame extends JFrame {
 
+    public static final HashMap<String, GlobalHistoricEvent> eventHashMap = new HashMap<String, GlobalHistoricEvent>();
     public static String THEME = "standard";
-    public static HashMap<String, GlobalHistoricEvent> eventHashMap = new HashMap<String, GlobalHistoricEvent>();
     private static ArrayList<Peuple> peuplesArrayList = new ArrayList<Peuple>();
     private static ArrayList<String> eventArrayList = new ArrayList<String>();
     private static ArrayList<String> logArrayList = new ArrayList<String>();
@@ -85,10 +85,6 @@ public class MainFrame extends JFrame {
         return peuplesArrayList.size();
     }
 
-    public static String getCurrentEvent() {
-        return "X a déclaré la guerre à Y !";
-    }
-
     public static void togglePlay() {
         playing = !playing;
     }
@@ -101,30 +97,17 @@ public class MainFrame extends JFrame {
         return peuplesArrayList;
     }
 
-    public static void setPeuplesArrayList(ArrayList<Peuple> peuplesArrayList) {
-        MainFrame.peuplesArrayList = peuplesArrayList;
-    }
-
     public static ArrayList<String> getEventArrayList() {
         return eventArrayList;
-    }
-
-    public static void setEventArrayList(ArrayList<String> eventArrayList) {
-        MainFrame.eventArrayList = eventArrayList;
     }
 
     public static ArrayList<String> getLogArrayList() {
         return logArrayList;
     }
 
-    public static void setLogArrayList(ArrayList<String> logArrayList) {
-        MainFrame.logArrayList = logArrayList;
-    }
-
     private void initEventList() {
         eventArrayList.add("Séisme");
         eventArrayList.add("Réchauffement Climatique");
-
         eventHashMap.put("Séisme", new Seisme());
         eventHashMap.put("Réchauffement Climatique", new GlobalWarming());
     }

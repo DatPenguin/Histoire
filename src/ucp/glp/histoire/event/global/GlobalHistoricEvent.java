@@ -8,18 +8,16 @@ import ucp.glp.histoire.event.HistoricEvent;
  * @date 2016-2017
  */
 public abstract class GlobalHistoricEvent extends HistoricEvent {
-
-
-    public String toString(){
+    public String toString() {
         String amp = "";
-        switch(amplitude){
+        switch (amplitude) {
             case 0:
                 amp = "petit(e)";
                 break;
-            case 1 :
+            case 1:
                 amp = "moyen(nne)";
                 break;
-            case 2 :
+            case 2:
                 amp = "grand(e)";
                 break;
             default:

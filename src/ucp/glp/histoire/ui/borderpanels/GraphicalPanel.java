@@ -7,7 +7,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Line2D;
-import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -20,12 +19,10 @@ public class GraphicalPanel extends JPanel {
     public final static Color WAR_COLOR = new Color(178, 62, 76);
     public final static Color TRADE_COLOR = new Color(71, 175, 255);
     private final static int nombrePeuples = MainFrame.getPeuplesNumber();
-    private static ArrayList<Color> colorList = new ArrayList<>();
-    private static ArrayList<Color> haloColorList = new ArrayList<>();
     private final int CIRCLE_DIAMETER = 450;
     private final int CIRCLE_RADIUS = CIRCLE_DIAMETER / 2;
     private final int PEUPLE_SIZE = 30 /* * 2*/;
-    private int HALO_SIZE = PEUPLE_SIZE + 6;
+    private final int HALO_SIZE = PEUPLE_SIZE + 6;
     private Graphics g1;
     private Color haloColor = Color.WHITE;
 
@@ -33,21 +30,6 @@ public class GraphicalPanel extends JPanel {
         this.setLayout(new BorderLayout());
         this.setOpaque(false);
 
-        initColors();
-    }
-
-    public GraphicalPanel(Color c) {
-        this.setLayout(new BorderLayout());
-        this.setOpaque(false);
-
-        initColors();
-        haloColor = c;
-    }
-
-    public static void initColors() {
-        Random r = new Random();
-        for (int i = 0; i < nombrePeuples; i++)
-            colorList.add(new Color(r.nextFloat(), r.nextFloat(), r.nextFloat()));
     }
 
     private void createBond(int a, int b, Color c) {
@@ -58,10 +40,9 @@ public class GraphicalPanel extends JPanel {
     }
 
     private int getAlterIndex(Peuple p) {
-        for (int i = 0; i < nombrePeuples; i++) {
+        for (int i = 0; i < nombrePeuples; i++)
             if (MainFrame.getPeuplesArrayList().get(i) == p)
                 return i;
-        }
         return 0;
     }
 
@@ -72,16 +53,12 @@ public class GraphicalPanel extends JPanel {
         g2d.drawOval(35, 30, CIRCLE_DIAMETER, CIRCLE_DIAMETER);
 
         for (int i = 0; i < nombrePeuples; i++) {
-            if (MainFrame.getPeuplesArrayList().get(i).getListeEnnemies() != null) {
-                for (Peuple p : MainFrame.getPeuplesArrayList().get(i).getListeEnnemies()) {
+            if (MainFrame.getPeuplesArrayList().get(i).getListeEnnemies() != null)
+                for (Peuple p : MainFrame.getPeuplesArrayList().get(i).getListeEnnemies())
                     createBond(i, getAlterIndex(p), WAR_COLOR);
-                }
-            }
-            if (MainFrame.getPeuplesArrayList().get(i).getListeTrade() != null) {
-                for (Peuple p : MainFrame.getPeuplesArrayList().get(i).getListeTrade()) {
+            if (MainFrame.getPeuplesArrayList().get(i).getListeTrade() != null)
+                for (Peuple p : MainFrame.getPeuplesArrayList().get(i).getListeTrade())
                     createBond(i, getAlterIndex(p), TRADE_COLOR);
-                }
-            }
         }
 
         for (int i = 1; i <= nombrePeuples; i++) {
@@ -91,9 +68,7 @@ public class GraphicalPanel extends JPanel {
                 g2d.setColor(TRADE_COLOR);
             else
                 g2d.setColor(haloColor);
-            // TODO Calculer a chaque tour la taille du halo en fonction de la puissance du pays affiche
             g2d.fill(new Ellipse2D.Double(CIRCLE_RADIUS * Math.cos(2 * i * Math.PI / nombrePeuples) + CIRCLE_RADIUS + PEUPLE_SIZE / 2, CIRCLE_RADIUS * Math.sin(2 * i * Math.PI / nombrePeuples) + CIRCLE_RADIUS + PEUPLE_SIZE / 2, HALO_SIZE, HALO_SIZE));
-
             g2d.setColor(MainFrame.getPeuplesArrayList().get(i - 1).getColor());
             g2d.fill(new Ellipse2D.Double(CIRCLE_RADIUS * Math.cos(2 * i * Math.PI / nombrePeuples) + CIRCLE_RADIUS + HALO_SIZE / 2, CIRCLE_RADIUS * Math.sin(2 * i * Math.PI / nombrePeuples) + CIRCLE_RADIUS + HALO_SIZE / 2, PEUPLE_SIZE, PEUPLE_SIZE));
         }

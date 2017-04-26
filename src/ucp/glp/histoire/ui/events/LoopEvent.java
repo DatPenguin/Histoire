@@ -9,7 +9,7 @@ import java.util.List;
  * @date 2016-2017
  */
 public class LoopEvent {
-    private List<LoopListener> listeners = new ArrayList<LoopListener>();
+    private final List<LoopListener> listeners = new ArrayList<LoopListener>();
 
     public void addListener(LoopListener toAdd) {
         listeners.add(toAdd);

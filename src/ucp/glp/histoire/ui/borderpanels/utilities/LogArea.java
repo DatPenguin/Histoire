@@ -11,11 +11,11 @@ import javax.swing.text.Style;
  * @date 2016-2017
  */
 public class LogArea extends JTextPane {
-    public void insert(String str, int pos, Style style) {
+    public void insert(String str, Style style) {
         Document doc = getDocument();
         if (doc != null) {
             try {
-                doc.insertString(pos, str, style);
+                doc.insertString(0, str, style);
             } catch (BadLocationException e) {
                 throw new IllegalArgumentException(e.getMessage());
             }

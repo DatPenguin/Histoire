@@ -20,10 +20,10 @@ import java.awt.*;
  */
 public class BottomPanel extends JPanel implements SwingerEventListener, ChangeListener {
 
-    private static JSlider timeSlider = new JSlider();
+    private static final JSlider timeSlider = new JSlider();
     private static MainPanel mainPanel;
-    private STexturedButton playPauseButton = new STexturedButton(Swinger.getResource("playPauseButton.png"));
-    private STexturedButton fastForwardButton = new STexturedButton(Swinger.getResource("fastForwardButton.png"));
+    private final STexturedButton playPauseButton = new STexturedButton(Swinger.getResource("playPauseButton.png"));
+    private final STexturedButton fastForwardButton = new STexturedButton(Swinger.getResource("fastForwardButton.png"));
 
     public BottomPanel() {
         this.setLayout(new BorderLayout());
@@ -48,14 +48,6 @@ public class BottomPanel extends JPanel implements SwingerEventListener, ChangeL
 
     public static JSlider getTimeSlider() {
         return timeSlider;
-    }
-
-    public static void setTimeSlider(JSlider timeSlider) {
-        BottomPanel.timeSlider = timeSlider;
-    }
-
-    public static MainPanel getMainPanel() {
-        return mainPanel;
     }
 
     public static void setMainPanel(MainPanel mainPanel) {

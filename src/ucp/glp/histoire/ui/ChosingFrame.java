@@ -11,7 +11,7 @@ import javax.swing.*;
  * @date 2016-2017
  */
 public class ChosingFrame extends JFrame {
-    private ChosingPanel panel = new ChosingPanel();
+    private final ChosingPanel panel = new ChosingPanel();
 
     public ChosingFrame() {
         try {

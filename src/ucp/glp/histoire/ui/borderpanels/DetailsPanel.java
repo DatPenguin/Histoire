@@ -1,6 +1,5 @@
 package ucp.glp.histoire.ui.borderpanels;
 
-import ucp.glp.histoire.ui.MainPanel;
 import ucp.glp.histoire.ui.borderpanels.utilities.DetailsArea;
 import ucp.glp.histoire.utilities.Peuple;
 
@@ -13,8 +12,7 @@ import java.awt.*;
  * @date 2016-2017
  */
 public class DetailsPanel extends JPanel {
-    public MainPanel mainPanel = null;
-    private DetailsArea textArea = new DetailsArea();
+    private final DetailsArea textArea = new DetailsArea();
 
     public DetailsPanel(Peuple p) {
         this.setOpaque(true);
@@ -25,7 +23,6 @@ public class DetailsPanel extends JPanel {
     }
 
     private void initTextArea(Peuple p) {
-
         textArea.appendln("Attributs primaires :");
         textArea.appendln("Nom : " + p.getNom());
         textArea.appendln("Population : " + p.getPopulation());
@@ -33,7 +30,6 @@ public class DetailsPanel extends JPanel {
         textArea.appendln("Agressivité : " + p.getAgressivite());
         textArea.appendln("Education : " + p.getEducation());
         textArea.appendln("Territoire : " + p.getTerritoire() + '\n');
-
 
         textArea.appendln("Attributs secondaires :");
         textArea.appendln("Attractivité : " + p.getAttractivite());

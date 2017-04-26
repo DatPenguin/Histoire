@@ -9,7 +9,6 @@ import javax.swing.*;
  */
 public class DetailsArea extends JTextPane {
     public void appendln(String s) {
-        //super.append(s + '\n');
         this.setText(this.getText() + s + '\n');
     }
 }

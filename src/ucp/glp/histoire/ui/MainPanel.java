@@ -18,15 +18,14 @@ import java.util.ArrayList;
  */
 public class MainPanel extends JPanel implements LoopListener {
 
-    private static LoopEvent e = new LoopEvent();
-
+    private static final LoopEvent e = new LoopEvent();
+    private static final JLabel runningLabel = new JLabel();
+    private static final RightPanel rightPanel = new RightPanel();
     private static float running = 0;
     private static float totalYears = 0;
-    private static JLabel runningLabel = new JLabel();
-    private static RightPanel rightPanel = new RightPanel();
+    private final LeftPanel leftPanel = new LeftPanel();
+    private final BottomPanel bottomPanel = new BottomPanel();
     private JPanel centerPanel = new GraphicalPanel();
-    private LeftPanel leftPanel = new LeftPanel();
-    private BottomPanel bottomPanel = new BottomPanel();
 
     public MainPanel() {
         this.setLayout(null);
@@ -61,10 +60,6 @@ public class MainPanel extends JPanel implements LoopListener {
         MainPanel.runningLabel.setText(runningLabel);
     }
 
-    public static JLabel getRunningLabel() {
-        return runningLabel;
-    }
-
     public static float getRunning() {
         return running;
     }
@@ -89,15 +84,11 @@ public class MainPanel extends JPanel implements LoopListener {
         rightPanel.getLogPanel().appendText(logList);
     }
 
-    public void addToSeries(int x, double y) {
-        rightPanel.addToSeries(x, y);
-    }
-
-    public void refreshSeries() {
+    private void refreshSeries() {
         rightPanel.refreshSeries();
     }
 
-    public void refreshDetailedSeries() {
+    private void refreshDetailedSeries() {
         rightPanel.refreshDetailedSeries();
     }
 
@@ -134,9 +125,6 @@ public class MainPanel extends JPanel implements LoopListener {
 
     @Override
     public void looped() {
-        int totalPop = 0;
-        for (Peuple p : MainFrame.getPeuplesArrayList())
-            totalPop += p.getPopulation();
         this.getParent().repaint();
         leftPanel.getTop().actionPerformed(new ActionEvent(this, 42, "refresh"));
         refreshSeries();
