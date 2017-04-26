@@ -120,6 +120,51 @@ public class EventReactionManager extends EventManager{
         RunningLoop.addTotextLog(ReactionEventList.get(randEvent).toString(p));
 
     }
+    public void forcedAction(Peuple p) {
+
+        // TODO Ajouter : un systeme de condition directement dans les events et une methode de check
+        // TODO Remplacer le System.out.println par un ajout a la file des messages a afficher
+        int randEvent = (int) (Math.random() * (ReactionEventList.size()));    // Generera un nombre aléatoire compris entre [0,size]
+        int RandAmp = (int) (Math.random() * (3));                 			   // Generera un nombre aléatoire compris entre [0,2]
+
+        switch(ReactionEventList.get(randEvent).getConditionType()) {			// Testera si l'attribut donné du peuple corresponds est bien supérieur au seuil
+            case 0 :
+                if(p.getTechnologie() >= ReactionEventList.get(randEvent).getSeuil()){
+                    EventReactionManager.actionOnPeuple(ReactionEventList.get(randEvent), p, RandAmp);
+                    System.out.println(ReactionEventList.get(randEvent).toString(p));
+                }
+                break;
+            case 1 :
+                if(p.getRichesse() >= ReactionEventList.get(randEvent).getSeuil()){
+                    EventReactionManager.actionOnPeuple(ReactionEventList.get(randEvent), p, RandAmp);
+                    System.out.println(ReactionEventList.get(randEvent).toString(p));
+                }
+                break;
+            case 2:
+                if(p.getBellicisme() >= ReactionEventList.get(randEvent).getSeuil()){
+                    EventReactionManager.actionOnPeuple(ReactionEventList.get(randEvent), p, RandAmp);
+                    System.out.println(ReactionEventList.get(randEvent).toString(p));
+                }
+                break;
+            case 3 :
+                if(p.getDensite() >= ReactionEventList.get(randEvent).getSeuil()){
+                    EventReactionManager.actionOnPeuple(ReactionEventList.get(randEvent), p, RandAmp);
+                    System.out.println(ReactionEventList.get(randEvent).toString(p));
+                }
+                break;
+            case 4 :
+                if(p.getNbSoldat() >= ReactionEventList.get(randEvent).getSeuil()){
+                    EventReactionManager.actionOnPeuple(ReactionEventList.get(randEvent), p, RandAmp);
+                    System.out.println(ReactionEventList.get(randEvent).toString(p));
+                }
+                break;
+            default:
+                System.out.println("ERREUR ENTREE action EVENT CHECK");
+                break;
+        }
+        RunningLoop.addTotextLog(ReactionEventList.get(randEvent).toString(p));
+
+    }
 
 
 }

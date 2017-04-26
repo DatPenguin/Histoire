@@ -53,23 +53,7 @@ public class EventGlobalManager extends EventManager{
         
 }
 
-    // TODO Remove
-	/*
-	public static double genereAmpReel(int amplitude) {    // Méthode gérant les différant coeficient multiplicateur
-	switch(amplitude){
-	case 0:
-		return 0.5;
-	case 1 :
-		return 1.0;
-	case 2 :
-		return 2.0;
-	default:
-	    System.out.println("ERREUR ENTREE genereAmpReel EVENT");
-	    return -1;
-	}
-
-}
-	*/
+ 
     public void genererEventList() {
 
         // On ajoutera une instance de chanque classe global event
@@ -81,11 +65,19 @@ public class EventGlobalManager extends EventManager{
         // TODO Ajouter un systeme de condition directement dans les events et une methode de check
         // TODO Remplacer le System.out.println par un ajout a la pile des messages a afficher
         int randEvent = (int) (Math.random() * (GlobalEventList.size()));                            // Generera un nombre aléatoire compris entre [0,size]
-        int RandAmp = (int) (Math.random() * (3));                                                    // Generera un nombre aléatoire compris entre [0,2]
+        int RandAmp = (int) (Math.random() * (3));                                                   // Generera un nombre aléatoire compris entre [0,2]
         //GlobalEventList.get(randEvent).action(listP, RandAmp);
         EventGlobalManager.actionOnPeuple(GlobalEventList.get(randEvent), listP, RandAmp);
         System.out.println(GlobalEventList.get(randEvent).toString());
         RunningLoop.addTotextLog(GlobalEventList.get(randEvent).toString());
+
+    }
+    public void forcedAction(ArrayList<Peuple> listP,GlobalHistoricEvent forcedEvent) {
+    	
+        int RandAmp = (int) (Math.random() * (3));                                                  // Generera un nombre aléatoire compris entre [0,2]
+        EventGlobalManager.actionOnPeuple(forcedEvent, listP, RandAmp);
+        System.out.println(forcedEvent.toString());
+        RunningLoop.addTotextLog(forcedEvent.toString());
 
     }
 

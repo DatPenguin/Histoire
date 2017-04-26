@@ -1,12 +1,16 @@
 package ucp.glp.histoire.managers;
 
+
 import org.apache.log4j.Logger;
 
+import ucp.glp.histoire.event.*;
 import ucp.glp.histoire.log.LoggerUtility;
 import ucp.glp.histoire.test.TestRunningLoop;
 import ucp.glp.histoire.utilities.Peuple;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Queue;
 
 /**
  * @author Matteo STAIANO, Mathieu HANNOUN
@@ -17,11 +21,13 @@ public class RunningLoop {
     private static Logger logger = LoggerUtility.getLogger(RunningLoop.class);
     private EventChanceManager eventChanceManager;
     private ArrayList<Peuple> listePeuple;
+    public static ArrayDeque<GlobalHistoricEvent> fileGlobalEvent;	// File d'événement passée manuellement
+
     private GrowthManager growthManager;
     private static ArrayList<String> textLog;	// A été rendus static pour faciliter son accès depuis les différentes classes
 	public static int nbIteration = 0;	// Permettra de connaitre à quel itération l'on se trouve pour les logs
-
     public RunningLoop (ArrayList<Peuple> listePeuple){
+    	RunningLoop.fileGlobalEvent = new ArrayDeque<GlobalHistoricEvent>();
     	RunningLoop.textLog = new ArrayList<String>();
         this.listePeuple = listePeuple;
         eventChanceManager = new EventChanceManager();
@@ -35,6 +41,8 @@ public class RunningLoop {
         eventChanceManager.actionLocale(listePeuple);
 
         eventChanceManager.actionGlobale(listePeuple);
+        
+        eventChanceManager.forcedGlobale(listePeuple, RunningLoop.fileGlobalEvent);
 
         PeupleManager.genereEnsembleTotal(listePeuple);
 
