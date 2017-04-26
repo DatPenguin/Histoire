@@ -1,7 +1,8 @@
 package ucp.glp.histoire.managers;
 
-import ucp.glp.histoire.event.GlobalHistoricEvent;
-import ucp.glp.histoire.event.Seisme;
+import ucp.glp.histoire.event.global.GlobalHistoricEvent;
+import ucp.glp.histoire.event.global.GlobalWarming;
+import ucp.glp.histoire.event.global.Seisme;
 import ucp.glp.histoire.utilities.Peuple;
 
 import java.util.ArrayList;
@@ -58,6 +59,7 @@ public class EventGlobalManager extends EventManager{
 
         // On ajoutera une instance de chanque classe global event
         GlobalEventList.add(new Seisme());
+        GlobalEventList.add(new GlobalWarming());
     }
 
     public void action(ArrayList<Peuple> listP) {

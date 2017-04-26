@@ -1,6 +1,6 @@
 package ucp.glp.histoire.managers;
 
-import ucp.glp.histoire.event.GlobalHistoricEvent;
+import ucp.glp.histoire.event.global.GlobalHistoricEvent;
 import ucp.glp.histoire.utilities.Peuple;
 
 import java.util.ArrayDeque;

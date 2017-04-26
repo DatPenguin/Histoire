@@ -1,4 +1,6 @@
-package ucp.glp.histoire.event;
+package ucp.glp.histoire.event.local;
+
+import ucp.glp.histoire.event.HistoricEvent;
 
 /**
  * @author Matteo STAIANO, Mathieu HANNOUN

@@ -2,11 +2,15 @@ package ucp.glp.histoire.ui;
 
 import fr.theshark34.swinger.Swinger;
 import fr.theshark34.swinger.util.WindowMover;
+import ucp.glp.histoire.event.global.GlobalHistoricEvent;
+import ucp.glp.histoire.event.global.GlobalWarming;
+import ucp.glp.histoire.event.global.Seisme;
 import ucp.glp.histoire.utilities.Peuple;
 import ucp.glp.histoire.utilities.RunningTime;
 
 import javax.swing.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * @author Matteo STAIANO, Mathieu HANNOUN
@@ -16,13 +20,13 @@ import java.util.ArrayList;
 public class MainFrame extends JFrame {
 
     public static String THEME = "standard";
+    public static HashMap<String, GlobalHistoricEvent> eventHashMap = new HashMap<String, GlobalHistoricEvent>();
     private static ArrayList<Peuple> peuplesArrayList = new ArrayList<Peuple>();
     private static ArrayList<String> eventArrayList = new ArrayList<String>();
     private static ArrayList<String> logArrayList = new ArrayList<String>();
     private static boolean playing = false;
 
     public MainFrame() {
-        eventArrayList.add("Ouragan");
         WindowMover mover = new WindowMover(this);
         this.addMouseListener(mover);
         this.addMouseMotionListener(mover);
@@ -45,12 +49,13 @@ public class MainFrame extends JFrame {
         this.setIconImage(Swinger.getResource("Icone.png"));
 
         new RunningTime().run();
+        initEventList();
     }
 
     public MainFrame(ArrayList<Peuple> peupleList, String theme) {
         THEME = theme;
         peuplesArrayList = peupleList;
-        eventArrayList.add("Ouragan");
+        initEventList();
         WindowMover mover = new WindowMover(this);
         this.addMouseListener(mover);
         this.addMouseMotionListener(mover);
@@ -114,5 +119,13 @@ public class MainFrame extends JFrame {
 
     public static void setLogArrayList(ArrayList<String> logArrayList) {
         MainFrame.logArrayList = logArrayList;
+    }
+
+    private void initEventList() {
+        eventArrayList.add("Séisme");
+        eventArrayList.add("Réchauffement Climatique");
+
+        eventHashMap.put("Séisme", new Seisme());
+        eventHashMap.put("Réchauffement Climatique", new GlobalWarming());
     }
 }

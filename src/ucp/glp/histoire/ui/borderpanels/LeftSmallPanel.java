@@ -1,5 +1,6 @@
 package ucp.glp.histoire.ui.borderpanels;
 
+import ucp.glp.histoire.managers.RunningLoop;
 import ucp.glp.histoire.ui.MainFrame;
 import ucp.glp.histoire.ui.MainPanel;
 import ucp.glp.histoire.utilities.Peuple;
@@ -71,6 +72,9 @@ public class LeftSmallPanel extends JPanel implements ActionListener {
                 mainPanel.swapCenter((Peuple) comboBox.getSelectedItem());
                 mainPanel.repaint();
             }
+        } else if (e.getSource() == button) {
+            RunningLoop.fileGlobalEvent.add(MainFrame.eventHashMap.get(comboBox.getSelectedItem()));
+            System.out.println(MainFrame.eventHashMap.get(comboBox.getSelectedItem()));
         }
     }
 }

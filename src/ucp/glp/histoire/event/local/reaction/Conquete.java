@@ -1,11 +1,11 @@
-package ucp.glp.histoire.event;
+package ucp.glp.histoire.event.local.reaction;
 
 /**
  * @author Matteo STAIANO, Mathieu HANNOUN
  * @project GLP Histoire (L2S4 I) - Université de Cergy-Pontoise
  * @date 2016-2017
  */
-public class Conquete extends ReactionEvent{
+public class Conquete extends ReactionEvent {
 
     /**
      * Gagne en moyenne 2.0 de territoire

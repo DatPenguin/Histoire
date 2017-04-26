@@ -2,15 +2,12 @@ package ucp.glp.histoire.managers;
 
 
 import org.apache.log4j.Logger;
-
-import ucp.glp.histoire.event.*;
+import ucp.glp.histoire.event.global.GlobalHistoricEvent;
 import ucp.glp.histoire.log.LoggerUtility;
-import ucp.glp.histoire.test.TestRunningLoop;
 import ucp.glp.histoire.utilities.Peuple;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
-import java.util.Queue;
 
 /**
  * @author Matteo STAIANO, Mathieu HANNOUN
@@ -18,20 +15,28 @@ import java.util.Queue;
  * @date 2016-2017
  */
 public class RunningLoop {
+    public static ArrayDeque<GlobalHistoricEvent> fileGlobalEvent;    // File d'événement passée manuellement
+    public static int nbIteration = 0;    // Permettra de connaitre à quel itération l'on se trouve pour les logs
     private static Logger logger = LoggerUtility.getLogger(RunningLoop.class);
+    private static ArrayList<String> textLog;    // A été rendus static pour faciliter son accès depuis les différentes classes
     private EventChanceManager eventChanceManager;
     private ArrayList<Peuple> listePeuple;
-    public static ArrayDeque<GlobalHistoricEvent> fileGlobalEvent;	// File d'événement passée manuellement
-
     private GrowthManager growthManager;
-    private static ArrayList<String> textLog;	// A été rendus static pour faciliter son accès depuis les différentes classes
-	public static int nbIteration = 0;	// Permettra de connaitre à quel itération l'on se trouve pour les logs
     public RunningLoop (ArrayList<Peuple> listePeuple){
     	RunningLoop.fileGlobalEvent = new ArrayDeque<GlobalHistoricEvent>();
     	RunningLoop.textLog = new ArrayList<String>();
         this.listePeuple = listePeuple;
         eventChanceManager = new EventChanceManager();
         this.growthManager = new GrowthManager(this.listePeuple);
+    }
+
+    /**
+     * Permettra depuis d'autre classe (Cf : Managers) d'ajouter des lignes au logs
+     *
+     * @param stringToAdd
+     */
+    public static void addTotextLog(String stringToAdd) {
+        textLog.add(stringToAdd);
     }
 
     public void loopAction (){										//voir logigramme
@@ -41,7 +46,7 @@ public class RunningLoop {
         eventChanceManager.actionLocale(listePeuple);
 
         eventChanceManager.actionGlobale(listePeuple);
-        
+
         eventChanceManager.forcedGlobale(listePeuple, RunningLoop.fileGlobalEvent);
 
         PeupleManager.genereEnsembleTotal(listePeuple);
@@ -77,13 +82,6 @@ public class RunningLoop {
         for(int i = 0; i < listePeuple.size() ; i++){
             logger.trace(listePeuple.get(i).displayInfo() + " iteration : " + RunningLoop.nbIteration);
         }
-    }
-    /**
-     * Permettra depuis d'autre classe (Cf : Managers) d'ajouter des lignes au logs
-     * @param stringToAdd
-     */
-    public static void addTotextLog(String stringToAdd){
-    	textLog.add(stringToAdd);
     }
 
 	public ArrayList<String> getTextLog() {

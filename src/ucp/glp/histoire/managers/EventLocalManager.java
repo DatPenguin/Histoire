@@ -1,11 +1,6 @@
 package ucp.glp.histoire.managers;
 
-import ucp.glp.histoire.event.Babyboom;
-import ucp.glp.histoire.event.CriseFinanciere;
-import ucp.glp.histoire.event.Famine;
-import ucp.glp.histoire.event.Inondation;
-import ucp.glp.histoire.event.LocalHistoricEvent;
-import ucp.glp.histoire.event.SurplusNourriture;
+import ucp.glp.histoire.event.local.*;
 import ucp.glp.histoire.utilities.Peuple;
 
 import java.util.ArrayList;

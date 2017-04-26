@@ -1,9 +1,9 @@
 package ucp.glp.histoire.managers;
 
-import ucp.glp.histoire.event.AmeliorationEducation;
-import ucp.glp.histoire.event.AmeliorationProduction;
-import ucp.glp.histoire.event.Conquete;
-import ucp.glp.histoire.event.ReactionEvent;
+import ucp.glp.histoire.event.local.reaction.AmeliorationEducation;
+import ucp.glp.histoire.event.local.reaction.AmeliorationProduction;
+import ucp.glp.histoire.event.local.reaction.Conquete;
+import ucp.glp.histoire.event.local.reaction.ReactionEvent;
 import ucp.glp.histoire.utilities.Peuple;
 
 import java.util.ArrayList;

@@ -7,7 +7,7 @@ import ucp.glp.histoire.utilities.Peuple;
  * 1 : Population
  * 2 : Agressivité
  * 3 : Education
- * 4 : territoire 
+ * 4 : Territoire
  */
 
 /**
