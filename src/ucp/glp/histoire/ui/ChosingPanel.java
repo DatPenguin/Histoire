@@ -1,11 +1,17 @@
 package ucp.glp.histoire.ui;
 
 import ucp.glp.histoire.utilities.Peuple;
+import ucp.glp.histoire.utilities.peuples.Azteques;
 import ucp.glp.histoire.utilities.peuples.Belges;
+import ucp.glp.histoire.utilities.peuples.Britanniques;
+import ucp.glp.histoire.utilities.peuples.Byzantins;
+import ucp.glp.histoire.utilities.peuples.Chinois;
+import ucp.glp.histoire.utilities.peuples.Espagnols;
 import ucp.glp.histoire.utilities.peuples.Gandhi;
 import ucp.glp.histoire.utilities.peuples.Grecs;
 
 import javax.swing.*;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -55,18 +61,34 @@ public class ChosingPanel extends JPanel implements ActionListener {
         availablePeuples.add(new Belges());
         availablePeuples.add(new Grecs());
         availablePeuples.add(new Gandhi());
+        availablePeuples.add(new Azteques());
+        availablePeuples.add(new Britanniques());
+        availablePeuples.add(new Byzantins());
+        availablePeuples.add(new Chinois());
+        availablePeuples.add(new Espagnols());
     }
 
     private void createComponents(int nb) {
         for (int i = 0; i < nb; i++) {
             JComboBox<Peuple> peupleBox = new JComboBox<>();
             for (Object p : availablePeuples) {
+            	// TODO Ajouter chaque peuple ici aussi
                 if (p instanceof Belges)
                     peupleBox.addItem(new Belges());
                 else if (p instanceof Grecs)
                     peupleBox.addItem(new Grecs());
                 else if (p instanceof Gandhi)
                     peupleBox.addItem(new Gandhi());
+                else if (p instanceof Azteques)
+                    peupleBox.addItem(new Azteques());
+                else if (p instanceof Britanniques)
+                    peupleBox.addItem(new Britanniques());
+                else if (p instanceof Byzantins)
+                    peupleBox.addItem(new Byzantins());
+                else if (p instanceof Chinois)
+                    peupleBox.addItem(new Chinois());
+                else if (p instanceof Espagnols)
+                    peupleBox.addItem(new Espagnols());
             }
             peupleBox.setAlignmentX(Component.CENTER_ALIGNMENT);
             this.add(peupleBox);

@@ -3,13 +3,13 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry exported="true" kind="lib" path="libs/swinger-1.0.0-BETA.jar"/>
-	<classpathentry kind="lib" path="/home/etu/mhannoun/log4j.jar"/>
-	<classpathentry kind="lib" path="/home/etu/mhannoun/Téléchargements/extra/junit-4.12.jar"/>
-	<classpathentry kind="lib" path="/home/etu/mhannoun/Téléchargements/extra/gnujaxp.jar"/>
-	<classpathentry kind="lib" path="/home/etu/mhannoun/Téléchargements/extra/hamcrest-core-1.3.jar"/>
-	<classpathentry kind="lib" path="/home/etu/mhannoun/Téléchargements/extra/jcommon-1.0.0.jar"/>
-	<classpathentry kind="lib" path="/home/etu/mhannoun/Téléchargements/extra/jfreechart-1.0.1.jar"/>
-	<classpathentry kind="lib" path="/home/etu/mhannoun/Téléchargements/extra/log4j.jar"/>
-	<classpathentry kind="lib" path="/home/etu/mhannoun/Téléchargements/extra/servlet.jar"/>
+	<classpathentry kind="lib" path="/home/etu/mstaiano/git/Histoire/libs/gnujaxp.jar"/>
+	<classpathentry kind="lib" path="/home/etu/mstaiano/git/Histoire/libs/hamcrest-core-1.3.jar"/>
+	<classpathentry kind="lib" path="/home/etu/mstaiano/git/Histoire/libs/jcommon-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/home/etu/mstaiano/git/Histoire/libs/jfreechart-1.0.1.jar"/>
+	<classpathentry kind="lib" path="/home/etu/mstaiano/git/Histoire/libs/junit-4.12.jar"/>
+	<classpathentry kind="lib" path="/home/etu/mstaiano/git/Histoire/libs/log4j.jar"/>
+	<classpathentry kind="lib" path="/home/etu/mstaiano/git/Histoire/libs/servlet.jar"/>
+	<classpathentry kind="lib" path="/home/etu/mstaiano/git/Histoire/libs/swinger-1.0.0-BETA.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
