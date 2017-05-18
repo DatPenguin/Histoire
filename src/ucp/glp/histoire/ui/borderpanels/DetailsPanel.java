@@ -7,6 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
+ * Zone contenant la DetailsArea
  * @author Matteo STAIANO, Mathieu HANNOUN
  * @project GLP Histoire (L2S4 I) - Université de Cergy-Pontoise
  * @date 2016-2017
@@ -22,6 +23,10 @@ public class DetailsPanel extends JPanel {
         initTextArea(p);
     }
 
+    /**
+     * Gère l'affichage des stats
+     * @param p
+     */
     private void initTextArea(Peuple p) {
         textArea.appendln("Attributs primaires :");
         textArea.appendln("Nom : " + p.getNom());

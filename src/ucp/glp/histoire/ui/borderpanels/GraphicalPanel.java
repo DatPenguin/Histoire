@@ -10,6 +10,7 @@ import java.awt.geom.Line2D;
 import java.util.Random;
 
 /**
+ * Zone centrale affichant le diagramme
  * @author Matteo STAIANO, Mathieu HANNOUN
  * @project GLP Histoire (L2S4 I) - Université de Cergy-Pontoise
  * @date 2016-2017
@@ -29,16 +30,26 @@ public class GraphicalPanel extends JPanel {
     public GraphicalPanel() {
         this.setLayout(new BorderLayout());
         this.setOpaque(false);
-
     }
 
-    private void createBond(int a, int b, Color c) {
+    /**
+     * Crée un lien entre deux peuples
+     * @param peupleA
+     * @param peupleB
+     * @param couleur
+     */
+    private void createBond(int peupleA, int peupleB, Color couleur) {
         Graphics2D g2d = (Graphics2D) g1.create();
-        g2d.setColor(c);
+        g2d.setColor(couleur);
         g2d.setStroke(new BasicStroke(5));
-        g2d.draw(new Line2D.Double(CIRCLE_RADIUS * Math.cos(2 * a * Math.PI / nombrePeuples) + CIRCLE_RADIUS + HALO_SIZE, CIRCLE_RADIUS * Math.sin(2 * a * Math.PI / nombrePeuples) + CIRCLE_RADIUS + HALO_SIZE, CIRCLE_RADIUS * Math.cos(2 * b * Math.PI / nombrePeuples) + CIRCLE_RADIUS + HALO_SIZE, CIRCLE_RADIUS * Math.sin(2 * b * Math.PI / nombrePeuples) + CIRCLE_RADIUS + HALO_SIZE));
+        g2d.draw(new Line2D.Double(CIRCLE_RADIUS * Math.cos(2 * peupleA * Math.PI / nombrePeuples) + CIRCLE_RADIUS + HALO_SIZE, CIRCLE_RADIUS * Math.sin(2 * peupleA * Math.PI / nombrePeuples) + CIRCLE_RADIUS + HALO_SIZE, CIRCLE_RADIUS * Math.cos(2 * peupleB * Math.PI / nombrePeuples) + CIRCLE_RADIUS + HALO_SIZE, CIRCLE_RADIUS * Math.sin(2 * peupleB * Math.PI / nombrePeuples) + CIRCLE_RADIUS + HALO_SIZE));
     }
 
+    /**
+     * Retourne l'index du pays avec lequel construire le lien
+     * @param p
+     * @return
+     */
     private int getAlterIndex(Peuple p) {
         for (int i = 0; i < nombrePeuples; i++)
             if (MainFrame.getPeuplesArrayList().get(i) == p)
@@ -46,8 +57,11 @@ public class GraphicalPanel extends JPanel {
         return 0;
     }
 
+    /**
+     * Crée le diagramme
+     * @param g
+     */
     private void init(Graphics g) {
-        Random r = new Random();
         Graphics2D g2d = (Graphics2D) g.create();
         g2d.setColor(Color.BLACK);
         g2d.drawOval(35, 30, CIRCLE_DIAMETER, CIRCLE_DIAMETER);

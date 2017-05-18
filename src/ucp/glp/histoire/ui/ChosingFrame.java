@@ -6,6 +6,7 @@ import fr.theshark34.swinger.util.WindowMover;
 import javax.swing.*;
 
 /**
+ * Frame permettant le choix du nombre de peuples et des peuples
  * @author Matteo STAIANO, Mathieu HANNOUN
  * @project GLP Histoire (L2S4 I) - Université de Cergy-Pontoise
  * @date 2016-2017

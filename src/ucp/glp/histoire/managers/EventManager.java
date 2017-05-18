@@ -1,6 +1,7 @@
 package ucp.glp.histoire.managers;
 
 /**
+ * Classe-mère des gestionnaires d'évènements
  * @author Matteo STAIANO, Mathieu HANNOUN
  * @project GLP Histoire (L2S4 I) - Université de Cergy-Pontoise
  * @date 2016-2017

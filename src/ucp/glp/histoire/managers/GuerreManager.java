@@ -7,10 +7,10 @@ import ucp.glp.histoire.utilities.Peuple;
 import java.util.ArrayList;
 
 /**
+ * Cette classe sera instanciée une seule fois et après travaillera par routine à chaque passage de temps
  * @author Matteo STAIANO, Mathieu HANNOUN
  * @project GLP Histoire (L2S4 I) - Université de Cergy-Pontoise
  * @date 2016-2017
- * Cette classe sera instanciée une seule fois et après travaillera par routine à chaque passage de temps
  */
 public class GuerreManager {
     private static final int GUERRE_SEUIL = 150;
@@ -49,7 +49,7 @@ public class GuerreManager {
         p1.addEnnemies(p2);
         p2.addEnnemies(p1);
 
-        logger.info("La guerre à éclaté entre " + p1.getNom() + " et " + p2.getNom() + " iteration : " + RunningLoop.nbIteration);
-        RunningLoop.addTotextLog("La guerre à éclaté entre " + p1.getNom() + " et " + p2.getNom());
+        logger.info("La guerre fait rage entre " + p1.getNom() + " et " + p2.getNom() + " itération : " + RunningLoop.nbIteration);
+        RunningLoop.addTotextLog("La guerre fait rage entre " + p1.getNom() + " et " + p2.getNom());
     }
 }

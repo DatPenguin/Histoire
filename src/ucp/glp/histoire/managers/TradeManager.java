@@ -7,11 +7,13 @@ import ucp.glp.histoire.utilities.Peuple;
 import java.util.ArrayList;
 
 /**
+ * Gestionnaire de commerce
  * @author Matteo STAIANO, Mathieu HANNOUN
  * @project GLP Histoire (L2S4 I) - Université de Cergy-Pontoise
  * @date 2016-2017
  */
 public class TradeManager {
+    private static int TRADE_SEUIL = 100;
     private static final Logger logger = LoggerUtility.getLogger(TradeManager.class);
 
     /**
@@ -20,14 +22,13 @@ public class TradeManager {
      */
     public static void TradeChecker(ArrayList<Peuple> listePeuple) {
         // Routine de déclenchement ou non du commerce (commerce ponctuel)
-        int seuil = 100;
         for (Peuple aListePeuple : listePeuple) {
             aListePeuple.setListeTrade(new ArrayList<Peuple>());    // On réinitialise à chaque fois la liste des partenaires commerciaux
         }
 
         for (int i = 0; i < listePeuple.size(); i++)
             for (int j = (i + 1); j < listePeuple.size(); j++)      // De cette façon on évitera un dédoublement du commerce
-                if (((int) (listePeuple.get(i).getAttractivite() + listePeuple.get(j).getAttractivite()) >= seuil) && !(listePeuple.get(i).getListeEnnemies().contains(listePeuple.get(j))))    // Si la somme de leur attractivité est suffisante et si ils ne sont pas ennemis
+                if (((int) (listePeuple.get(i).getAttractivite() + listePeuple.get(j).getAttractivite()) >= TRADE_SEUIL) && !(listePeuple.get(i).getListeEnnemies().contains(listePeuple.get(j))))    // Si la somme de leur attractivité est suffisante et si ils ne sont pas ennemis
                     TradeManager.trade(listePeuple.get(i), listePeuple.get(j));
     }
 

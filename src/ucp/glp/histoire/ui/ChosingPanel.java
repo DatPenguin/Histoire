@@ -18,6 +18,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 /**
+ * Panel de sélection du nombre de peuples et des peuples
  * @author Matteo STAIANO, Mathieu HANNOUN
  * @project GLP Histoire (L2S4 I) - Université de Cergy-Pontoise
  * @date 2016-2017
@@ -56,31 +57,32 @@ public class ChosingPanel extends JPanel implements ActionListener {
         ChosingPanel.frame = frame;
     }
 
+    /**
+     * Initialise la liste des peuples choisissables
+     */
     private static void initPeuples() {
-        // TODO Creer ici tous les peuples choisissables
-        availablePeuples.add(new Belges());
-        availablePeuples.add(new Grecs());
-        availablePeuples.add(new Gandhi());
         availablePeuples.add(new Azteques());
+        availablePeuples.add(new Belges());
         availablePeuples.add(new Britanniques());
         availablePeuples.add(new Byzantins());
         availablePeuples.add(new Chinois());
         availablePeuples.add(new Espagnols());
+        availablePeuples.add(new Gandhi());
+        availablePeuples.add(new Grecs());
     }
 
+    /**
+     * Crée la liste des peuples sélectionnables
+     * @param nb
+     */
     private void createComponents(int nb) {
         for (int i = 0; i < nb; i++) {
             JComboBox<Peuple> peupleBox = new JComboBox<>();
             for (Object p : availablePeuples) {
-            	// TODO Ajouter chaque peuple ici aussi
-                if (p instanceof Belges)
-                    peupleBox.addItem(new Belges());
-                else if (p instanceof Grecs)
-                    peupleBox.addItem(new Grecs());
-                else if (p instanceof Gandhi)
-                    peupleBox.addItem(new Gandhi());
-                else if (p instanceof Azteques)
+                if (p instanceof Azteques)
                     peupleBox.addItem(new Azteques());
+                else if (p instanceof Belges)
+                    peupleBox.addItem(new Belges());
                 else if (p instanceof Britanniques)
                     peupleBox.addItem(new Britanniques());
                 else if (p instanceof Byzantins)
@@ -89,6 +91,10 @@ public class ChosingPanel extends JPanel implements ActionListener {
                     peupleBox.addItem(new Chinois());
                 else if (p instanceof Espagnols)
                     peupleBox.addItem(new Espagnols());
+                else if (p instanceof Gandhi)
+                    peupleBox.addItem(new Gandhi());
+                else if (p instanceof Grecs)
+                    peupleBox.addItem(new Grecs());
             }
             peupleBox.setAlignmentX(Component.CENTER_ALIGNMENT);
             this.add(peupleBox);
@@ -109,6 +115,10 @@ public class ChosingPanel extends JPanel implements ActionListener {
         this.add(Box.createRigidArea(new Dimension(100, 10)));
     }
 
+    /**
+     * Initialise la liste des thèmes choisissables
+     * @return
+     */
     private ArrayList<String> initThemes() {
         ArrayList<String> out = new ArrayList<String>();
         out.add("standard");
@@ -117,6 +127,9 @@ public class ChosingPanel extends JPanel implements ActionListener {
         return out;
     }
 
+    /**
+     * Peuple l'ArrayList des peuples en fonction des choix de l'utilisateur
+     */
     private void populateAL() {
         Component[] components = this.getComponents();
         for (Component c : components)

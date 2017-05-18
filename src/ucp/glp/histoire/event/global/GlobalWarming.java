@@ -7,7 +7,7 @@ package ucp.glp.histoire.event.global;
  */
 public class GlobalWarming extends GlobalHistoricEvent {
     public GlobalWarming() {
-        this.nom = "Réchauffement climatique";
+        this.nom = "réchauffement climatique";
         this.puissance = -1.0;
         this.type = 0;
     }

@@ -12,7 +12,7 @@ public class Conquete extends ReactionEvent {
      * dépends du Nombres d'unités militaires
      */
     public Conquete() {
-        this.nom = "Conquête";
+        this.nom = "conquête";
         this.puissance = 2.0;
         this.type = 4;
         this.seuil = 55;

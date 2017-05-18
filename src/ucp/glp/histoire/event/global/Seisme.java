@@ -7,7 +7,7 @@ package ucp.glp.histoire.event.global;
  */
 public class Seisme extends GlobalHistoricEvent {
     public Seisme() {
-        this.nom = "Seisme";
+        this.nom = "séisme";
         this.puissance = -3.0;
         this.type = 1;
     }

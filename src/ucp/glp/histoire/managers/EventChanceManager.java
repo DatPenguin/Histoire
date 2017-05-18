@@ -7,6 +7,7 @@ import java.util.ArrayDeque;
 import java.util.ArrayList;
 
 /**
+ * Gère les probabilités des différents évènements
  * @author Matteo STAIANO, Mathieu HANNOUN
  * @project GLP Histoire (L2S4 I) - Université de Cergy-Pontoise
  * @date 2016-2017
@@ -28,6 +29,10 @@ public class EventChanceManager {
         eventReactionManager = new EventReactionManager();
     }
 
+    /**
+     * Gère les probabilités des évènements locaux
+     * @param listePeuple
+     */
     public void actionLocale(ArrayList<Peuple> listePeuple) {       // Va pour chaque pays tester si il leur arrive un evenement ou non
         for (Peuple aListePeuple : listePeuple) {
             int randNumb = (int) (Math.random() * 101);             // Generera un nombre aléatoire compris entre [0,100]
@@ -36,12 +41,20 @@ public class EventChanceManager {
         }
     }
 
+    /**
+     * Gère les probabilités des évènements globaux
+     * @param listePeuple
+     */
     public void actionGlobale(ArrayList<Peuple> listePeuple) {
         int randNumb = (int) (Math.random() * 101);                 // Generera un nombre aléatoire compris entre [0,100]
         if (randNumb < tauxGlobal)
             eventGlobalManager.action(listePeuple);
     }
 
+    /**
+     * Gère les probabilités des réactions
+     * @param listePeuple
+     */
     public void reaction(ArrayList<Peuple> listePeuple) {
         for (Peuple aListePeuple : listePeuple) {
             int randNumb = (int) (Math.random() * 101);             // Generera un nombre aléatoire compris entre [0,100]
@@ -51,8 +64,7 @@ public class EventChanceManager {
     }
 
     /**
-     * Sera utilisé quand on voudra lancer des évément manuellement depuis l'ihm
-     *
+     * Sera utilisé quand on voudra lancer des évément manuellement depuis l'IHM
      * @param listePeuple
      * @param fileGlobalEvent
      */

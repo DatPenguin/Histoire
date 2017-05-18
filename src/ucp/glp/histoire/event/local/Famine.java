@@ -6,7 +6,6 @@ package ucp.glp.histoire.event.local;
  * @date 2016-2017
  */
 public class Famine extends LocalHistoricEvent {
-
     public Famine() {
         this.nom = "famine";
         this.puissance = -2.0;

@@ -6,6 +6,7 @@ import ucp.glp.histoire.ui.MainPanel;
 import ucp.glp.histoire.ui.borderpanels.BottomPanel;
 
 /**
+ * Classe gérant l'écoulement du temps
  * @author Matteo STAIANO, Mathieu HANNOUN
  * @project GLP Histoire (L2S4 I) - Université de Cergy-Pontoise
  * @date 2016-2017
@@ -13,6 +14,9 @@ import ucp.glp.histoire.ui.borderpanels.BottomPanel;
 public class RunningTime implements Runnable {
     private static final RunningLoop loop = new RunningLoop(MainFrame.getPeuplesArrayList());
 
+    /**
+     * Permet le lancement d'une boucle manuellement
+     */
     public static void fastForward() {
         System.out.println("Lancement de la boucle");
         loop.loopAction();

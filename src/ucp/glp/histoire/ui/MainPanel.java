@@ -12,6 +12,7 @@ import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 
 /**
+ * Panel principal
  * @author Matteo STAIANO, Mathieu HANNOUN
  * @project GLP Histoire (L2S4 I) - Université de Cergy-Pontoise
  * @date 2016-2017
@@ -41,7 +42,6 @@ public class MainPanel extends JPanel implements LoopListener {
         rightPanel.mainPanel = this;
         this.add(rightPanel);
 
-        BottomPanel.setMainPanel(this);
         bottomPanel.setBounds(35, 580, 1200, 85);
         this.add(bottomPanel);
 

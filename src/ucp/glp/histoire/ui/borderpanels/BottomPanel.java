@@ -14,6 +14,7 @@ import javax.swing.event.ChangeListener;
 import java.awt.*;
 
 /**
+ * Panel contenant les contrôles du temps
  * @author Matteo STAIANO, Mathieu HANNOUN
  * @project GLP Histoire (L2S4 I) - Université de Cergy-Pontoise
  * @date 2016-2017
@@ -21,7 +22,6 @@ import java.awt.*;
 public class BottomPanel extends JPanel implements SwingerEventListener, ChangeListener {
 
     private static final JSlider timeSlider = new JSlider();
-    private static MainPanel mainPanel;
     private final STexturedButton playPauseButton = new STexturedButton(Swinger.getResource("playPauseButton.png"));
     private final STexturedButton fastForwardButton = new STexturedButton(Swinger.getResource("fastForwardButton.png"));
 
@@ -50,10 +50,6 @@ public class BottomPanel extends JPanel implements SwingerEventListener, ChangeL
         return timeSlider;
     }
 
-    public static void setMainPanel(MainPanel mainPanel) {
-        BottomPanel.mainPanel = mainPanel;
-    }
-
     @Override
     public void onEvent(SwingerEvent e) {
         if (e.getSource() == playPauseButton) {
@@ -69,8 +65,7 @@ public class BottomPanel extends JPanel implements SwingerEventListener, ChangeL
     }
 
     /**
-     * Invoked when the target of the listener has changed its state.
-     *
+     * Détecte les changements d'état de la progressbar.
      * @param e a ChangeEvent object
      */
     @Override

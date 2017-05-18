@@ -17,6 +17,7 @@ import java.awt.*;
 import java.util.ArrayList;
 
 /**
+ * Panel à droite, contenant les graphiques et les logs
  * @author Matteo STAIANO, Mathieu HANNOUN
  * @project GLP Histoire (L2S4 I) - Université de Cergy-Pontoise
  * @date 2016-2017
@@ -52,6 +53,9 @@ public class RightPanel extends JPanel {
         this.setOpaque(false);
     }
 
+    /**
+     * Effectue le changement de graphiques lors de la sélection d'un peuple
+     */
     public void swapCharts() {
         this.remove(cPanel);
         cPanel = new ChartPanel(chartsList.get(mainPanel.getSelectedIndex() - 1));
@@ -59,6 +63,9 @@ public class RightPanel extends JPanel {
         this.repaint();
     }
 
+    /**
+     * Effectue le changement de graphiques lors de la désélection d'un peuple
+     */
     public void goGlobal() {
         this.remove(cPanel);
         cPanel = new ChartPanel(popChart);
@@ -66,6 +73,9 @@ public class RightPanel extends JPanel {
         this.repaint();
     }
 
+    /**
+     * Initialise les datasets
+     */
     private void initDatasets() {
         for (int i = 0; i < MainFrame.getPeuplesArrayList().size(); i++) {
             datasetsList.add(new XYSeriesCollection());
@@ -86,6 +96,9 @@ public class RightPanel extends JPanel {
         }
     }
 
+    /**
+     * Actualise les données en vue détaillée
+     */
     public void refreshDetailedSeries() {
         for (int i = 0; i < MainFrame.getPeuplesArrayList().size(); i++) {
             datasetsList.get(i).getSeries(0).add(RunningLoop.nbIteration, MainFrame.getPeuplesArrayList().get(i).getAgressivite());
@@ -103,13 +116,12 @@ public class RightPanel extends JPanel {
         }
     }
 
+    /**
+     * Actualise les données en vue globale
+     */
     public void refreshSeries() {
         for (int i = 0; i < MainFrame.getPeuplesArrayList().size(); i++)
             dataset.getSeries(i).add(RunningLoop.nbIteration, MainFrame.getPeuplesArrayList().get(i).getPopulation());
-    }
-
-    public void addToSeries(int x, double y) {
-        series.add(x, y);
     }
 
     public RightLogPanel getLogPanel() {

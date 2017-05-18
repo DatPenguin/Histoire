@@ -62,12 +62,11 @@ public class RunningLoop {
     }
 
     /**
-     * Enverra toute les stats de chaque pays dans les logs
+     * Envoie toute les stats de chaque pays dans les logs
      */
     private void logDisplayGlobalStat() {
-        for (Peuple aListePeuple : listePeuple) {
+        for (Peuple aListePeuple : listePeuple)
             logger.trace(aListePeuple.displayInfo() + " iteration : " + RunningLoop.nbIteration);
-        }
     }
 
     public ArrayList<String> getTextLog() {

@@ -5,6 +5,7 @@ import ucp.glp.histoire.utilities.Peuple;
 import java.util.ArrayList;
 
 /**
+ * Gestionnaire des peuples
  * @author Matteo STAIANO, Mathieu HANNOUN
  * @project GLP Histoire (L2S4 I) - Université de Cergy-Pontoise
  * @date 2016-2017
@@ -12,9 +13,8 @@ import java.util.ArrayList;
 public class PeupleManager {
 
     public static void genereEnsembleTotal(ArrayList<Peuple> listePeuple) {
-        for (Peuple aListePeuple : listePeuple) {
+        for (Peuple aListePeuple : listePeuple)
             PeupleManager.genereEnsemble(aListePeuple);
-        }
     }
 
     // Fonctions définissant les attributs secondaires
@@ -24,7 +24,6 @@ public class PeupleManager {
 
     private static void genereDensite(Peuple p) {
         p.setDensite(p.getTerritoire() - p.getPopulation());
-
     }
 
     private static void genereRichesse(Peuple p) {
@@ -36,11 +35,10 @@ public class PeupleManager {
     }
 
     private static void genereBellicisme(Peuple p) {
-        if (p.getPopulation() < 15) { // Pour éviter les résultat NaN lié au ln
+        if (p.getPopulation() < 15) // Pour éviter les résultat NaN lié au ln
             p.setBellicisme(0);
-        } else {
+        else
             p.setBellicisme((Math.log(p.getPopulation() + 1) / 4) * (p.getRichesse() + p.getAgressivite()) / 2);
-        }
     }
 
     private static void genereAttractivite(Peuple p) {
@@ -55,7 +53,7 @@ public class PeupleManager {
         p.setPuissancePolitique((p.getPuissanceMilitaire() + p.getRichesse()) / 2);
     }
 
-    private static void genereImigration(Peuple p) {
+    private static void genereImmigration(Peuple p) {
         p.setImmigration((int) (p.getDensite() + p.getRichesse()) / 10);
     }
 
@@ -68,8 +66,6 @@ public class PeupleManager {
         PeupleManager.genereAttractivite(p);
         PeupleManager.generePuissanceMilitaire(p);
         PeupleManager.generePuissancePolitique(p);
-        PeupleManager.genereImigration(p);
+        PeupleManager.genereImmigration(p);
     }
-
-
 }

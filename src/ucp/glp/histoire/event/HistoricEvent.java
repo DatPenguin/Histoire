@@ -17,12 +17,10 @@ import ucp.glp.histoire.utilities.Peuple;
  */
 public abstract class HistoricEvent {
 
-    // Sprite location  = location + nom + .png
     protected String nom;
     protected int amplitude; //multiplicateur du résultat
     protected int type;
-    protected double ampReel, puissance;
-    private String spritesLocation;
+    protected double puissance;
 
     public String toString(Peuple p) {
         String amp = "";
@@ -39,7 +37,7 @@ public abstract class HistoricEvent {
             default:
                 System.out.println("ERREUR ENTREE VALEUR EVENT" + this.nom);
         }
-        return ("un(e) " + amp + " " + this.nom + " touche " + p.getNom());
+        return ("Un(e) " + amp + " " + this.nom + " touche " + p.getNom());
     }
 
     public String getNom() {
@@ -56,21 +54,5 @@ public abstract class HistoricEvent {
 
     public double getPuissance() {
         return puissance;
-    }
-
-    public String getSpritesLocation() {
-        return spritesLocation;
-    }
-
-    public void setSpritesLocation(String spritesLocation) {
-        this.spritesLocation = spritesLocation;
-    }
-
-    public int getAmplitude() {
-        return amplitude;
-    }
-
-    public void setAmplitude(int amplitude) {
-        this.amplitude = amplitude;
     }
 }

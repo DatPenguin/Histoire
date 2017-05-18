@@ -4,6 +4,7 @@ import java.awt.*;
 import java.util.ArrayList;
 
 /**
+ * Classe de données contenant les informations des peuples
  * @author Matteo STAIANO, Mathieu HANNOUN
  * @project GLP Histoire (L2S4 I) - Université de Cergy-Pontoise
  * @date 2016-2017

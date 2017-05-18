@@ -9,6 +9,7 @@ import ucp.glp.histoire.utilities.Peuple;
 import java.util.ArrayList;
 
 /**
+ * Gestionnaire de réactions
  * @author Matteo STAIANO, Mathieu HANNOUN
  * @project GLP Histoire (L2S4 I) - Université de Cergy-Pontoise
  * @date 2016-2017
@@ -30,7 +31,6 @@ public class EventReactionManager extends EventManager {
      * @param amplitude
      */
     private static void actionOnPeuple(ReactionEvent hEvent, Peuple p, int amplitude) {
-
         switch (hEvent.getType()) {
             case 0:
                 p.setRessources(p.getRessources() + (hEvent.getPuissance() * EventLocalManager.genereAmpReel(amplitude)));
@@ -63,7 +63,7 @@ public class EventReactionManager extends EventManager {
         ReactionEventList.add(new AmeliorationProduction());
     }
 
-    /**
+    /*
      * Les attributs utilisé sont ici les attributs secondaires
      * 0 : technologie
      * 1 : richesses
@@ -71,6 +71,11 @@ public class EventReactionManager extends EventManager {
      * 3 : Densité de population
      * 4 : Unités militaires
      * Testera si pour le peuple donné son attribut est bien supérieur ou égale au seuil de la réaction
+     */
+
+    /**
+     * Lance des réactions aléatoires
+     * @param p
      */
     public void action(Peuple p) {
         int randEvent = (int) (Math.random() * (ReactionEventList.size()));    // Generera un nombre aléatoire compris entre [0,size]

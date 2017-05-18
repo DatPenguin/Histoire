@@ -6,6 +6,7 @@ import ucp.glp.histoire.utilities.Peuple;
 import java.util.ArrayList;
 
 /**
+ * Gestionnaire d'évènements locaux
  * @author Matteo STAIANO, Mathieu HANNOUN
  * @project GLP Histoire (L2S4 I) - Université de Cergy-Pontoise
  * @date 2016-2017
@@ -18,6 +19,12 @@ public class EventLocalManager extends EventManager {
         genererEventList();
     }
 
+    /**
+     * Gère les effets des actions sur un peuple
+     * @param hEvent
+     * @param p
+     * @param amplitude
+     */
     private static void actionOnPeuple(LocalHistoricEvent hEvent, Peuple p, int amplitude) {
         switch (hEvent.getType()) {
             case 0:
@@ -41,6 +48,9 @@ public class EventLocalManager extends EventManager {
         }
     }
 
+    /**
+     * Génère la liste des events possibles
+     */
     public void genererEventList() {
         // On ajoutera une instance de chanque classe event
         localEventList.add(new Famine());
@@ -50,6 +60,10 @@ public class EventLocalManager extends EventManager {
         localEventList.add(new SurplusNourriture());
     }
 
+    /**
+     * Lance des évènements aléatoires
+     * @param p
+     */
     public void action(Peuple p) {
         int randEvent = (int) (Math.random() * (localEventList.size()));    // Generera un nombre aléatoire compris entre [0,size]
         int RandAmp = (int) (Math.random() * (3));                    // Generera un nombre aléatoire compris entre [0,2]

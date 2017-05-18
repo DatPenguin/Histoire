@@ -6,9 +6,8 @@ package ucp.glp.histoire.event.local;
  * @date 2016-2017
  */
 public class CriseFinanciere extends LocalHistoricEvent {
-
     public CriseFinanciere() {
-        this.nom = "Crise Financiere";
+        this.nom = "crise financière";
         this.puissance = -2.0;
         this.type = 0;
     }
